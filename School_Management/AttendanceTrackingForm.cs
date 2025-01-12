@@ -52,14 +52,14 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT StudentID, StudentName FROM Students WHERE ClassID = @ClassID";
+                    string query = "SELECT StudentID, Name FROM Students WHERE ClassID = @ClassID";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     adapter.SelectCommand.Parameters.AddWithValue("@ClassID", classID);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
 
                     dgvStudents.DataSource = dataTable;
-                    dgvStudents.Columns.Add(new DataGridViewCheckBoxColumn() { HeaderText = "Present", Name = "Present" });
+                    dgvStudents.Columns.Add(new DataGridViewCheckBoxColumn() { HeaderText = "Status", Name = "Status" });
                 }
             }
             catch (Exception ex)
@@ -68,12 +68,12 @@ namespace School_Management
             }
         }
 
-        private void btnLoadStudents_Click(object sender, EventArgs e)
+        private void btnLoadStudents_Click_1(object sender, EventArgs e)
         {
             LoadStudentsData();
         }
 
-        private void btnSaveAttendance_Click(object sender, EventArgs e)
+        private void btnSaveAttendance_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace School_Management
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Attendance (StudentID, Date, IsPresent) VALUES (@StudentID, @Date, @IsPresent)";
+                    string query = "INSERT INTO Attendance (StudentID, Date, Status) VALUES (@StudentID, @Date, @Status)";
 
                     foreach (DataGridViewRow row in dgvStudents.Rows)
                     {
@@ -96,7 +96,11 @@ namespace School_Management
                             SqlCommand command = new SqlCommand(query, connection);
                             command.Parameters.AddWithValue("@StudentID", row.Cells["StudentID"].Value);
                             command.Parameters.AddWithValue("@Date", dtpDate.Value.Date);
-                            command.Parameters.AddWithValue("@IsPresent", Convert.ToBoolean(row.Cells["Present"].Value));
+
+                            // تعيين القيمة المناسبة لعمود Status
+                            bool isPresent = Convert.ToBoolean(row.Cells["Status"].Value);
+                            string status = isPresent ? "Present" : "Absent";  // تأكد من أن هذه القيم تتوافق مع القيود
+                            command.Parameters.AddWithValue("@Status", status);
 
                             command.ExecuteNonQuery();
                         }
@@ -110,10 +114,14 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
+       
     }
-}
+
+        
+    }
+

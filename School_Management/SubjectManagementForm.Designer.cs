@@ -41,15 +41,15 @@
             // dgvSubjects
             // 
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Location = new System.Drawing.Point(0, 0);
+            this.dgvSubjects.Location = new System.Drawing.Point(0, -1);
             this.dgvSubjects.Name = "dgvSubjects";
-            this.dgvSubjects.Size = new System.Drawing.Size(240, 150);
+            this.dgvSubjects.Size = new System.Drawing.Size(788, 241);
             this.dgvSubjects.TabIndex = 0;
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // txtSubjectName
             // 
-            this.txtSubjectName.Location = new System.Drawing.Point(23, 189);
+            this.txtSubjectName.Location = new System.Drawing.Point(350, 284);
             this.txtSubjectName.Name = "txtSubjectName";
             this.txtSubjectName.Size = new System.Drawing.Size(100, 20);
             this.txtSubjectName.TabIndex = 1;
@@ -57,46 +57,50 @@
             // cmbTeachers
             // 
             this.cmbTeachers.FormattingEnabled = true;
-            this.cmbTeachers.Location = new System.Drawing.Point(142, 188);
+            this.cmbTeachers.Location = new System.Drawing.Point(364, 319);
             this.cmbTeachers.Name = "cmbTeachers";
             this.cmbTeachers.Size = new System.Drawing.Size(121, 21);
             this.cmbTeachers.TabIndex = 2;
             // 
             // btnAddSubject
             // 
-            this.btnAddSubject.Location = new System.Drawing.Point(86, 263);
+            this.btnAddSubject.Location = new System.Drawing.Point(145, 269);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.Size = new System.Drawing.Size(75, 23);
             this.btnAddSubject.TabIndex = 3;
             this.btnAddSubject.Text = "Add Subject";
             this.btnAddSubject.UseVisualStyleBackColor = true;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click_1);
             // 
             // btnEditSubject
             // 
-            this.btnEditSubject.Location = new System.Drawing.Point(12, 234);
+            this.btnEditSubject.Location = new System.Drawing.Point(36, 281);
             this.btnEditSubject.Name = "btnEditSubject";
             this.btnEditSubject.Size = new System.Drawing.Size(75, 23);
             this.btnEditSubject.TabIndex = 4;
             this.btnEditSubject.Text = "Edit Subject";
             this.btnEditSubject.UseVisualStyleBackColor = true;
+            this.btnEditSubject.Click += new System.EventHandler(this.btnEditSubject_Click);
             // 
             // btnDeleteSubject
             // 
-            this.btnDeleteSubject.Location = new System.Drawing.Point(77, 298);
+            this.btnDeleteSubject.Location = new System.Drawing.Point(162, 317);
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteSubject.TabIndex = 5;
             this.btnDeleteSubject.Text = "Delete Subject";
             this.btnDeleteSubject.UseVisualStyleBackColor = true;
+            this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(-25, 298);
+            this.btnClose.Location = new System.Drawing.Point(21, 317);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // SubjectManagementForm
             // 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivitiesManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivitiesManagementForm.Designer.cs">
+      <DependentUpon>ActivitiesManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AttendanceTrackingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="MainForm.cs.Designer.cs">
       <DependentUpon>MainForm.cs.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParentManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentManagementForm.Designer.cs">
+      <DependentUpon>ParentManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentManagementForm.cs">
@@ -102,6 +114,15 @@
     <Compile Include="TeacherManagementForm.Designer.cs">
       <DependentUpon>TeacherManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimetableManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimetableManagementForm.Designer.cs">
+      <DependentUpon>TimetableManagementForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivitiesManagementForm.resx">
+      <DependentUpon>ActivitiesManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AttendanceTrackingForm.resx">
       <DependentUpon>AttendanceTrackingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +141,9 @@
     <EmbeddedResource Include="MainForm.cs.resx">
       <DependentUpon>MainForm.cs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParentManagementForm.resx">
+      <DependentUpon>ParentManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -137,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherManagementForm.resx">
       <DependentUpon>TeacherManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimetableManagementForm.resx">
+      <DependentUpon>TimetableManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -24,7 +24,10 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT SubjectID, SubjectName, TeacherName FROM Subjects s JOIN Teachers t ON s.TeacherID = t.TeacherID";
+                    // Corrected query
+                    string query = "SELECT s.SubjectID, s.SubjectName, t.Name AS TeacherName " +
+                                   "FROM Subjects s " +
+                                   "JOIN Teachers t ON s.TeacherID = t.TeacherID";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
@@ -37,6 +40,7 @@ namespace School_Management
             }
         }
 
+
         private void LoadTeachersIntoDropdown()
         {
             try
@@ -44,11 +48,14 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT TeacherID, TeacherName FROM Teachers";
+                    // Corrected query
+                    string query = "SELECT TeacherID, Name AS TeacherName FROM Teachers";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
-                    cmbTeachers.DisplayMember = "TeacherName";
+
+                    // Set DisplayMember and ValueMember for the ComboBox
+                    cmbTeachers.DisplayMember = "TeacherName"; // Alias used in the query
                     cmbTeachers.ValueMember = "TeacherID";
                     cmbTeachers.DataSource = dataTable;
                 }
@@ -59,7 +66,7 @@ namespace School_Management
             }
         }
 
-        private void btnAddSubject_Click(object sender, EventArgs e)
+        private void btnAddSubject_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -173,5 +180,7 @@ namespace School_Management
         {
 
         }
+
+        
     }
 }

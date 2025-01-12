@@ -25,7 +25,18 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT StudentID, Name, BirthDate, Class FROM Students";
+                    // Correct query to join Students and Classes tables
+                    string query = @"
+                SELECT 
+                    s.StudentID, 
+                    s.Name, 
+                    s.DateOfBirth AS BirthDate, 
+                    c.ClassName AS Class 
+                FROM 
+                    Students s
+                LEFT JOIN 
+                    Classes c ON s.ClassID = c.ClassID";
+
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
@@ -38,15 +49,15 @@ namespace School_Management
             }
         }
 
-        private void btnAddStudent_Click(object sender, EventArgs e)
+        private void btnAddStudent_Click_1(object sender, EventArgs e)
         {
             try
             {
                 string name = txtName.Text.Trim();
                 string birthDate = dtpBirthDate.Value.ToString("yyyy-MM-dd");
-                string studentClass = txtClass.Text.Trim();
+                string studentClassID = txtClass.Text.Trim(); // تأكد من أن هذا هو معرف الصف وليس الاسم
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(studentClass))
+                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(studentClassID))
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -55,11 +66,11 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Students (Name, BirthDate, Class) VALUES (@Name, @BirthDate, @Class)";
+                    string query = "INSERT INTO Students (Name, DateOfBirth, ClassID) VALUES (@Name, @DateOfBirth, @ClassID)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@BirthDate", birthDate);
-                    command.Parameters.AddWithValue("@Class", studentClass);
+                    command.Parameters.AddWithValue("@DateOfBirth", birthDate);
+                    command.Parameters.AddWithValue("@ClassID", studentClassID); // تأكد أن القيمة هنا صحيحة
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -72,8 +83,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnEditStudent_Click(object sender, EventArgs e)
+        private void btnEditStudent_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -86,9 +96,9 @@ namespace School_Management
                 int studentID = Convert.ToInt32(dgvStudents.SelectedRows[0].Cells["StudentID"].Value);
                 string name = txtName.Text.Trim();
                 string birthDate = dtpBirthDate.Value.ToString("yyyy-MM-dd");
-                string studentClass = txtClass.Text.Trim();
+                string studentClassID = txtClass.Text.Trim(); // تأكد من أن هذا هو معرف الصف وليس الاسم
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(studentClass))
+                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(studentClassID))
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -97,11 +107,11 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Students SET Name = @Name, BirthDate = @BirthDate, Class = @Class WHERE StudentID = @StudentID";
+                    string query = "UPDATE Students SET Name = @Name, DateOfBirth = @BirthDate, ClassID = @Class WHERE StudentID = @StudentID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@BirthDate", birthDate);
-                    command.Parameters.AddWithValue("@Class", studentClass);
+                    command.Parameters.AddWithValue("@Class", studentClassID); // تأكد من أن القيمة هنا صحيحة
                     command.Parameters.AddWithValue("@StudentID", studentID);
 
                     connection.Open();
@@ -115,8 +125,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnDeleteStudent_Click(object sender, EventArgs e)
+        private void btnDeleteStudent_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -147,9 +156,18 @@ namespace School_Management
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void btnViewStudentDetails_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dtpBirthDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

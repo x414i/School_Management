@@ -24,11 +24,11 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT StudentID, StudentName FROM Students";
+                    string query = "SELECT StudentID, Name FROM Students"; // تعديل اسم العمود هنا
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
-                    cmbStudents.DisplayMember = "StudentName";
+                    cmbStudents.DisplayMember = "Name"; // تأكد من تحديث DisplayMember
                     cmbStudents.ValueMember = "StudentID";
                     cmbStudents.DataSource = dataTable;
                 }
@@ -38,7 +38,6 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void LoadSubjectsIntoDropdown()
         {
             try
@@ -61,7 +60,7 @@ namespace School_Management
             }
         }
 
-        private void btnSaveGrade_Click(object sender, EventArgs e)
+        private void btnSaveGrade_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -80,7 +79,7 @@ namespace School_Management
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Grades (StudentID, SubjectID, Grade, ExamDate) VALUES (@StudentID, @SubjectID, @Grade, @ExamDate)";
+                    string query = "INSERT INTO Grades (StudentID, SubjectID, Marks, ExamDate) VALUES (@StudentID, @SubjectID, @Grade, @ExamDate)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@StudentID", studentID);
                     command.Parameters.AddWithValue("@SubjectID", subjectID);
@@ -97,9 +96,19 @@ namespace School_Management
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbStudents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

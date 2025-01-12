@@ -38,6 +38,9 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,55 +55,60 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(89, 318);
+            this.btnAddStudent.Location = new System.Drawing.Point(58, 176);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStudent.Size = new System.Drawing.Size(163, 68);
             this.btnAddStudent.TabIndex = 1;
             this.btnAddStudent.Text = "لإضافة طالب جديد";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click_1);
             // 
             // btnEditStudent
             // 
-            this.btnEditStudent.Location = new System.Drawing.Point(106, 223);
+            this.btnEditStudent.Location = new System.Drawing.Point(172, 351);
             this.btnEditStudent.Name = "btnEditStudent";
-            this.btnEditStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnEditStudent.Size = new System.Drawing.Size(141, 68);
             this.btnEditStudent.TabIndex = 2;
             this.btnEditStudent.Text = "لتعديل بيانات طالب";
             this.btnEditStudent.UseVisualStyleBackColor = true;
+            this.btnEditStudent.Click += new System.EventHandler(this.btnEditStudent_Click_1);
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(3, 201);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(172, 260);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
-            this.btnDeleteStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteStudent.Size = new System.Drawing.Size(141, 69);
             this.btnDeleteStudent.TabIndex = 3;
             this.btnDeleteStudent.Text = "لحذف طالب محدد.";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click_1);
             // 
             // btnViewStudentDetails
             // 
-            this.btnViewStudentDetails.Location = new System.Drawing.Point(195, 318);
+            this.btnViewStudentDetails.Location = new System.Drawing.Point(10, 263);
             this.btnViewStudentDetails.Name = "btnViewStudentDetails";
-            this.btnViewStudentDetails.Size = new System.Drawing.Size(75, 23);
+            this.btnViewStudentDetails.Size = new System.Drawing.Size(145, 63);
             this.btnViewStudentDetails.TabIndex = 4;
             this.btnViewStudentDetails.Text = "لعرض تفاصيل طالب محدد.";
             this.btnViewStudentDetails.UseVisualStyleBackColor = true;
+            this.btnViewStudentDetails.Click += new System.EventHandler(this.btnViewStudentDetails_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(208, 223);
+            this.btnClose.Location = new System.Drawing.Point(12, 351);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(143, 68);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // dgvStudents
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(332, 223);
+            this.dgvStudents.Location = new System.Drawing.Point(360, 223);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.Size = new System.Drawing.Size(240, 150);
+            this.dgvStudents.Size = new System.Drawing.Size(389, 194);
             this.dgvStudents.TabIndex = 6;
             // 
             // txtName
@@ -119,16 +127,47 @@
             // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(298, 158);
+            this.dtpBirthDate.Location = new System.Drawing.Point(319, 157);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBirthDate.TabIndex = 9;
+            this.dtpBirthDate.ValueChanged += new System.EventHandler(this.dtpBirthDate_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(592, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "اسم الطالب";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(592, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "الفصل";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(592, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "التاريح";
             // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.txtClass);
             this.Controls.Add(this.txtName);
@@ -160,5 +199,8 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

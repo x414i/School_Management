@@ -60,15 +60,15 @@ namespace School_Management
         private void btnManageParents_Click_1(object sender, EventArgs e)
         {
             // Open the Parent Management form
-            //ParentManagementForm parentForm = new ParentManagementForm();
-            //parentForm.ShowDialog();
+            ParentManagementForm parentForm = new ParentManagementForm();
+            parentForm.ShowDialog();
         }
 
         private void btnManageTimetable_Click_1(object sender, EventArgs e)
         {
             // Open the Timetable Management form
-            //TimetableManagementForm timetableForm = new TimetableManagementForm();
-            //timetableForm.ShowDialog();
+            TimetableManagementForm timetableForm = new TimetableManagementForm();
+            timetableForm.ShowDialog();
         }
 
         private void btnManageActivities_Click_1(object sender, EventArgs e)

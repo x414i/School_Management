@@ -37,7 +37,7 @@ namespace School_Management
             }
         }
 
-        private void btnAddClass_Click(object sender, EventArgs e)
+        private void btnAddClass_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace School_Management
             }
         }
 
-        private void btnEditClass_Click(object sender, EventArgs e)
+        private void btnEditClass_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace School_Management
             }
         }
 
-        private void btnDeleteClass_Click(object sender, EventArgs e)
+        private void btnDeleteClass_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -142,9 +142,10 @@ namespace School_Management
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

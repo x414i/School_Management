@@ -12,7 +12,7 @@ namespace School_Management
             InitializeComponent();
         }
 
-        private void TeacherManagementForm_Load(object sender, EventArgs e)
+        private void TeacherManagementForm_Load_1(object sender, EventArgs e)
         {
             // Load teacher data into DataGridView
             LoadTeachersData();
@@ -25,7 +25,7 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT TeacherID, Name, Subject FROM Teachers";
+                    string query = "SELECT TeacherID, Name, Specialization FROM Teachers";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
@@ -54,7 +54,7 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Teachers (Name, Subject) VALUES (@Name, @Subject)";
+                    string query = "INSERT INTO Teachers (Name, Specialization) VALUES (@Name, @Subject)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@Subject", subject);
@@ -71,7 +71,7 @@ namespace School_Management
             }
         }
 
-        private void btnEditTeacher_Click(object sender, EventArgs e)
+        private void btnEditTeacher_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Teachers SET Name = @Name, Subject = @Subject WHERE TeacherID = @TeacherID";
+                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @Subject WHERE TeacherID = @TeacherID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@Subject", subject);
@@ -112,7 +112,7 @@ namespace School_Management
             }
         }
 
-        private void btnDeleteTeacher_Click(object sender, EventArgs e)
+        private void btnDeleteTeacher_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -143,14 +143,11 @@ namespace School_Management
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void TeacherManagementForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
