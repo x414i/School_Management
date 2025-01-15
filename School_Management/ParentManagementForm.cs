@@ -38,7 +38,28 @@ namespace School_Management
 
         private void btnAddParent_Click(object sender, EventArgs e)
         {
-            ClearFields();
+
+            // إضافة ولي أمر جديد مباشرةً إذا كانت الحقول تحتوي على بيانات
+            if (!string.IsNullOrEmpty(txtParentName.Text) || !string.IsNullOrEmpty(txtPhoneNumber.Text) || !string.IsNullOrEmpty(txtEmail.Text))
+            {
+                string query = "INSERT INTO Parents (Name, Phone, Email) VALUES (@ParentName, @PhoneNumber, @Email)";
+                SqlConnection connection = new SqlConnection("Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;");
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ParentName", txtParentName.Text);
+                command.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text);
+                command.Parameters.AddWithValue("@Email", txtEmail.Text);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Parent information saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadParents();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in the fields and click Save to add a new parent.", "Add Parent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void btnEditParent_Click(object sender, EventArgs e)
@@ -147,6 +168,33 @@ namespace School_Management
             this.Close();
         }
 
-        
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchTerm = txtSearch.Text.Trim();
+
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT ParentID, Name, Phone, Email FROM Parents WHERE Name LIKE @SearchTerm OR Phone LIKE @SearchTerm OR Email LIKE @SearchTerm";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+                    dgvParents.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            LoadParents();
+            txtSearch.Clear();
+        }
     }
 }

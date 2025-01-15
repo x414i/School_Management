@@ -58,7 +58,7 @@
             this.btnManageStudents.Name = "btnManageStudents";
             this.btnManageStudents.Size = new System.Drawing.Size(95, 42);
             this.btnManageStudents.TabIndex = 1;
-            this.btnManageStudents.Text = "Manage Students";
+            this.btnManageStudents.Text = "إدارة الطلبة";
             this.btnManageStudents.UseVisualStyleBackColor = true;
             this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click_1);
             // 
@@ -68,13 +68,13 @@
             this.btnManageTeachers.Name = "btnManageTeachers";
             this.btnManageTeachers.Size = new System.Drawing.Size(83, 42);
             this.btnManageTeachers.TabIndex = 2;
-            this.btnManageTeachers.Text = "Manage Teachers";
+            this.btnManageTeachers.Text = "إدارة الاساتذة";
             this.btnManageTeachers.UseVisualStyleBackColor = true;
             this.btnManageTeachers.Click += new System.EventHandler(this.btnManageTeachers_Click_1);
             // 
             // btnViewReports
             // 
-            this.btnViewReports.Location = new System.Drawing.Point(526, 170);
+            this.btnViewReports.Location = new System.Drawing.Point(526, 293);
             this.btnViewReports.Name = "btnViewReports";
             this.btnViewReports.Size = new System.Drawing.Size(84, 30);
             this.btnViewReports.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(447, 303);
+            this.btnExit.Location = new System.Drawing.Point(431, 312);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
@@ -104,17 +104,17 @@
             // 
             // btnManageClasses
             // 
-            this.btnManageClasses.Location = new System.Drawing.Point(538, 293);
+            this.btnManageClasses.Location = new System.Drawing.Point(378, 101);
             this.btnManageClasses.Name = "btnManageClasses";
             this.btnManageClasses.Size = new System.Drawing.Size(83, 42);
             this.btnManageClasses.TabIndex = 6;
-            this.btnManageClasses.Text = "Manage Classes";
+            this.btnManageClasses.Text = "ادارة الصفوف";
             this.btnManageClasses.UseVisualStyleBackColor = true;
             this.btnManageClasses.Click += new System.EventHandler(this.btnManageClasses_Click_1);
             // 
             // btnEnterGrades
             // 
-            this.btnEnterGrades.Location = new System.Drawing.Point(538, 356);
+            this.btnEnterGrades.Location = new System.Drawing.Point(539, 356);
             this.btnEnterGrades.Name = "btnEnterGrades";
             this.btnEnterGrades.Size = new System.Drawing.Size(83, 42);
             this.btnEnterGrades.TabIndex = 7;
@@ -138,7 +138,7 @@
             this.btnManageSubjects.Name = "btnManageSubjects";
             this.btnManageSubjects.Size = new System.Drawing.Size(83, 42);
             this.btnManageSubjects.TabIndex = 9;
-            this.btnManageSubjects.Text = "Manage Subjects";
+            this.btnManageSubjects.Text = "إدارة المواد";
             this.btnManageSubjects.UseVisualStyleBackColor = true;
             this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click_1);
             // 
@@ -154,17 +154,17 @@
             // 
             // btnManageParents
             // 
-            this.btnManageParents.Location = new System.Drawing.Point(662, 224);
+            this.btnManageParents.Location = new System.Drawing.Point(391, 164);
             this.btnManageParents.Name = "btnManageParents";
-            this.btnManageParents.Size = new System.Drawing.Size(83, 42);
+            this.btnManageParents.Size = new System.Drawing.Size(92, 42);
             this.btnManageParents.TabIndex = 11;
-            this.btnManageParents.Text = "Manage Parents";
+            this.btnManageParents.Text = "ادارة اولياء الامر";
             this.btnManageParents.UseVisualStyleBackColor = true;
             this.btnManageParents.Click += new System.EventHandler(this.btnManageParents_Click_1);
             // 
             // btnManageActivities
             // 
-            this.btnManageActivities.Location = new System.Drawing.Point(671, 356);
+            this.btnManageActivities.Location = new System.Drawing.Point(662, 356);
             this.btnManageActivities.Name = "btnManageActivities";
             this.btnManageActivities.Size = new System.Drawing.Size(83, 42);
             this.btnManageActivities.TabIndex = 12;

@@ -59,15 +59,18 @@ namespace School_Management
                     adapter.Fill(dataTable);
 
                     dgvStudents.DataSource = dataTable;
-                    dgvStudents.Columns.Add(new DataGridViewCheckBoxColumn() { HeaderText = "Status", Name = "Status" });
+
+                    if (!dgvStudents.Columns.Contains("Status"))
+                    {
+                        dgvStudents.Columns.Add(new DataGridViewCheckBoxColumn() { HeaderText = "Status", Name = "Status" });
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while loading students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnLoadStudents_Click_1(object sender, EventArgs e)
         {
             LoadStudentsData();

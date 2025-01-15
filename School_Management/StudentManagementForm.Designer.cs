@@ -32,15 +32,18 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnEditStudent = new System.Windows.Forms.Button();
             this.btnDeleteStudent = new System.Windows.Forms.Button();
-            this.btnViewStudentDetails = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtClass = new System.Windows.Forms.TextBox();
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.cmbClass = new System.Windows.Forms.ComboBox();
+            this.cmbParent = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +86,15 @@
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click_1);
             // 
-            // btnViewStudentDetails
+            // btnSearch
             // 
-            this.btnViewStudentDetails.Location = new System.Drawing.Point(10, 263);
-            this.btnViewStudentDetails.Name = "btnViewStudentDetails";
-            this.btnViewStudentDetails.Size = new System.Drawing.Size(145, 63);
-            this.btnViewStudentDetails.TabIndex = 4;
-            this.btnViewStudentDetails.Text = "لعرض تفاصيل طالب محدد.";
-            this.btnViewStudentDetails.UseVisualStyleBackColor = true;
-            this.btnViewStudentDetails.Click += new System.EventHandler(this.btnViewStudentDetails_Click);
+            this.btnSearch.Location = new System.Drawing.Point(10, 263);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(145, 63);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "لعرض تفاصيل طالب محدد.";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnViewStudentDetails_Click);
             // 
             // btnClose
             // 
@@ -118,16 +121,9 @@
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 7;
             // 
-            // txtClass
-            // 
-            this.txtClass.Location = new System.Drawing.Point(419, 124);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(100, 20);
-            this.txtClass.TabIndex = 8;
-            // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(319, 157);
+            this.dtpBirthDate.Location = new System.Drawing.Point(341, 183);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBirthDate.TabIndex = 9;
@@ -154,26 +150,61 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(592, 164);
+            this.label4.Location = new System.Drawing.Point(581, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "التاريح";
+            // 
+            // cmbClass
+            // 
+            this.cmbClass.FormattingEnabled = true;
+            this.cmbClass.Location = new System.Drawing.Point(398, 121);
+            this.cmbClass.Name = "cmbClass";
+            this.cmbClass.Size = new System.Drawing.Size(121, 21);
+            this.cmbClass.TabIndex = 13;
+            // 
+            // cmbParent
+            // 
+            this.cmbParent.FormattingEnabled = true;
+            this.cmbParent.Location = new System.Drawing.Point(398, 156);
+            this.cmbParent.Name = "cmbParent";
+            this.cmbParent.Size = new System.Drawing.Size(121, 21);
+            this.cmbParent.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(581, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "cmbParent ";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(110, 71);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 16;
             // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmbParent);
+            this.Controls.Add(this.cmbClass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpBirthDate);
-            this.Controls.Add(this.txtClass);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnViewStudentDetails);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDeleteStudent);
             this.Controls.Add(this.btnEditStudent);
             this.Controls.Add(this.btnAddStudent);
@@ -193,14 +224,17 @@
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.Button btnEditStudent;
         private System.Windows.Forms.Button btnDeleteStudent;
-        private System.Windows.Forms.Button btnViewStudentDetails;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbClass;
+        private System.Windows.Forms.ComboBox cmbParent;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
