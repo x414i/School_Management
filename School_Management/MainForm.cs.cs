@@ -74,8 +74,8 @@ namespace School_Management
         private void btnManageActivities_Click_1(object sender, EventArgs e)
         {
             // Open the Activities Management form
-            //ActivitiesManagementForm activitiesForm = new ActivitiesManagementForm();
-            //activitiesForm.ShowDialog();
+            ActivitiesManagementForm activitiesForm = new ActivitiesManagementForm();
+            activitiesForm.ShowDialog();
         }
 
         private void btnViewReports_Click_1(object sender, EventArgs e)

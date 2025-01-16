@@ -30,14 +30,18 @@
         {
             this.dgvActivities = new System.Windows.Forms.DataGridView();
             this.btnSaveActivity = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnDeleteActivity = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtActivityID = new System.Windows.Forms.TextBox();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,15 +63,6 @@
             this.btnSaveActivity.UseVisualStyleBackColor = true;
             this.btnSaveActivity.Click += new System.EventHandler(this.btnSaveActivity_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(101, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btnDeleteActivity
             // 
             this.btnDeleteActivity.Location = new System.Drawing.Point(20, 62);
@@ -77,15 +72,6 @@
             this.btnDeleteActivity.Text = "btnDeleteActivity";
             this.btnDeleteActivity.UseVisualStyleBackColor = true;
             this.btnDeleteActivity.Click += new System.EventHandler(this.btnDeleteActivity_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(20, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // cmbClass
             // 
@@ -123,19 +109,77 @@
             this.txtActivityID.Size = new System.Drawing.Size(100, 20);
             this.txtActivityID.TabIndex = 9;
             // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(20, 12);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(75, 23);
+            this.btnShowAll.TabIndex = 4;
+            this.btnShowAll.Text = "btnShowAll";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(122, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Text = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(451, 102);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(712, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "المعرف";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(712, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "الوصف";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(708, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "الاسم";
+            // 
             // ActivitiesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtActivityID);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.cmbClass);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnDeleteActivity);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSaveActivity);
             this.Controls.Add(this.dgvActivities);
             this.Name = "ActivitiesManagementForm";
@@ -151,13 +195,17 @@
 
         private System.Windows.Forms.DataGridView dgvActivities;
         private System.Windows.Forms.Button btnSaveActivity;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDeleteActivity;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.TextBox txtActivityID;
+        private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

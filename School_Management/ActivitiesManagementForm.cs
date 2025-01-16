@@ -66,11 +66,11 @@ namespace School_Management
                     SqlDataReader reader = command.ExecuteReader();
 
                     cmbClass.Items.Clear();
-                    cmbClass.Items.Add(new { Text = "All Classes", Value = DBNull.Value });
+                    cmbClass.Items.Add(new ComboBoxItem { Text = "All Classes", Value = DBNull.Value });
 
                     while (reader.Read())
                     {
-                        cmbClass.Items.Add(new
+                        cmbClass.Items.Add(new ComboBoxItem
                         {
                             Text = reader["ClassName"].ToString(),
                             Value = reader["ClassID"]
@@ -107,7 +107,7 @@ namespace School_Management
                     command.Parameters.AddWithValue("@Name", txtName.Text);
                     command.Parameters.AddWithValue("@Description", txtDescription.Text);
                     command.Parameters.AddWithValue("@Date", dtpDate.Value);
-                    command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as dynamic)?.Value ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
 
                     if (!string.IsNullOrEmpty(txtActivityID.Text))
                     {
@@ -166,6 +166,79 @@ namespace School_Management
             txtDescription.Clear();
             cmbClass.SelectedIndex = -1;
             dtpDate.Value = DateTime.Now;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchTerm = txtSearch.Text.Trim();
+
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                    SELECT 
+                        Activities.ActivityID,
+                        Activities.Name,
+                        Activities.Description,
+                        Activities.Date,
+                        Classes.ClassName
+                    FROM Activities
+                    LEFT JOIN Classes ON Activities.ClassID = Classes.ClassID
+                    WHERE Activities.Name LIKE @SearchTerm OR Activities.Description LIKE @SearchTerm OR Activities.Date LIKE @SearchTerm";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dgvActivities.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            LoadActivities();
+            txtSearch.Clear(); // مسح حقل البحث
+        }
+
+        private void dgvActivities_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvActivities.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgvActivities.SelectedRows[0];
+                txtActivityID.Text = row.Cells["ActivityID"].Value.ToString();
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtDescription.Text = row.Cells["Description"].Value.ToString();
+                dtpDate.Value = Convert.ToDateTime(row.Cells["Date"].Value);
+
+                // تحديد الفصل في القائمة المنسدلة
+                var className = row.Cells["ClassName"].Value.ToString();
+                foreach (ComboBoxItem item in cmbClass.Items)
+                {
+                    if (item.Text == className)
+                    {
+                        cmbClass.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    public class ComboBoxItem
+    {
+        public string Text { get; set; }
+        public object Value { get; set; }
+
+        public override string ToString()
+        {
+            return Text;
         }
     }
 }

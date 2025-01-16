@@ -114,21 +114,21 @@
             // 
             // btnEnterGrades
             // 
-            this.btnEnterGrades.Location = new System.Drawing.Point(539, 356);
+            this.btnEnterGrades.Location = new System.Drawing.Point(538, 188);
             this.btnEnterGrades.Name = "btnEnterGrades";
             this.btnEnterGrades.Size = new System.Drawing.Size(83, 42);
             this.btnEnterGrades.TabIndex = 7;
-            this.btnEnterGrades.Text = "Enter Grades";
+            this.btnEnterGrades.Text = "درجات";
             this.btnEnterGrades.UseVisualStyleBackColor = true;
             this.btnEnterGrades.Click += new System.EventHandler(this.btnEnterGrades_Click_1);
             // 
             // btnTrackAttendance
             // 
-            this.btnTrackAttendance.Location = new System.Drawing.Point(538, 224);
+            this.btnTrackAttendance.Location = new System.Drawing.Point(662, 356);
             this.btnTrackAttendance.Name = "btnTrackAttendance";
             this.btnTrackAttendance.Size = new System.Drawing.Size(83, 42);
             this.btnTrackAttendance.TabIndex = 8;
-            this.btnTrackAttendance.Text = "Track Attendance";
+            this.btnTrackAttendance.Text = "الحضور";
             this.btnTrackAttendance.UseVisualStyleBackColor = true;
             this.btnTrackAttendance.Click += new System.EventHandler(this.btnTrackAttendance_Click_1);
             // 
@@ -148,7 +148,7 @@
             this.btnManageTimetable.Name = "btnManageTimetable";
             this.btnManageTimetable.Size = new System.Drawing.Size(83, 42);
             this.btnManageTimetable.TabIndex = 10;
-            this.btnManageTimetable.Text = "Manage Timetable";
+            this.btnManageTimetable.Text = "الجدول الزمني";
             this.btnManageTimetable.UseVisualStyleBackColor = true;
             this.btnManageTimetable.Click += new System.EventHandler(this.btnManageTimetable_Click_1);
             // 
@@ -164,7 +164,7 @@
             // 
             // btnManageActivities
             // 
-            this.btnManageActivities.Location = new System.Drawing.Point(662, 356);
+            this.btnManageActivities.Location = new System.Drawing.Point(73, 188);
             this.btnManageActivities.Name = "btnManageActivities";
             this.btnManageActivities.Size = new System.Drawing.Size(83, 42);
             this.btnManageActivities.TabIndex = 12;

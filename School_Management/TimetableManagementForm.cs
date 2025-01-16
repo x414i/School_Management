@@ -25,23 +25,28 @@ namespace School_Management
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = @"
-                                     SELECT 
-                                            Timetable.TimetableID, 
-                                            Classes.ClassName, 
-                                            Subjects.SubjectName, 
-                                            Teachers.Name AS TeacherName, 
-                                            Timetable.Day, 
-                                            Timetable.Time
-                                        FROM Timetable
-                                        INNER JOIN Classes ON Timetable.ClassID = Classes.ClassID
-                                        INNER JOIN Subjects ON Timetable.SubjectID = Subjects.SubjectID
-                                        INNER JOIN Teachers ON Timetable.TeacherID = Teachers.TeacherID";
-
+                SELECT 
+                    Timetable.TimetableID, 
+                    Classes.ClassName, 
+                    Subjects.SubjectName, 
+                    Teachers.Name AS TeacherName, 
+                    Timetable.Day, 
+                    Timetable.Time
+                FROM Timetable
+                INNER JOIN Classes ON Timetable.ClassID = Classes.ClassID
+                INNER JOIN Subjects ON Timetable.SubjectID = Subjects.SubjectID
+                INNER JOIN Teachers ON Timetable.TeacherID = Teachers.TeacherID";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
 
+                    // مسح الأعمدة الموجودة مسبقًا
+                    dgvTimetable.DataSource = null;
+                    dgvTimetable.Columns.Clear();
+
+                    // تعيين مصدر البيانات
+                    dgvTimetable.AutoGenerateColumns = true; // أو false إذا كنت تريد إضافة الأعمدة يدويًا
                     dgvTimetable.DataSource = dataTable;
 
                     // إخفاء عمود TimetableID
@@ -56,7 +61,6 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading the timetable: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         //private void LoadTimetable()
         //{
@@ -146,6 +150,11 @@ namespace School_Management
                     }
                     teacherReader.Close();
                 }
+                cmbDay.Items.Add("الاحد");
+                cmbDay.Items.Add("الإثنين");
+                cmbDay.Items.Add("الثلاثاء");
+                cmbDay.Items.Add("الأربعاء");
+                cmbDay.Items.Add("الخميس");
             }
             catch (Exception ex)
             {
@@ -155,7 +164,49 @@ namespace School_Management
 
         private void btnAddLesson_Click(object sender, EventArgs e)
         {
-            ClearFields();
+            if (string.IsNullOrEmpty(cmbClass.Text) || string.IsNullOrEmpty(cmbSubject.Text) || string.IsNullOrEmpty(cmbTeacher.Text) || string.IsNullOrEmpty(cmbDay.Text) || string.IsNullOrEmpty(txtTimetableID.Text))
+            {
+                MessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // استعلام الإضافة
+                    string query = @"
+                INSERT INTO Timetable (ClassID, SubjectID, TeacherID, Day, Time)
+                VALUES (
+                    (SELECT ClassID FROM Classes WHERE ClassName = @ClassName),
+                    (SELECT SubjectID FROM Subjects WHERE SubjectName = @SubjectName),
+                    (SELECT TeacherID FROM Teachers WHERE Name = @TeacherName),
+                    @Day, @Time)";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ClassName", cmbClass.Text);
+                    command.Parameters.AddWithValue("@SubjectName", cmbSubject.Text);
+                    command.Parameters.AddWithValue("@TeacherName", cmbTeacher.Text);
+                    command.Parameters.AddWithValue("@Day", cmbDay.Text);
+                    command.Parameters.AddWithValue("@Time", txtTimetableID.Text);
+
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Lesson added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // إعادة تحميل الجدول لعرض البيانات المحدثة
+                    LoadTimetable();
+
+                    // مسح الحقول بعد الإضافة
+                    ClearFields();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEditLesson_Click(object sender, EventArgs e)

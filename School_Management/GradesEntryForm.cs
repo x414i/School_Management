@@ -15,6 +15,7 @@ namespace School_Management
         {
             LoadStudentsIntoDropdown();
             LoadSubjectsIntoDropdown();
+            LoadGrades();
         }
 
         private void LoadStudentsIntoDropdown()
@@ -24,11 +25,11 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT StudentID, Name FROM Students"; // تعديل اسم العمود هنا
+                    string query = "SELECT StudentID, Name FROM Students";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
-                    cmbStudents.DisplayMember = "Name"; // تأكد من تحديث DisplayMember
+                    cmbStudents.DisplayMember = "Name";
                     cmbStudents.ValueMember = "StudentID";
                     cmbStudents.DataSource = dataTable;
                 }
@@ -38,6 +39,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void LoadSubjectsIntoDropdown()
         {
             try
@@ -57,6 +59,36 @@ namespace School_Management
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while loading subjects: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadGrades()
+        {
+            try
+            {
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                    SELECT 
+                        Grades.GradeID,
+                        Students.Name AS StudentName,
+                        Subjects.SubjectName,
+                        Grades.Marks,
+                        Grades.ExamDate
+                    FROM Grades
+                    INNER JOIN Students ON Grades.StudentID = Students.StudentID
+                    INNER JOIN Subjects ON Grades.SubjectID = Subjects.SubjectID";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+                    dgvGrades.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading grades: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,6 +120,9 @@ namespace School_Management
 
                     command.ExecuteNonQuery();
                     MessageBox.Show("Grade saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ClearFields();
+                    LoadGrades();
                 }
             }
             catch (Exception ex)
@@ -96,11 +131,50 @@ namespace School_Management
             }
         }
 
+        private void ClearFields()
+        {
+            txtGrade.Clear();
+            dtpExamDate.Value = DateTime.Now;
+        }
+
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchTerm = txtSearch.Text.Trim();
+
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                    SELECT 
+                        Grades.GradeID,
+                        Students.Name AS StudentName,
+                        Subjects.SubjectName,
+                        Grades.Marks,
+                        Grades.ExamDate
+                    FROM Grades
+                    INNER JOIN Students ON Grades.StudentID = Students.StudentID
+                    INNER JOIN Subjects ON Grades.SubjectID = Subjects.SubjectID
+                    WHERE Students.Name LIKE @SearchTerm OR Subjects.SubjectName LIKE @SearchTerm OR Grades.ExamDate LIKE @SearchTerm";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+                    dgvGrades.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void cmbStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -109,6 +183,17 @@ namespace School_Management
         private void cmbSubjects_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void dgvGrades_CellContentClick(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            LoadGrades();
+            txtSearch.Clear(); 
         }
     }
 }
