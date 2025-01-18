@@ -105,6 +105,42 @@ namespace School_Management
             userForm.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                SyncService syncService = new SyncService();
+
+                // مزامنة الجداول
+                syncService.SyncTable("Students");
+                syncService.SyncTable("Teachers");
+                syncService.SyncTable("Classes");
+                syncService.SyncTable("Subjects");
+                syncService.SyncTable("Attendance");
+                syncService.SyncTable("Grades");
+                syncService.SyncTable("Timetable");
+                syncService.SyncTable("Activities");
+
+                MessageBox.Show("تمت المزامنة بنجاح!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"فشلت المزامنة: {ex.Message}");
+            }
+        }
+
+        private void syncTimer_Click(object sender, EventArgs e)
+        {
+            SchoolManagementSyncApp schoolManagementSyncApp = new SchoolManagementSyncApp();
+            schoolManagementSyncApp.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void btnManageStudents_Click_1(object sender, EventArgs e)
         //{
 

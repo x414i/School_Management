@@ -24,6 +24,7 @@ namespace School_Management
             cmbReportType.Items.Add("الحضور");
             cmbReportType.Items.Add("الدرجات");
             cmbReportType.Items.Add("الأنشطة");
+            cmbReportType.Items.Add("المزامنة");
             cmbReportType.SelectedIndex = 0; // تحديد العنصر الأول افتراضيًا
         }
         private void ReportsForm_Load (object sender, EventArgs e)
@@ -47,6 +48,9 @@ namespace School_Management
                     break;
                 case "الأنشطة":
                     ShowActivitiesReport(selectedDate);
+                    break;
+                case "المزامنة":
+                    ShowSyncReport();
                     break;
             }
         }
@@ -219,6 +223,63 @@ namespace School_Management
             // إضافة الجدول إلى المستند
             pdfDoc.Add(pdfTable);
             pdfDoc.Close();
+        }
+
+        private void ShowSyncReport()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // استرداد بيانات المزامنة
+                    string query = @"
+                SELECT TableName, LastSyncDate, Status 
+                FROM CloudSync
+                ORDER BY LastSyncDate DESC";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dgvReport.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء استرداد تقرير المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnSyncReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // استرداد عدد السجلات التي تمت مزامنتها
+                    string countQuery = "SELECT COUNT(*) FROM Students WHERE IsSynced = 1";
+                    SqlCommand countCommand = new SqlCommand(countQuery, connection);
+                    int syncedCount = Convert.ToInt32(countCommand.ExecuteScalar());
+
+                    // استرداد تاريخ آخر مزامنة
+                    string lastSyncQuery = "SELECT MAX(LastSyncDate) FROM CloudSync WHERE TableName = 'Students'";
+                    SqlCommand lastSyncCommand = new SqlCommand(lastSyncQuery, connection);
+                    object lastSyncDate = lastSyncCommand.ExecuteScalar();
+
+                    // عرض التقرير
+                    string reportMessage = $"عدد السجلات التي تمت مزامنتها: {syncedCount}\n";
+                    reportMessage += lastSyncDate != DBNull.Value ? $"تاريخ آخر مزامنة: {lastSyncDate}" : "لم تتم مزامنة أي بيانات بعد.";
+                    MessageBox.Show(reportMessage, "تقرير المزامنة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء استرداد تقرير المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

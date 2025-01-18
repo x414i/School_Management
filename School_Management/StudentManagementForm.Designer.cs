@@ -44,6 +44,7 @@
             this.cmbParent = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSync = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(58, 176);
+            this.btnAddStudent.Location = new System.Drawing.Point(150, 183);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(163, 68);
             this.btnAddStudent.TabIndex = 1;
@@ -188,11 +189,22 @@
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 16;
             // 
+            // btnSync
+            // 
+            this.btnSync.Location = new System.Drawing.Point(21, 183);
+            this.btnSync.Name = "btnSync";
+            this.btnSync.Size = new System.Drawing.Size(123, 68);
+            this.btnSync.TabIndex = 17;
+            this.btnSync.Text = "btnSync";
+            this.btnSync.UseVisualStyleBackColor = true;
+            this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
+            // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSync);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbParent);
@@ -236,5 +248,6 @@
         private System.Windows.Forms.ComboBox cmbParent;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSync;
     }
 }

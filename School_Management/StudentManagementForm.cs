@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
+using MySqlConnector;
 using System.Xml.Linq;
+using System.Data;
 
 namespace School_Management
 {
@@ -62,7 +65,8 @@ namespace School_Management
                     s.StudentID, 
                     s.Name, 
                     s.DateOfBirth AS BirthDate, 
-                    c.ClassName AS Class 
+                    c.ClassName AS Class,
+                    s.IsSynced 
                 FROM 
                     Students s
                 LEFT JOIN 
@@ -79,7 +83,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading students data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+       
         private void btnAddStudent_Click_1(object sender, EventArgs e)
         {
             try
@@ -251,6 +255,71 @@ namespace School_Management
         private void dtpBirthDate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSync_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // استرداد الطلاب الذين لم تتم مزامنتهم
+                    string selectQuery = "SELECT * FROM Students WHERE IsSynced = 0";
+                    SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, connection);
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        // نقل البيانات إلى السحابة (MySQL)
+                        SyncStudentsToCloud(dataTable);
+
+                        // تحديث حالة المزامنة في SQL Server
+                        string updateQuery = "UPDATE Students SET IsSynced = 1 WHERE IsSynced = 0";
+                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                        updateCommand.ExecuteNonQuery();
+
+                        MessageBox.Show("تمت مزامنة الطلاب بنجاح!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadStudentsData(); // إعادة تحميل البيانات
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد بيانات جديدة للمزامنة.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // دالة لنقل البيانات إلى السحابة (MySQL)
+        private void SyncStudentsToCloud(System.Data.DataTable dataTable)
+        {
+            // قم بتنفيذ الكود لنقل البيانات من SQL Server إلى MySQL هنا
+            // يمكنك استخدام مكتبة مثل MySqlConnector أو كتابة كود مخصص
+            // مثال:
+            
+            string mySqlConnectionString = "Server=localhost;Database=SchoolManagement;User Id=root;Password=;";
+            using (MySqlConnection mySqlConnection = new MySqlConnection(mySqlConnectionString))
+            {
+                mySqlConnection.Open();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string insertQuery = "INSERT INTO Students (Name, DateOfBirth, ClassID, ParentID) VALUES (@Name, @DateOfBirth, @ClassID, @ParentID)";
+                    MySqlCommand command = new MySqlCommand(insertQuery, mySqlConnection);
+                    command.Parameters.AddWithValue("@Name", row["Name"]);
+                    command.Parameters.AddWithValue("@DateOfBirth", row["DateOfBirth"]);
+                    command.Parameters.AddWithValue("@ClassID", row["ClassID"]);
+                    command.Parameters.AddWithValue("@ParentID", row["ParentID"]);
+                    command.ExecuteNonQuery();
+                }
+            }
+            
         }
     }
 }

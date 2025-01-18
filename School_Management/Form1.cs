@@ -25,5 +25,7 @@ namespace School_Management
             //mainForm.Show();
             this.Hide();
         }
+
+        
     }
 }

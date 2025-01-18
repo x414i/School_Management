@@ -34,6 +34,7 @@
             this.btnShowReport = new System.Windows.Forms.Button();
             this.btnExportReport = new System.Windows.Forms.Button();
             this.btnExportToPDF = new System.Windows.Forms.Button();
+            this.btnSyncReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +91,22 @@
             this.btnExportToPDF.UseVisualStyleBackColor = true;
             this.btnExportToPDF.Click += new System.EventHandler(this.btnExportToPDF_Click);
             // 
+            // btnSyncReport
+            // 
+            this.btnSyncReport.Location = new System.Drawing.Point(221, 237);
+            this.btnSyncReport.Name = "btnSyncReport";
+            this.btnSyncReport.Size = new System.Drawing.Size(75, 23);
+            this.btnSyncReport.TabIndex = 6;
+            this.btnSyncReport.Text = "SyncReport";
+            this.btnSyncReport.UseVisualStyleBackColor = true;
+            this.btnSyncReport.Click += new System.EventHandler(this.btnSyncReport_Click);
+            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSyncReport);
             this.Controls.Add(this.btnExportToPDF);
             this.Controls.Add(this.btnExportReport);
             this.Controls.Add(this.btnShowReport);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Button btnShowReport;
         private System.Windows.Forms.Button btnExportReport;
         private System.Windows.Forms.Button btnExportToPDF;
+        private System.Windows.Forms.Button btnSyncReport;
     }
 }
