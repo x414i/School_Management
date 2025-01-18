@@ -19,10 +19,10 @@ namespace School_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //LoginForm loginForm = new LoginForm();
-            //loginForm.Show();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            //MainForm mainForm = new MainForm();
+            //mainForm.Show();
             this.Hide();
         }
     }

@@ -81,8 +81,8 @@ namespace School_Management
         private void btnViewReports_Click_1(object sender, EventArgs e)
         {
             // Open the Reports form
-            //ReportsForm reportsForm = new ReportsForm();
-            //reportsForm.ShowDialog();
+            ReportsForm reportsForm = new ReportsForm();
+            reportsForm.ShowDialog();
         }
 
         private void btnLogout_Click_1(object sender, EventArgs e)

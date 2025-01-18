@@ -71,5 +71,10 @@ namespace School_Management
         {
 
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
