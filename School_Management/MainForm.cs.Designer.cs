@@ -42,6 +42,7 @@
             this.btnManageParents = new System.Windows.Forms.Button();
             this.btnManageActivities = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@
             // btnViewReports
             // 
             this.btnViewReports.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnViewReports.Location = new System.Drawing.Point(55, 179);
+            this.btnViewReports.Location = new System.Drawing.Point(83, 89);
             this.btnViewReports.Name = "btnViewReports";
             this.btnViewReports.Size = new System.Drawing.Size(103, 45);
             this.btnViewReports.TabIndex = 3;
@@ -215,11 +216,23 @@
             this.panel1.Size = new System.Drawing.Size(283, 298);
             this.panel1.TabIndex = 13;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Cairo", 10F);
+            this.button1.Location = new System.Drawing.Point(214, 158);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 45);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Users";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnManageActivities);
             this.Controls.Add(this.btnManageTimetable);
@@ -254,5 +267,6 @@
         private System.Windows.Forms.Button btnManageParents;
         private System.Windows.Forms.Button btnManageActivities;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

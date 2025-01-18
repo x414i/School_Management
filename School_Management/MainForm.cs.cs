@@ -99,6 +99,12 @@ namespace School_Management
             Application.Exit();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddUserForm userForm = new AddUserForm();
+            userForm.Show();
+        }
+
         //private void btnManageStudents_Click_1(object sender, EventArgs e)
         //{
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using BCrypt.Net; // تثبيت المكتبة عبر NuGet: Install-Package BCrypt.Net-Next
 
 namespace School_Management
 {
@@ -31,27 +32,53 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    // Query to check user credentials
-                    string query = "SELECT COUNT(1) FROM Users WHERE Username = @Username AND Password = @Password";
+                    // Query to get user details
+                    string query = "SELECT Password, Role FROM Users WHERE Username = @Username";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Username", username);
-                        command.Parameters.AddWithValue("@Password", password);
 
-                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string hashedPassword = reader["Password"].ToString();
+                                string role = reader["Role"].ToString();
 
-                        if (count == 1)
-                        {
-                            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Redirect to the main form
-                            MainForm mainForm = new MainForm();
-                            mainForm.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                // Verify the password
+                                if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                                {
+                                    MessageBox.Show("Login successful! Role: " + role, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    // Redirect to the appropriate form based on role
+                                    switch (role)
+                                    {
+                                        case "Admin":
+                                            MainForm adminForm = new MainForm();
+                                            adminForm.Show();
+                                            break;
+                                        case "Teacher":
+                                            //TeacherForm teacherForm = new TeacherForm();
+                                            //teacherForm.Show();
+                                            break;
+                                        case "Parent":
+                                            //ParentForm parentForm = new ParentForm();
+                                            //parentForm.Show();
+                                            break;
+                                    }
+
+                                    this.Hide(); // Hide the login form
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
@@ -69,12 +96,12 @@ namespace School_Management
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            // يمكنك إضافة أي تهيئة إضافية هنا
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-
+            // يمكنك إضافة أي منطق إضافي هنا
         }
     }
 }
