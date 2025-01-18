@@ -59,9 +59,9 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(150, 183);
+            this.btnAddStudent.Location = new System.Drawing.Point(110, 204);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(163, 68);
+            this.btnAddStudent.Size = new System.Drawing.Size(121, 47);
             this.btnAddStudent.TabIndex = 1;
             this.btnAddStudent.Text = "لإضافة طالب جديد";
             this.btnAddStudent.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             // btnEditStudent
             // 
-            this.btnEditStudent.Location = new System.Drawing.Point(172, 351);
+            this.btnEditStudent.Location = new System.Drawing.Point(132, 372);
             this.btnEditStudent.Name = "btnEditStudent";
-            this.btnEditStudent.Size = new System.Drawing.Size(141, 68);
+            this.btnEditStudent.Size = new System.Drawing.Size(99, 47);
             this.btnEditStudent.TabIndex = 2;
             this.btnEditStudent.Text = "لتعديل بيانات طالب";
             this.btnEditStudent.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(172, 260);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(132, 281);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
-            this.btnDeleteStudent.Size = new System.Drawing.Size(141, 69);
+            this.btnDeleteStudent.Size = new System.Drawing.Size(99, 48);
             this.btnDeleteStudent.TabIndex = 3;
             this.btnDeleteStudent.Text = "لحذف طالب محدد.";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(10, 263);
+            this.btnSearch.Location = new System.Drawing.Point(10, 284);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(145, 63);
+            this.btnSearch.Size = new System.Drawing.Size(103, 42);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "لعرض تفاصيل طالب محدد.";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(12, 351);
+            this.btnClose.Location = new System.Drawing.Point(12, 372);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(143, 68);
+            this.btnClose.Size = new System.Drawing.Size(101, 47);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -109,22 +109,24 @@
             // 
             // dgvStudents
             // 
+            this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(360, 223);
+            this.dgvStudents.Location = new System.Drawing.Point(249, 223);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.Size = new System.Drawing.Size(389, 194);
+            this.dgvStudents.Size = new System.Drawing.Size(515, 228);
             this.dgvStudents.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(419, 84);
+            this.txtName.Location = new System.Drawing.Point(509, 74);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 7;
             // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(341, 183);
+            this.dtpBirthDate.Location = new System.Drawing.Point(431, 173);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBirthDate.TabIndex = 9;
@@ -133,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(592, 87);
+            this.label2.Location = new System.Drawing.Point(682, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 10;
@@ -142,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(592, 124);
+            this.label3.Location = new System.Drawing.Point(682, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 11;
@@ -151,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(581, 189);
+            this.label4.Location = new System.Drawing.Point(671, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 12;
@@ -160,7 +162,7 @@
             // cmbClass
             // 
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(398, 121);
+            this.cmbClass.Location = new System.Drawing.Point(488, 111);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(121, 21);
             this.cmbClass.TabIndex = 13;
@@ -168,7 +170,7 @@
             // cmbParent
             // 
             this.cmbParent.FormattingEnabled = true;
-            this.cmbParent.Location = new System.Drawing.Point(398, 156);
+            this.cmbParent.Location = new System.Drawing.Point(488, 146);
             this.cmbParent.Name = "cmbParent";
             this.cmbParent.Size = new System.Drawing.Size(121, 21);
             this.cmbParent.TabIndex = 14;
@@ -176,7 +178,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(581, 164);
+            this.label5.Location = new System.Drawing.Point(671, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 15;
@@ -184,16 +186,16 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(110, 71);
+            this.txtSearch.Location = new System.Drawing.Point(30, 74);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 16;
             // 
             // btnSync
             // 
-            this.btnSync.Location = new System.Drawing.Point(21, 183);
+            this.btnSync.Location = new System.Drawing.Point(21, 204);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(123, 68);
+            this.btnSync.Size = new System.Drawing.Size(81, 47);
             this.btnSync.TabIndex = 17;
             this.btnSync.Text = "btnSync";
             this.btnSync.UseVisualStyleBackColor = true;

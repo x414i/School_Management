@@ -96,10 +96,12 @@
             // 
             // dgvClasses
             // 
+            this.dgvClasses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClasses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasses.Location = new System.Drawing.Point(244, 166);
+            this.dgvClasses.Location = new System.Drawing.Point(128, 124);
             this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.Size = new System.Drawing.Size(387, 197);
+            this.dgvClasses.Size = new System.Drawing.Size(624, 314);
             this.dgvClasses.TabIndex = 6;
             // 
             // label1

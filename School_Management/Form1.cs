@@ -26,6 +26,10 @@ namespace School_Management
             this.Hide();
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
     }
 }

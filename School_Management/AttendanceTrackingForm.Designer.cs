@@ -49,7 +49,7 @@
             // 
             // btnLoadStudents
             // 
-            this.btnLoadStudents.Location = new System.Drawing.Point(126, 300);
+            this.btnLoadStudents.Location = new System.Drawing.Point(64, 171);
             this.btnLoadStudents.Name = "btnLoadStudents";
             this.btnLoadStudents.Size = new System.Drawing.Size(98, 57);
             this.btnLoadStudents.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // btnSaveAttendance
             // 
-            this.btnSaveAttendance.Location = new System.Drawing.Point(159, 231);
+            this.btnSaveAttendance.Location = new System.Drawing.Point(64, 248);
             this.btnSaveAttendance.Name = "btnSaveAttendance";
             this.btnSaveAttendance.Size = new System.Drawing.Size(98, 57);
             this.btnSaveAttendance.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(54, 231);
+            this.btnClose.Location = new System.Drawing.Point(64, 329);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 57);
             this.btnClose.TabIndex = 3;
@@ -86,10 +86,12 @@
             // 
             // dgvStudents
             // 
+            this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(326, 171);
+            this.dgvStudents.Location = new System.Drawing.Point(181, 171);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.Size = new System.Drawing.Size(407, 244);
+            this.dgvStudents.Size = new System.Drawing.Size(552, 267);
             this.dgvStudents.TabIndex = 5;
             // 
             // label1

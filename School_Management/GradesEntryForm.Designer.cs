@@ -46,7 +46,7 @@
             // 
             // btnSaveGrade
             // 
-            this.btnSaveGrade.Location = new System.Drawing.Point(420, 337);
+            this.btnSaveGrade.Location = new System.Drawing.Point(667, 308);
             this.btnSaveGrade.Name = "btnSaveGrade";
             this.btnSaveGrade.Size = new System.Drawing.Size(121, 62);
             this.btnSaveGrade.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(202, 337);
+            this.btnClose.Location = new System.Drawing.Point(518, 308);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(106, 62);
             this.btnClose.TabIndex = 1;
@@ -67,7 +67,7 @@
             // cmbStudents
             // 
             this.cmbStudents.FormattingEnabled = true;
-            this.cmbStudents.Location = new System.Drawing.Point(460, 120);
+            this.cmbStudents.Location = new System.Drawing.Point(577, 107);
             this.cmbStudents.Name = "cmbStudents";
             this.cmbStudents.Size = new System.Drawing.Size(121, 21);
             this.cmbStudents.TabIndex = 2;
@@ -76,7 +76,7 @@
             // cmbSubjects
             // 
             this.cmbSubjects.FormattingEnabled = true;
-            this.cmbSubjects.Location = new System.Drawing.Point(460, 178);
+            this.cmbSubjects.Location = new System.Drawing.Point(577, 165);
             this.cmbSubjects.Name = "cmbSubjects";
             this.cmbSubjects.Size = new System.Drawing.Size(121, 21);
             this.cmbSubjects.TabIndex = 3;
@@ -84,14 +84,14 @@
             // 
             // txtGrade
             // 
-            this.txtGrade.Location = new System.Drawing.Point(481, 63);
+            this.txtGrade.Location = new System.Drawing.Point(598, 50);
             this.txtGrade.Name = "txtGrade";
             this.txtGrade.Size = new System.Drawing.Size(100, 20);
             this.txtGrade.TabIndex = 4;
             // 
             // dtpExamDate
             // 
-            this.dtpExamDate.Location = new System.Drawing.Point(381, 234);
+            this.dtpExamDate.Location = new System.Drawing.Point(498, 221);
             this.dtpExamDate.Name = "dtpExamDate";
             this.dtpExamDate.Size = new System.Drawing.Size(200, 20);
             this.dtpExamDate.TabIndex = 5;
@@ -99,7 +99,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(641, 70);
+            this.label1.Location = new System.Drawing.Point(758, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 6;
@@ -108,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(626, 120);
+            this.label2.Location = new System.Drawing.Point(743, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 7;
@@ -117,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(634, 178);
+            this.label3.Location = new System.Drawing.Point(751, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 8;
@@ -126,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(612, 234);
+            this.label4.Location = new System.Drawing.Point(729, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 9;
@@ -134,10 +134,12 @@
             // 
             // dgvGrades
             // 
+            this.dgvGrades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGrades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvGrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrades.Location = new System.Drawing.Point(12, 70);
             this.dgvGrades.Name = "dgvGrades";
-            this.dgvGrades.Size = new System.Drawing.Size(363, 233);
+            this.dgvGrades.Size = new System.Drawing.Size(480, 368);
             this.dgvGrades.TabIndex = 10;
             this.dgvGrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrades_CellContentClick);
             // 

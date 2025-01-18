@@ -53,6 +53,8 @@
             // 
             // dgvTimetable
             // 
+            this.dgvTimetable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTimetable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTimetable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTimetable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Class,
@@ -60,9 +62,9 @@
             this.Teacher,
             this.Day,
             this.Time});
-            this.dgvTimetable.Location = new System.Drawing.Point(-1, 277);
+            this.dgvTimetable.Location = new System.Drawing.Point(-1, 245);
             this.dgvTimetable.Name = "dgvTimetable";
-            this.dgvTimetable.Size = new System.Drawing.Size(431, 150);
+            this.dgvTimetable.Size = new System.Drawing.Size(803, 207);
             this.dgvTimetable.TabIndex = 0;
             // 
             // Class
@@ -93,7 +95,7 @@
             // cmbDay
             // 
             this.cmbDay.FormattingEnabled = true;
-            this.cmbDay.Location = new System.Drawing.Point(216, 131);
+            this.cmbDay.Location = new System.Drawing.Point(446, 121);
             this.cmbDay.Name = "cmbDay";
             this.cmbDay.Size = new System.Drawing.Size(121, 21);
             this.cmbDay.TabIndex = 1;
@@ -101,7 +103,7 @@
             // cmbSubject
             // 
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(38, 131);
+            this.cmbSubject.Location = new System.Drawing.Point(268, 121);
             this.cmbSubject.Name = "cmbSubject";
             this.cmbSubject.Size = new System.Drawing.Size(121, 21);
             this.cmbSubject.TabIndex = 2;
@@ -109,7 +111,7 @@
             // cmbTeacher
             // 
             this.cmbTeacher.FormattingEnabled = true;
-            this.cmbTeacher.Location = new System.Drawing.Point(235, 43);
+            this.cmbTeacher.Location = new System.Drawing.Point(465, 33);
             this.cmbTeacher.Name = "cmbTeacher";
             this.cmbTeacher.Size = new System.Drawing.Size(121, 21);
             this.cmbTeacher.TabIndex = 3;
@@ -117,7 +119,7 @@
             // cmbClass
             // 
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(38, 43);
+            this.cmbClass.Location = new System.Drawing.Point(268, 33);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(121, 21);
             this.cmbClass.TabIndex = 4;
@@ -125,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 43);
+            this.label1.Location = new System.Drawing.Point(420, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 5;
@@ -134,7 +136,7 @@
             // المادة
             // 
             this.المادة.AutoSize = true;
-            this.المادة.Location = new System.Drawing.Point(178, 131);
+            this.المادة.Location = new System.Drawing.Point(408, 121);
             this.المادة.Name = "المادة";
             this.المادة.Size = new System.Drawing.Size(33, 13);
             this.المادة.TabIndex = 6;
@@ -143,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(372, 50);
+            this.label3.Location = new System.Drawing.Point(602, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 7;
@@ -152,7 +154,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(375, 138);
+            this.label4.Location = new System.Drawing.Point(605, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 8;
@@ -160,14 +162,14 @@
             // 
             // txtTimetableID
             // 
-            this.txtTimetableID.Location = new System.Drawing.Point(106, 199);
+            this.txtTimetableID.Location = new System.Drawing.Point(336, 189);
             this.txtTimetableID.Name = "txtTimetableID";
             this.txtTimetableID.Size = new System.Drawing.Size(100, 20);
             this.txtTimetableID.TabIndex = 9;
             // 
             // btnAddLesson
             // 
-            this.btnAddLesson.Location = new System.Drawing.Point(335, 244);
+            this.btnAddLesson.Location = new System.Drawing.Point(713, 33);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(75, 23);
             this.btnAddLesson.TabIndex = 10;
@@ -177,7 +179,7 @@
             // 
             // btnEditLesson
             // 
-            this.btnEditLesson.Location = new System.Drawing.Point(252, 244);
+            this.btnEditLesson.Location = new System.Drawing.Point(713, 82);
             this.btnEditLesson.Name = "btnEditLesson";
             this.btnEditLesson.Size = new System.Drawing.Size(75, 23);
             this.btnEditLesson.TabIndex = 11;
@@ -187,7 +189,7 @@
             // 
             // btnDeleteLesson
             // 
-            this.btnDeleteLesson.Location = new System.Drawing.Point(171, 244);
+            this.btnDeleteLesson.Location = new System.Drawing.Point(713, 121);
             this.btnDeleteLesson.Name = "btnDeleteLesson";
             this.btnDeleteLesson.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteLesson.TabIndex = 12;
@@ -197,7 +199,7 @@
             // 
             // btnSaveLesson
             // 
-            this.btnSaveLesson.Location = new System.Drawing.Point(80, 248);
+            this.btnSaveLesson.Location = new System.Drawing.Point(713, 161);
             this.btnSaveLesson.Name = "btnSaveLesson";
             this.btnSaveLesson.Size = new System.Drawing.Size(75, 23);
             this.btnSaveLesson.TabIndex = 13;
@@ -207,7 +209,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(-1, 248);
+            this.btnClose.Location = new System.Drawing.Point(713, 199);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 14;
