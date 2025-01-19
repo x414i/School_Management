@@ -36,22 +36,27 @@
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbClasses
             // 
+            this.cmbClasses.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbClasses.FormattingEnabled = true;
-            this.cmbClasses.Location = new System.Drawing.Point(531, 67);
+            this.cmbClasses.Location = new System.Drawing.Point(21, 30);
             this.cmbClasses.Name = "cmbClasses";
-            this.cmbClasses.Size = new System.Drawing.Size(121, 21);
+            this.cmbClasses.Size = new System.Drawing.Size(260, 32);
             this.cmbClasses.TabIndex = 0;
             // 
             // btnLoadStudents
             // 
-            this.btnLoadStudents.Location = new System.Drawing.Point(64, 171);
+            this.btnLoadStudents.Location = new System.Drawing.Point(279, 34);
             this.btnLoadStudents.Name = "btnLoadStudents";
-            this.btnLoadStudents.Size = new System.Drawing.Size(98, 57);
+            this.btnLoadStudents.Size = new System.Drawing.Size(98, 76);
             this.btnLoadStudents.TabIndex = 1;
             this.btnLoadStudents.Text = "Load Students";
             this.btnLoadStudents.UseVisualStyleBackColor = true;
@@ -59,9 +64,9 @@
             // 
             // btnSaveAttendance
             // 
-            this.btnSaveAttendance.Location = new System.Drawing.Point(64, 248);
+            this.btnSaveAttendance.Location = new System.Drawing.Point(149, 34);
             this.btnSaveAttendance.Name = "btnSaveAttendance";
-            this.btnSaveAttendance.Size = new System.Drawing.Size(98, 57);
+            this.btnSaveAttendance.Size = new System.Drawing.Size(98, 76);
             this.btnSaveAttendance.TabIndex = 2;
             this.btnSaveAttendance.Text = "Save Attendance";
             this.btnSaveAttendance.UseVisualStyleBackColor = true;
@@ -69,9 +74,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(64, 329);
+            this.btnClose.Location = new System.Drawing.Point(14, 34);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(98, 57);
+            this.btnClose.Size = new System.Drawing.Size(98, 76);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(473, 115);
+            this.dtpDate.Font = new System.Drawing.Font("Cairo", 10F);
+            this.dtpDate.Location = new System.Drawing.Point(21, 78);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.Size = new System.Drawing.Size(260, 32);
             this.dtpDate.TabIndex = 4;
             // 
             // dgvStudents
@@ -89,48 +95,70 @@
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(181, 171);
+            this.dgvStudents.Location = new System.Drawing.Point(-1, 171);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.Size = new System.Drawing.Size(552, 267);
+            this.dgvStudents.Size = new System.Drawing.Size(800, 278);
             this.dgvStudents.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(707, 75);
+            this.label1.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label1.Location = new System.Drawing.Point(289, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(58, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Clasess";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(707, 115);
+            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label2.Location = new System.Drawing.Point(307, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(40, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Date";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLoadStudents);
+            this.panel1.Controls.Add(this.btnSaveAttendance);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(392, 140);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dtpDate);
+            this.panel2.Controls.Add(this.cmbClasses);
+            this.panel2.Location = new System.Drawing.Point(429, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(359, 140);
+            this.panel2.TabIndex = 9;
             // 
             // AttendanceTrackingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvStudents);
-            this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSaveAttendance);
-            this.Controls.Add(this.btnLoadStudents);
-            this.Controls.Add(this.cmbClasses);
             this.Name = "AttendanceTrackingForm";
             this.Text = "AttendanceTrackingForm";
             this.Load += new System.EventHandler(this.AttendanceTrackingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -144,5 +172,7 @@
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
