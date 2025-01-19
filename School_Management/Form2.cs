@@ -222,11 +222,11 @@ namespace School_Management
                 try
                 {
                     SyncTable(tableName);
-                    txtLog.AppendText($"Synchronization completed for table: {tableName}.\r\n");
+                    txtLog1.AppendText($"Synchronization completed for table: {tableName}.\r\n");
                 }
                 catch (Exception ex)
                 {
-                    txtLog.AppendText($"Error during synchronization for table {tableName}: {ex.Message}\r\n");
+                    txtLog1.AppendText($"Error during synchronization for table {tableName}: {ex.Message}\r\n");
                 }
             }
         }
