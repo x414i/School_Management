@@ -57,7 +57,7 @@ namespace School_Management
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            try
+             try
             {
                 using (SqlConnection connection = new SqlConnection("Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;"))
                 {
