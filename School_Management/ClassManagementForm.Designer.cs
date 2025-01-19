@@ -46,7 +46,8 @@
             // 
             // btnAddClass
             // 
-            this.btnAddClass.Location = new System.Drawing.Point(156, 3);
+            this.btnAddClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClass.Location = new System.Drawing.Point(238, 0);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(102, 74);
             this.btnAddClass.TabIndex = 0;
@@ -56,6 +57,7 @@
             // 
             // btnEditClass
             // 
+            this.btnEditClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditClass.Location = new System.Drawing.Point(38, 3);
             this.btnEditClass.Name = "btnEditClass";
             this.btnEditClass.Size = new System.Drawing.Size(102, 74);
@@ -66,6 +68,7 @@
             // 
             // btnDeleteClass
             // 
+            this.btnDeleteClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClass.Location = new System.Drawing.Point(38, 83);
             this.btnDeleteClass.Name = "btnDeleteClass";
             this.btnDeleteClass.Size = new System.Drawing.Size(102, 74);
@@ -76,7 +79,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(156, 83);
+            this.btnClose.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(238, 83);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(102, 74);
             this.btnClose.TabIndex = 3;
