@@ -60,9 +60,9 @@
             // btnStartSync
             // 
             this.btnStartSync.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnStartSync.Location = new System.Drawing.Point(250, 81);
+            this.btnStartSync.Location = new System.Drawing.Point(250, 22);
             this.btnStartSync.Name = "btnStartSync";
-            this.btnStartSync.Size = new System.Drawing.Size(75, 23);
+            this.btnStartSync.Size = new System.Drawing.Size(123, 65);
             this.btnStartSync.TabIndex = 4;
             this.btnStartSync.Text = "btnStartSync";
             this.btnStartSync.UseVisualStyleBackColor = true;
