@@ -32,8 +32,8 @@
             this.clbTables = new System.Windows.Forms.CheckedListBox();
             this.btnStartSync = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSync = new System.Windows.Forms.Button();
             this.txtLog = new System.Windows.Forms.TextBox();
+            this.btnSync = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -42,9 +42,9 @@
             // txtLog1
             // 
             this.txtLog1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtLog1.Location = new System.Drawing.Point(39, 185);
+            this.txtLog1.Location = new System.Drawing.Point(6, 153);
             this.txtLog1.Name = "txtLog1";
-            this.txtLog1.Size = new System.Drawing.Size(322, 202);
+            this.txtLog1.Size = new System.Drawing.Size(401, 234);
             this.txtLog1.TabIndex = 2;
             this.txtLog1.Text = "";
             // 
@@ -52,17 +52,17 @@
             // 
             this.clbTables.Font = new System.Drawing.Font("Cairo", 10F);
             this.clbTables.FormattingEnabled = true;
-            this.clbTables.Location = new System.Drawing.Point(19, 38);
+            this.clbTables.Location = new System.Drawing.Point(78, 31);
             this.clbTables.Name = "clbTables";
-            this.clbTables.Size = new System.Drawing.Size(120, 94);
+            this.clbTables.Size = new System.Drawing.Size(137, 112);
             this.clbTables.TabIndex = 3;
             // 
             // btnStartSync
             // 
             this.btnStartSync.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnStartSync.Location = new System.Drawing.Point(250, 22);
+            this.btnStartSync.Location = new System.Drawing.Point(248, 38);
             this.btnStartSync.Name = "btnStartSync";
-            this.btnStartSync.Size = new System.Drawing.Size(123, 65);
+            this.btnStartSync.Size = new System.Drawing.Size(129, 90);
             this.btnStartSync.TabIndex = 4;
             this.btnStartSync.Text = "btnStartSync";
             this.btnStartSync.UseVisualStyleBackColor = true;
@@ -80,25 +80,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // txtLog
+            // 
+            this.txtLog.Font = new System.Drawing.Font("Cairo", 10F);
+            this.txtLog.Location = new System.Drawing.Point(6, 31);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(412, 384);
+            this.txtLog.TabIndex = 1;
+            // 
             // btnSync
             // 
             this.btnSync.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSync.Location = new System.Drawing.Point(77, 32);
+            this.btnSync.Location = new System.Drawing.Point(418, 38);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(122, 66);
+            this.btnSync.Size = new System.Drawing.Size(104, 66);
             this.btnSync.TabIndex = 0;
             this.btnSync.Text = "Sync";
             this.btnSync.UseVisualStyleBackColor = true;
             this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
-            // 
-            // txtLog
-            // 
-            this.txtLog.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtLog.Location = new System.Drawing.Point(6, 104);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(412, 311);
-            this.txtLog.TabIndex = 1;
             // 
             // groupBox2
             // 
