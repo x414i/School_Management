@@ -81,7 +81,7 @@
             // btnAddTeacher
             // 
             this.btnAddTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddTeacher.Location = new System.Drawing.Point(194, 10);
+            this.btnAddTeacher.Location = new System.Drawing.Point(220, 10);
             this.btnAddTeacher.Name = "btnAddTeacher";
             this.btnAddTeacher.Size = new System.Drawing.Size(123, 83);
             this.btnAddTeacher.TabIndex = 3;
@@ -92,7 +92,7 @@
             // btnEditTeacher
             // 
             this.btnEditTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditTeacher.Location = new System.Drawing.Point(3, 10);
+            this.btnEditTeacher.Location = new System.Drawing.Point(29, 10);
             this.btnEditTeacher.Name = "btnEditTeacher";
             this.btnEditTeacher.Size = new System.Drawing.Size(123, 83);
             this.btnEditTeacher.TabIndex = 4;
@@ -103,7 +103,7 @@
             // btnDeleteTeacher
             // 
             this.btnDeleteTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteTeacher.Location = new System.Drawing.Point(194, 102);
+            this.btnDeleteTeacher.Location = new System.Drawing.Point(220, 102);
             this.btnDeleteTeacher.Name = "btnDeleteTeacher";
             this.btnDeleteTeacher.Size = new System.Drawing.Size(123, 83);
             this.btnDeleteTeacher.TabIndex = 5;
@@ -114,7 +114,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(3, 97);
+            this.btnClose.Location = new System.Drawing.Point(29, 97);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(123, 83);
             this.btnClose.TabIndex = 6;
@@ -127,9 +127,9 @@
             this.dgvTeachers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTeachers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTeachers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTeachers.Location = new System.Drawing.Point(366, 282);
+            this.dgvTeachers.Location = new System.Drawing.Point(2, 282);
             this.dgvTeachers.Name = "dgvTeachers";
-            this.dgvTeachers.Size = new System.Drawing.Size(573, 252);
+            this.dgvTeachers.Size = new System.Drawing.Size(937, 252);
             this.dgvTeachers.TabIndex = 7;
             // 
             // label2
@@ -234,7 +234,7 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Location = new System.Drawing.Point(366, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 208);
+            this.panel1.Size = new System.Drawing.Size(573, 199);
             this.panel1.TabIndex = 17;
             // 
             // panel2
@@ -243,9 +243,9 @@
             this.panel2.Controls.Add(this.btnDeleteTeacher);
             this.panel2.Controls.Add(this.btnAddTeacher);
             this.panel2.Controls.Add(this.btnEditTeacher);
-            this.panel2.Location = new System.Drawing.Point(20, 272);
+            this.panel2.Location = new System.Drawing.Point(2, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(320, 199);
+            this.panel2.Size = new System.Drawing.Size(358, 199);
             this.panel2.TabIndex = 18;
             // 
             // TeacherManagementForm
