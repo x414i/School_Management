@@ -46,9 +46,13 @@
             this.btnSync = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +68,7 @@
             // btnAddStudent
             // 
             this.btnAddStudent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddStudent.Location = new System.Drawing.Point(62, 14);
+            this.btnAddStudent.Location = new System.Drawing.Point(166, 6);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(143, 56);
             this.btnAddStudent.TabIndex = 1;
@@ -75,7 +79,7 @@
             // btnEditStudent
             // 
             this.btnEditStudent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditStudent.Location = new System.Drawing.Point(62, 150);
+            this.btnEditStudent.Location = new System.Drawing.Point(166, 85);
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.Size = new System.Drawing.Size(143, 47);
             this.btnEditStudent.TabIndex = 2;
@@ -86,7 +90,7 @@
             // btnDeleteStudent
             // 
             this.btnDeleteStudent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteStudent.Location = new System.Drawing.Point(62, 83);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(0, 6);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(143, 46);
             this.btnDeleteStudent.TabIndex = 3;
@@ -97,9 +101,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(62, 216);
+            this.btnSearch.Location = new System.Drawing.Point(144, 118);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(143, 42);
+            this.btnSearch.Size = new System.Drawing.Size(174, 51);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "لعرض تفاصيل طالب محدد.";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -108,7 +112,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(62, 331);
+            this.btnClose.Location = new System.Drawing.Point(78, 153);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(143, 47);
             this.btnClose.TabIndex = 5;
@@ -121,7 +125,7 @@
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(285, 300);
+            this.dgvStudents.Location = new System.Drawing.Point(330, 325);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.Size = new System.Drawing.Size(582, 228);
             this.dgvStudents.TabIndex = 6;
@@ -204,7 +208,7 @@
             // btnSync
             // 
             this.btnSync.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSync.Location = new System.Drawing.Point(62, 276);
+            this.btnSync.Location = new System.Drawing.Point(0, 85);
             this.btnSync.Name = "btnSync";
             this.btnSync.Size = new System.Drawing.Size(143, 47);
             this.btnSync.TabIndex = 17;
@@ -222,9 +226,9 @@
             this.panel1.Controls.Add(this.cmbParent);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmbClass);
-            this.panel1.Location = new System.Drawing.Point(479, 94);
+            this.panel1.Location = new System.Drawing.Point(517, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(388, 200);
+            this.panel1.Size = new System.Drawing.Size(388, 197);
             this.panel1.TabIndex = 18;
             // 
             // panel2
@@ -234,17 +238,46 @@
             this.panel2.Controls.Add(this.btnSync);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.btnEditStudent);
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Location = new System.Drawing.Point(12, 120);
+            this.panel2.Location = new System.Drawing.Point(12, 325);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 408);
+            this.panel2.Size = new System.Drawing.Size(312, 203);
             this.panel2.TabIndex = 19;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
+            this.txtSearch.Location = new System.Drawing.Point(68, 54);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(241, 32);
+            this.txtSearch.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Controls.Add(this.btnSearch);
+            this.panel3.Location = new System.Drawing.Point(72, 120);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(416, 197);
+            this.panel3.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label6.Location = new System.Drawing.Point(369, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 26);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "بحث";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 527);
+            this.ClientSize = new System.Drawing.Size(917, 554);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvStudents);
@@ -256,6 +289,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,5 +316,8 @@
         private System.Windows.Forms.Button btnSync;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
     }
 }
