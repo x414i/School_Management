@@ -95,6 +95,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnExit.Location = new System.Drawing.Point(57, 250);
             this.btnExit.Name = "btnExit";
@@ -106,9 +107,11 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(608, 341);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
