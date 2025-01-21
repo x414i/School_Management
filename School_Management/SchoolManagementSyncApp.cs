@@ -14,14 +14,15 @@ namespace School_Management
 
             // تهيئة Timer
             syncTimer = new Timer();
-            syncTimer.Interval = 5 * 60 * 1000; // كل 5 دقائق
+            syncTimer.Interval = 1 * 60 * 1000; // كل 5 دقائق
             syncTimer.Tick += SyncTimer_Tick;
             syncTimer.Start();
         }
         private void SchoolManagementSyncApp_Load(object sender, EventArgs e)
         {
              timer1 = syncTimer;
-          
+            label1.Text = "جاري المزامنة التلقائية...";
+
         }
         private void SyncTimer_Tick(object sender, EventArgs e)
         {
@@ -40,6 +41,7 @@ namespace School_Management
                 syncService.SyncTable("Activities");
                 label1.Text = "تمت المزامنة التلقائية بنجاح!";
                 Console.WriteLine("تمت المزامنة التلقائية بنجاح!");
+
             }
             catch (Exception ex)
             {
