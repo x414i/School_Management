@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -70,78 +71,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading activities: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //private void LoadActivities()
-        //{
-        //    try
-        //    {
-        //        string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
-        //        using (SqlConnection connection = new SqlConnection(connectionString))
-        //        {
-        //            string query = @"
-        //            SELECT 
-        //                Activities.ActivityID,
-        //                Activities.Name,
-        //                Activities.Description,
-        //                Activities.Date,
-        //                Classes.ClassName
-        //            FROM Activities
-        //            LEFT JOIN Classes ON Activities.ClassID = Classes.ClassID";
-
-        //            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-        //            DataTable dataTable = new DataTable();
-        //            adapter.Fill(dataTable);
-
-        //            dgvActivities.DataSource = dataTable;
-
-        //            if (dgvActivities.Columns["ActivityID"] != null)
-        //            {
-        //                dgvActivities.Columns["ActivityID"].Visible = false;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("An error occurred while loading activities: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-        //private void LoadActivities()
-        //{
-        //    try
-        //    {
-        //        string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
-        //        using (SqlConnection connection = new SqlConnection(connectionString))
-        //        {
-        //            string query = @"
-        //    SELECT 
-        //        Activities.ActivityID,
-        //        Activities.Name,
-        //        Activities.Description,
-        //        Activities.Date,
-        //        Classes.ClassName
-        //    FROM Activities
-        //    LEFT JOIN Classes ON Activities.ClassID = Classes.ClassID";
-
-        //            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-        //            DataTable dataTable = new DataTable();
-        //            adapter.Fill(dataTable);
-
-        //            if (dataTable.Rows.Count > 0)
-        //            {
-        //                dgvActivities.DataSource = dataTable;
-        //                dgvActivities.Columns["ActivityID"].Visible = false; // إخفاء العمود ActivityID
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("No activities found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("An error occurred while loading activities: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-        private void LoadClassesDropdown()
+         private void LoadClassesDropdown()
         {
             try
             {
@@ -302,16 +232,29 @@ namespace School_Management
 
         private void dgvActivities_SelectionChanged(object sender, EventArgs e)
         {
+            // التحقق من وجود صفوف محددة
             if (dgvActivities.SelectedRows.Count > 0)
             {
+                // الحصول على الصف المحدد
                 DataGridViewRow row = dgvActivities.SelectedRows[0];
-                txtActivityID.Text = row.Cells["ActivityID"].Value.ToString();
-                txtName.Text = row.Cells["Name"].Value.ToString();
-                txtDescription.Text = row.Cells["Description"].Value.ToString();
-                dtpDate.Value = Convert.ToDateTime(row.Cells["Date"].Value);
 
-                // تحديد الفصل في القائمة المنسدلة
-                var className = row.Cells["ClassName"].Value.ToString();
+                // تعبئة الحقول بالبيانات من الصف المحدد
+                txtActivityID.Text = row.Cells["ActivityID"].Value?.ToString() ?? string.Empty;
+                txtName.Text = row.Cells["Name"].Value?.ToString() ?? string.Empty;
+                txtDescription.Text = row.Cells["Description"].Value?.ToString() ?? string.Empty;
+
+                // تعبئة حقل التاريخ
+                if (DateTime.TryParse(row.Cells["Date"].Value?.ToString(), out DateTime date))
+                {
+                    dtpDate.Value = date;
+                }
+                else
+                {
+                    dtpDate.Value = DateTime.Now; // قيمة افتراضية إذا كان التاريخ غير صالح
+                }
+
+                // تعبئة القائمة المنسدلة (ComboBox)
+                var className = row.Cells["ClassName"].Value?.ToString() ?? string.Empty;
                 foreach (ComboBoxItem item in cmbClass.Items)
                 {
                     if (item.Text == className)
@@ -327,8 +270,7 @@ namespace School_Management
 
         }
 
-
-         private void AddActivity()
+        private void AddActivity()
         {
             if (string.IsNullOrEmpty(txtName.Text) || dtpDate.Value == null)
             {
@@ -343,15 +285,49 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@Name", txtName.Text);
-                    command.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    command.Parameters.AddWithValue("@Date", dtpDate.Value);
-                    command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
+                    // إذا تم اختيار "All Classes"
+                    if ((cmbClass.SelectedItem as ComboBoxItem)?.Value == DBNull.Value)
+                    {
+                        // جلب جميع الفصول
+                        string getClassesQuery = "SELECT ClassID FROM Classes";
+                        SqlCommand getClassesCommand = new SqlCommand(getClassesQuery, connection);
+                        SqlDataReader reader = getClassesCommand.ExecuteReader();
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Activity added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        List<int> classIDs = new List<int>();
+                        while (reader.Read())
+                        {
+                            classIDs.Add(Convert.ToInt32(reader["ClassID"]));
+                        }
+                        reader.Close();
+
+                        // إدراج النشاط لكل فصل
+                        foreach (int classID in classIDs)
+                        {
+                            string insertQuery = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
+                            SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
+                            insertCommand.Parameters.AddWithValue("@Name", txtName.Text);
+                            insertCommand.Parameters.AddWithValue("@Description", txtDescription.Text);
+                            insertCommand.Parameters.AddWithValue("@Date", dtpDate.Value);
+                            insertCommand.Parameters.AddWithValue("@ClassID", classID);
+
+                            insertCommand.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Activity added to all classes successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // إدراج النشاط لفصل محدد
+                        string insertQuery = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
+                        SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
+                        insertCommand.Parameters.AddWithValue("@Name", txtName.Text);
+                        insertCommand.Parameters.AddWithValue("@Description", txtDescription.Text);
+                        insertCommand.Parameters.AddWithValue("@Date", dtpDate.Value);
+                        insertCommand.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
+
+                        insertCommand.ExecuteNonQuery();
+                        MessageBox.Show("Activity added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
                     ClearFields();
                     LoadActivities(); // تحديث DataGridView بعد الإضافة
@@ -363,10 +339,46 @@ namespace School_Management
             }
         }
 
+        // private void AddActivity()
+        //{
+        //    if (string.IsNullOrEmpty(txtName.Text) || dtpDate.Value == null)
+        //    {
+        //        MessageBox.Show("Please provide all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    try
+        //    {
+        //        string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+        //        using (SqlConnection connection = new SqlConnection(connectionString))
+        //        {
+        //            connection.Open();
+
+        //            string query = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
+        //            SqlCommand command = new SqlCommand(query, connection);
+        //            command.Parameters.AddWithValue("@Name", txtName.Text);
+        //            command.Parameters.AddWithValue("@Description", txtDescription.Text);
+        //            command.Parameters.AddWithValue("@Date", dtpDate.Value);
+        //            command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
+
+        //            command.ExecuteNonQuery();
+        //            MessageBox.Show("Activity added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //            ClearFields();
+        //            LoadActivities(); // تحديث DataGridView بعد الإضافة
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
         private void btnAddUpdateActivity_Click(object sender, EventArgs e)
         {
             AddActivity();
         }
+
 
         private void UpdateActivity()
         {
@@ -389,16 +401,51 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    string query = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@Name", txtName.Text);
-                    command.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    command.Parameters.AddWithValue("@Date", dtpDate.Value);
-                    command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
-                    command.Parameters.AddWithValue("@ActivityID", Convert.ToInt32(txtActivityID.Text));
+                    // إذا تم اختيار "All Classes"
+                    if ((cmbClass.SelectedItem as ComboBoxItem)?.Value == DBNull.Value)
+                    {
+                        // جلب جميع الفصول
+                        string getClassesQuery = "SELECT ClassID FROM Classes";
+                        SqlCommand getClassesCommand = new SqlCommand(getClassesQuery, connection);
+                        SqlDataReader reader = getClassesCommand.ExecuteReader();
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Activity updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        List<int> classIDs = new List<int>();
+                        while (reader.Read())
+                        {
+                            classIDs.Add(Convert.ToInt32(reader["ClassID"]));
+                        }
+                        reader.Close();
+
+                        // تحديث النشاط لكل فصل
+                        foreach (int classID in classIDs)
+                        {
+                            string updateQuery = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
+                            SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                            updateCommand.Parameters.AddWithValue("@Name", txtName.Text);
+                            updateCommand.Parameters.AddWithValue("@Description", txtDescription.Text);
+                            updateCommand.Parameters.AddWithValue("@Date", dtpDate.Value);
+                            updateCommand.Parameters.AddWithValue("@ClassID", classID);
+                            updateCommand.Parameters.AddWithValue("@ActivityID", Convert.ToInt32(txtActivityID.Text));
+
+                            updateCommand.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Activity updated for all classes successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // تحديث النشاط لفصل محدد
+                        string updateQuery = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
+                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                        updateCommand.Parameters.AddWithValue("@Name", txtName.Text);
+                        updateCommand.Parameters.AddWithValue("@Description", txtDescription.Text);
+                        updateCommand.Parameters.AddWithValue("@Date", dtpDate.Value);
+                        updateCommand.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
+                        updateCommand.Parameters.AddWithValue("@ActivityID", Convert.ToInt32(txtActivityID.Text));
+
+                        updateCommand.ExecuteNonQuery();
+                        MessageBox.Show("Activity updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
                     ClearFields();
                     LoadActivities(); // تحديث DataGridView بعد التعديل
@@ -409,6 +456,48 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+       
+        //private void UpdateActivity()
+        //{
+        //    if (string.IsNullOrEmpty(txtActivityID.Text))
+        //    {
+        //        MessageBox.Show("Please select an activity to update.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    if (string.IsNullOrEmpty(txtName.Text) || dtpDate.Value == null)
+        //    {
+        //        MessageBox.Show("Please provide all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    try
+        //    {
+        //        string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+        //        using (SqlConnection connection = new SqlConnection(connectionString))
+        //        {
+        //            connection.Open();
+
+        //            string query = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
+        //            SqlCommand command = new SqlCommand(query, connection);
+        //            command.Parameters.AddWithValue("@Name", txtName.Text);
+        //            command.Parameters.AddWithValue("@Description", txtDescription.Text);
+        //            command.Parameters.AddWithValue("@Date", dtpDate.Value);
+        //            command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
+        //            command.Parameters.AddWithValue("@ActivityID", Convert.ToInt32(txtActivityID.Text));
+
+        //            command.ExecuteNonQuery();
+        //            MessageBox.Show("Activity updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //            ClearFields();
+        //            LoadActivities(); // تحديث DataGridView بعد التعديل
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
         private void btnUpdateActivity_Click(object sender, EventArgs e)
         {
             UpdateActivity();
