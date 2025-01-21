@@ -48,7 +48,12 @@
             this.btnDeleteLesson = new System.Windows.Forms.Button();
             this.btnSaveLesson = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTimetable
@@ -62,8 +67,10 @@
             this.Teacher,
             this.Day,
             this.Time});
-            this.dgvTimetable.Location = new System.Drawing.Point(-1, 245);
+            this.dgvTimetable.Location = new System.Drawing.Point(0, 291);
             this.dgvTimetable.Name = "dgvTimetable";
+            this.dgvTimetable.ReadOnly = true;
+            this.dgvTimetable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvTimetable.Size = new System.Drawing.Size(803, 207);
             this.dgvTimetable.TabIndex = 0;
             // 
@@ -94,84 +101,94 @@
             // 
             // cmbDay
             // 
+            this.cmbDay.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbDay.FormattingEnabled = true;
-            this.cmbDay.Location = new System.Drawing.Point(446, 121);
+            this.cmbDay.Location = new System.Drawing.Point(120, 58);
             this.cmbDay.Name = "cmbDay";
-            this.cmbDay.Size = new System.Drawing.Size(121, 21);
+            this.cmbDay.Size = new System.Drawing.Size(296, 32);
             this.cmbDay.TabIndex = 1;
             // 
             // cmbSubject
             // 
+            this.cmbSubject.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(268, 121);
+            this.cmbSubject.Location = new System.Drawing.Point(120, 141);
             this.cmbSubject.Name = "cmbSubject";
-            this.cmbSubject.Size = new System.Drawing.Size(121, 21);
+            this.cmbSubject.Size = new System.Drawing.Size(296, 32);
             this.cmbSubject.TabIndex = 2;
             // 
             // cmbTeacher
             // 
+            this.cmbTeacher.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbTeacher.FormattingEnabled = true;
-            this.cmbTeacher.Location = new System.Drawing.Point(465, 33);
+            this.cmbTeacher.Location = new System.Drawing.Point(120, 11);
             this.cmbTeacher.Name = "cmbTeacher";
-            this.cmbTeacher.Size = new System.Drawing.Size(121, 21);
+            this.cmbTeacher.Size = new System.Drawing.Size(296, 32);
             this.cmbTeacher.TabIndex = 3;
             // 
             // cmbClass
             // 
+            this.cmbClass.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(268, 33);
+            this.cmbClass.Location = new System.Drawing.Point(120, 101);
             this.cmbClass.Name = "cmbClass";
-            this.cmbClass.Size = new System.Drawing.Size(121, 21);
+            this.cmbClass.Size = new System.Drawing.Size(296, 32);
             this.cmbClass.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(420, 33);
+            this.label1.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label1.Location = new System.Drawing.Point(444, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(47, 26);
             this.label1.TabIndex = 5;
             this.label1.Text = "الصف";
             // 
             // المادة
             // 
             this.المادة.AutoSize = true;
-            this.المادة.Location = new System.Drawing.Point(408, 121);
+            this.المادة.Font = new System.Drawing.Font("Cairo", 10F);
+            this.المادة.Location = new System.Drawing.Point(443, 144);
             this.المادة.Name = "المادة";
-            this.المادة.Size = new System.Drawing.Size(33, 13);
+            this.المادة.Size = new System.Drawing.Size(48, 26);
             this.المادة.TabIndex = 6;
             this.المادة.Text = "المادة";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(602, 40);
+            this.label3.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label3.Location = new System.Drawing.Point(444, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(51, 26);
             this.label3.TabIndex = 7;
             this.label3.Text = "المعلم";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(605, 128);
+            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label4.Location = new System.Drawing.Point(454, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(41, 26);
             this.label4.TabIndex = 8;
             this.label4.Text = "اليوم";
             // 
             // txtTimetableID
             // 
-            this.txtTimetableID.Location = new System.Drawing.Point(336, 189);
+            this.txtTimetableID.Font = new System.Drawing.Font("Cairo", 10F);
+            this.txtTimetableID.Location = new System.Drawing.Point(120, 186);
             this.txtTimetableID.Name = "txtTimetableID";
-            this.txtTimetableID.Size = new System.Drawing.Size(100, 20);
+            this.txtTimetableID.Size = new System.Drawing.Size(296, 32);
             this.txtTimetableID.TabIndex = 9;
             // 
             // btnAddLesson
             // 
-            this.btnAddLesson.Location = new System.Drawing.Point(713, 33);
+            this.btnAddLesson.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnAddLesson.Location = new System.Drawing.Point(155, 11);
             this.btnAddLesson.Name = "btnAddLesson";
-            this.btnAddLesson.Size = new System.Drawing.Size(75, 23);
+            this.btnAddLesson.Size = new System.Drawing.Size(91, 34);
             this.btnAddLesson.TabIndex = 10;
             this.btnAddLesson.Text = "إضافة حصة جديدة";
             this.btnAddLesson.UseVisualStyleBackColor = true;
@@ -179,70 +196,103 @@
             // 
             // btnEditLesson
             // 
-            this.btnEditLesson.Location = new System.Drawing.Point(713, 82);
+            this.btnEditLesson.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnEditLesson.Location = new System.Drawing.Point(42, 11);
             this.btnEditLesson.Name = "btnEditLesson";
-            this.btnEditLesson.Size = new System.Drawing.Size(75, 23);
+            this.btnEditLesson.Size = new System.Drawing.Size(107, 34);
             this.btnEditLesson.TabIndex = 11;
-            this.btnEditLesson.Text = "Edit Lesson";
+            this.btnEditLesson.Text = "تعديل ";
             this.btnEditLesson.UseVisualStyleBackColor = true;
             this.btnEditLesson.Click += new System.EventHandler(this.btnEditLesson_Click);
             // 
             // btnDeleteLesson
             // 
-            this.btnDeleteLesson.Location = new System.Drawing.Point(713, 121);
+            this.btnDeleteLesson.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnDeleteLesson.Location = new System.Drawing.Point(155, 61);
             this.btnDeleteLesson.Name = "btnDeleteLesson";
-            this.btnDeleteLesson.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteLesson.Size = new System.Drawing.Size(91, 39);
             this.btnDeleteLesson.TabIndex = 12;
-            this.btnDeleteLesson.Text = "Delete Lesson";
+            this.btnDeleteLesson.Text = "حذف";
             this.btnDeleteLesson.UseVisualStyleBackColor = true;
             this.btnDeleteLesson.Click += new System.EventHandler(this.btnDeleteLesson_Click);
             // 
             // btnSaveLesson
             // 
-            this.btnSaveLesson.Location = new System.Drawing.Point(713, 161);
+            this.btnSaveLesson.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnSaveLesson.Location = new System.Drawing.Point(42, 51);
             this.btnSaveLesson.Name = "btnSaveLesson";
-            this.btnSaveLesson.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveLesson.Size = new System.Drawing.Size(107, 43);
             this.btnSaveLesson.TabIndex = 13;
-            this.btnSaveLesson.Text = "Save Lesson";
+            this.btnSaveLesson.Text = "حفظ";
             this.btnSaveLesson.UseVisualStyleBackColor = true;
             this.btnSaveLesson.Click += new System.EventHandler(this.btnSaveLesson_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(713, 199);
+            this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnClose.Location = new System.Drawing.Point(63, 125);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(148, 35);
             this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "إغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnAddLesson);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnEditLesson);
+            this.panel1.Controls.Add(this.btnSaveLesson);
+            this.panel1.Controls.Add(this.btnDeleteLesson);
+            this.panel1.Location = new System.Drawing.Point(0, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(249, 221);
+            this.panel1.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cmbTeacher);
+            this.panel2.Controls.Add(this.txtTimetableID);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.cmbSubject);
+            this.panel2.Controls.Add(this.المادة);
+            this.panel2.Controls.Add(this.cmbDay);
+            this.panel2.Controls.Add(this.cmbClass);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(271, 58);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(517, 227);
+            this.panel2.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label2.Location = new System.Drawing.Point(443, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 26);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "الوقت";
             // 
             // TimetableManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSaveLesson);
-            this.Controls.Add(this.btnDeleteLesson);
-            this.Controls.Add(this.btnEditLesson);
-            this.Controls.Add(this.btnAddLesson);
-            this.Controls.Add(this.txtTimetableID);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.المادة);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbClass);
-            this.Controls.Add(this.cmbTeacher);
-            this.Controls.Add(this.cmbSubject);
-            this.Controls.Add(this.cmbDay);
+            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvTimetable);
             this.Name = "TimetableManagementForm";
             this.Text = "TimetableManagementForm";
             this.Load += new System.EventHandler(this.TimetableManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -268,5 +318,8 @@
         private System.Windows.Forms.Button btnDeleteLesson;
         private System.Windows.Forms.Button btnSaveLesson;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
     }
 }
