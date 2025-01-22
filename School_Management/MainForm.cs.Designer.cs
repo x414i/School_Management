@@ -126,7 +126,7 @@
             // 
             // btnManageClasses
             // 
-            this.btnManageClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageClasses.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageClasses.ForeColor = System.Drawing.Color.Black;

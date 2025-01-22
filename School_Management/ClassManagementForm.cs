@@ -15,7 +15,6 @@ namespace School_Management
 
         private void ClassManagementForm_Load(object sender, EventArgs e)
         {
-            // Load class data into DataGridView
             LoadClassesData();
         }
 
