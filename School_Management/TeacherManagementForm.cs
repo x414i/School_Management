@@ -17,6 +17,14 @@ namespace School_Management
             LoadSubjects();
         }
 
+        private void clearFeild()
+        {
+            txtName.Text = "";
+            cmbSubject.SelectedIndex = 0;
+            cmbSubject.Items.Clear();
+            txtEmail.Text = "";
+            txtPhone.Text = "";
+        }
         private void LoadTeachersData()
         {
             try
@@ -49,7 +57,6 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading teacher data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void LoadSubjects()
         {
             try
@@ -105,14 +112,6 @@ namespace School_Management
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void clearFeild()
-        {
-            txtName.Text = "";
-            cmbSubject.SelectedIndex = 0;
-            cmbSubject.Items.Clear();
-            txtEmail.Text = "";
-            txtPhone.Text = "";
         }
         private void btnEditTeacher_Click_1(object sender, EventArgs e)
         {

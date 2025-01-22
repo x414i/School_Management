@@ -42,7 +42,6 @@
             this.المادة = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTimetableID = new System.Windows.Forms.TextBox();
             this.btnAddLesson = new System.Windows.Forms.Button();
             this.btnEditLesson = new System.Windows.Forms.Button();
             this.btnDeleteLesson = new System.Windows.Forms.Button();
@@ -51,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbTime = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,26 +78,31 @@
             // 
             this.Class.HeaderText = "الصف";
             this.Class.Name = "Class";
+            this.Class.ReadOnly = true;
             // 
             // Subject
             // 
             this.Subject.HeaderText = "المادة";
             this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
             // 
             // Teacher
             // 
             this.Teacher.HeaderText = "المعلم";
             this.Teacher.Name = "Teacher";
+            this.Teacher.ReadOnly = true;
             // 
             // Day
             // 
             this.Day.HeaderText = "اليوم";
             this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
             // 
             // Time
             // 
             this.Time.HeaderText = "الوقت";
             this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
             // 
             // cmbDay
             // 
@@ -175,18 +180,10 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "اليوم";
             // 
-            // txtTimetableID
-            // 
-            this.txtTimetableID.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtTimetableID.Location = new System.Drawing.Point(120, 186);
-            this.txtTimetableID.Name = "txtTimetableID";
-            this.txtTimetableID.Size = new System.Drawing.Size(296, 32);
-            this.txtTimetableID.TabIndex = 9;
-            // 
             // btnAddLesson
             // 
             this.btnAddLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddLesson.Location = new System.Drawing.Point(155, 11);
+            this.btnAddLesson.Location = new System.Drawing.Point(143, 8);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(91, 34);
             this.btnAddLesson.TabIndex = 10;
@@ -197,7 +194,7 @@
             // btnEditLesson
             // 
             this.btnEditLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditLesson.Location = new System.Drawing.Point(42, 11);
+            this.btnEditLesson.Location = new System.Drawing.Point(12, 8);
             this.btnEditLesson.Name = "btnEditLesson";
             this.btnEditLesson.Size = new System.Drawing.Size(107, 34);
             this.btnEditLesson.TabIndex = 11;
@@ -208,7 +205,7 @@
             // btnDeleteLesson
             // 
             this.btnDeleteLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteLesson.Location = new System.Drawing.Point(155, 61);
+            this.btnDeleteLesson.Location = new System.Drawing.Point(143, 59);
             this.btnDeleteLesson.Name = "btnDeleteLesson";
             this.btnDeleteLesson.Size = new System.Drawing.Size(91, 39);
             this.btnDeleteLesson.TabIndex = 12;
@@ -219,7 +216,7 @@
             // btnSaveLesson
             // 
             this.btnSaveLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSaveLesson.Location = new System.Drawing.Point(42, 51);
+            this.btnSaveLesson.Location = new System.Drawing.Point(12, 55);
             this.btnSaveLesson.Name = "btnSaveLesson";
             this.btnSaveLesson.Size = new System.Drawing.Size(107, 43);
             this.btnSaveLesson.TabIndex = 13;
@@ -230,7 +227,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(63, 125);
+            this.btnClose.Location = new System.Drawing.Point(47, 132);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(148, 35);
             this.btnClose.TabIndex = 14;
@@ -252,10 +249,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cmbTime);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cmbTeacher);
-            this.panel2.Controls.Add(this.txtTimetableID);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.cmbSubject);
             this.panel2.Controls.Add(this.المادة);
@@ -276,6 +273,15 @@
             this.label2.Size = new System.Drawing.Size(48, 26);
             this.label2.TabIndex = 10;
             this.label2.Text = "الوقت";
+            // 
+            // cmbTime
+            // 
+            this.cmbTime.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTime.FormattingEnabled = true;
+            this.cmbTime.Location = new System.Drawing.Point(121, 183);
+            this.cmbTime.Name = "cmbTime";
+            this.cmbTime.Size = new System.Drawing.Size(295, 32);
+            this.cmbTime.TabIndex = 11;
             // 
             // TimetableManagementForm
             // 
@@ -312,7 +318,6 @@
         private System.Windows.Forms.Label المادة;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTimetableID;
         private System.Windows.Forms.Button btnAddLesson;
         private System.Windows.Forms.Button btnEditLesson;
         private System.Windows.Forms.Button btnDeleteLesson;
@@ -321,5 +326,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbTime;
     }
 }
