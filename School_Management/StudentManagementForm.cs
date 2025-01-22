@@ -47,7 +47,6 @@ namespace School_Management
         }
         private void StudentManagementForm_Load(object sender, EventArgs e)
         {
-            // Load students data into DataGridView
             LoadStudentsData();
             LoadClassesAndParents();
                 }
@@ -76,6 +75,26 @@ namespace School_Management
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
                     dgvStudents.DataSource = dataTable;
+                }
+                if (dgvStudents.Columns["StudentID"] != null)
+                {
+                    dgvStudents.Columns["StudentID"].HeaderText = "رقم قيد ";
+                }
+                if (dgvStudents.Columns["Name"] != null)
+                {
+                    dgvStudents.Columns["Name"].HeaderText = "اسم الطالب";
+                }
+                if (dgvStudents.Columns["BirthDate"] != null)
+                {
+                    dgvStudents.Columns["BirthDate"].HeaderText = " تاريخ الميلاد ";
+                }
+                if (dgvStudents.Columns["Class"] != null)
+                {
+                    dgvStudents.Columns["Class"].HeaderText = " الفصل ";
+                }
+                if (dgvStudents.Columns["IsSynced"] != null)
+                {
+                    dgvStudents.Columns.Remove("IsSynced");
                 }
             }
             catch (Exception ex)
@@ -257,128 +276,10 @@ namespace School_Management
 
         }
 
-        private void btnSync_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    // استرداد الطلاب الذين لم تتم مزامنتهم
-                    string selectQuery = "SELECT * FROM Students WHERE IsSynced = 0";
-                    SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, connection);
-                    System.Data.DataTable dataTable = new System.Data.DataTable();
-                    adapter.Fill(dataTable);
-
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        // نقل البيانات إلى السحابة (MySQL)
-                        SyncStudentsToCloud(dataTable);
-
-                        // تحديث حالة المزامنة في SQL Server
-                        string updateQuery = "UPDATE Students SET IsSynced = 1 WHERE IsSynced = 0";
-                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
-                        updateCommand.ExecuteNonQuery();
-
-                        MessageBox.Show("تمت مزامنة الطلاب بنجاح!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadStudentsData(); // إعادة تحميل البيانات
-                    }
-                    else
-                    {
-                        MessageBox.Show("لا توجد بيانات جديدة للمزامنة.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("حدث خطأ أثناء المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // دالة لنقل البيانات إلى السحابة (MySQL)
-        private void SyncStudentsToCloud(System.Data.DataTable dataTable)
-        {
-            // قم بتنفيذ الكود لنقل البيانات من SQL Server إلى MySQL هنا
-            // يمكنك استخدام مكتبة مثل MySqlConnector أو كتابة كود مخصص
-            // مثال:
-            
-            string mySqlConnectionString = "Server=localhost;Database=SchoolManagement;User Id=root;Password=;";
-            using (MySqlConnection mySqlConnection = new MySqlConnection(mySqlConnectionString))
-            {
-                mySqlConnection.Open();
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    string insertQuery = "INSERT INTO Students (Name, DateOfBirth, ClassID, ParentID) VALUES (@Name, @DateOfBirth, @ClassID, @ParentID)";
-                    MySqlCommand command = new MySqlCommand(insertQuery, mySqlConnection);
-                    command.Parameters.AddWithValue("@Name", row["Name"]);
-                    command.Parameters.AddWithValue("@DateOfBirth", row["DateOfBirth"]);
-                    command.Parameters.AddWithValue("@ClassID", row["ClassID"]);
-                    command.Parameters.AddWithValue("@ParentID", row["ParentID"]);
-                    command.ExecuteNonQuery();
-                }
-            }
-            
-        }
-
+       
         private void label6_Click(object sender, EventArgs e)
         {
 
         }
     }
 }
-
-
-
-
-
-
-//using System;
-//using System.Windows.Forms;
-
-//namespace School_Management
-//{
-//    public partial class StudentManagementForm : Form
-//    {
-//        public StudentManagementForm()
-//        {
-//            InitializeComponent();
-//        }
-
-//        private void StudentManagementForm_Load(object sender, EventArgs e)
-//        {
-//            // Initialize the form with data or settings if necessary
-//        }
-
-//        private void btnAddStudent_Click(object sender, EventArgs e)
-//        {
-//            // Logic to add a new student
-//            MessageBox.Show("Add Student functionality not implemented yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-//        }
-
-//        private void btnEditStudent_Click(object sender, EventArgs e)
-//        {
-//            // Logic to edit selected student
-//            MessageBox.Show("Edit Student functionality not implemented yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-//        }
-
-//        private void btnDeleteStudent_Click(object sender, EventArgs e)
-//        {
-//            // Logic to delete selected student
-//            MessageBox.Show("Delete Student functionality not implemented yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-//        }
-
-//        private void btnViewStudentDetails_Click(object sender, EventArgs e)
-//        {
-//            // Logic to view details of the selected student
-//            MessageBox.Show("View Student Details functionality not implemented yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-//        }
-
-//        private void btnClose_Click(object sender, EventArgs e)
-//        {
-//            // Close the form
-//            this.Close();
-//        }
-//    }
-//}
