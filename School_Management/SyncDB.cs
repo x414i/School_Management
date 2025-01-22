@@ -70,8 +70,7 @@ namespace School_Management
                     sqlConnection.Open();
                     mySqlConnection.Open();
 
-                    // جلب البيانات من SQL Server
-                    string selectQuery = $"SELECT * FROM {tableName}"; // جلب جميع السجلات
+                    string selectQuery = $"SELECT * FROM {tableName}";
                     SqlCommand selectCommand = new SqlCommand(selectQuery, sqlConnection);
                     SqlDataAdapter adapter = new SqlDataAdapter(selectCommand);
                     DataTable dataTable = new DataTable();
@@ -121,6 +120,11 @@ namespace School_Management
                 {
                     AppendLog($"حدث خطأ أثناء مزامنة الجدول {tableName}: {ex.Message}", "Error");
                 }
+                finally
+                {
+                    sqlConnection.Close();
+                    mySqlConnection.Close();
+                }
             }
         }
 
@@ -148,6 +152,18 @@ namespace School_Management
         {
             switch (tableName)
             {
+                case "Students":
+                    return "StudentID";
+                case "Parents":
+                    return "ParentID";
+                case "Teachers":
+                    return "TeacherID";
+                case "Grades":
+                    return "GradeID";
+                case "Timetable":
+                    return "TimetableID";
+                case "Activities":
+                    return "ActivityID";
                 case "Classes":
                     return "ClassID";
                 case "Subjects":
@@ -157,9 +173,9 @@ namespace School_Management
                 case "CloudSync":
                     return "SyncID";
                 case "Attendance":
-                    return "AttendanceID"; // العمود الرئيسي لجدول Attendance
+                    return "AttendanceID";
                 default:
-                    return "ID"; // افتراضي (يجب تعديله حسب الجدول)
+                    throw new Exception($"العمود الرئيسي للجدول {tableName} غير معروف.");
             }
         }
 
