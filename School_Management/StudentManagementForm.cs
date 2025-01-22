@@ -2,9 +2,7 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-using MySqlConnector;
-using System.Xml.Linq;
-using System.Data;
+
 
 namespace School_Management
 {
@@ -132,6 +130,11 @@ namespace School_Management
                     command.ExecuteNonQuery();
                     MessageBox.Show("Student added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadStudentsData();
+                    txtName.Text = "";
+                    dtpBirthDate.Value = DateTime.Now;
+                    cmbClass.SelectedIndex = 0;
+                    cmbParent.SelectedIndex = 0;
+
                 }
             }
             catch (Exception ex)
@@ -188,6 +191,10 @@ namespace School_Management
                     command.ExecuteNonQuery();
                     MessageBox.Show("Student updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadStudentsData();
+                    txtName.Text = "";
+                    dtpBirthDate.Value = DateTime.Now;
+                    cmbClass.SelectedIndex = 0;
+                    cmbParent.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
@@ -212,13 +219,12 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    // حذف سجلات الدرجات المرتبطة بالطالب
                     string deleteGradesQuery = "DELETE FROM Grades WHERE StudentID = @StudentID";
                     SqlCommand deleteGradesCommand = new SqlCommand(deleteGradesQuery, connection);
                     deleteGradesCommand.Parameters.AddWithValue("@StudentID", studentID);
                     deleteGradesCommand.ExecuteNonQuery();
 
-                    // حذف الطالب
+                   
                     string deleteStudentQuery = "DELETE FROM Students WHERE StudentID = @StudentID";
                     SqlCommand deleteStudentCommand = new SqlCommand(deleteStudentQuery, connection);
                     deleteStudentCommand.Parameters.AddWithValue("@StudentID", studentID);
@@ -226,6 +232,11 @@ namespace School_Management
 
                     MessageBox.Show("Student and related grades records deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadStudentsData();
+                    txtName.Text = "";
+                    dtpBirthDate.Value = DateTime.Now;
+                    cmbClass.SelectedIndex = 0;
+                    cmbParent.SelectedIndex = 0;
+
                 }
             }
             catch (Exception ex)
