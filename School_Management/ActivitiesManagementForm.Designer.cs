@@ -35,7 +35,6 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.txtActivityID = new System.Windows.Forms.TextBox();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.btnAddActivity = new System.Windows.Forms.Button();
             this.btnUpdateActivity = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtActivityID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,16 +116,6 @@
             this.dtpDate.Size = new System.Drawing.Size(158, 32);
             this.dtpDate.TabIndex = 8;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
-            // 
-            // txtActivityID
-            // 
-            this.txtActivityID.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActivityID.Location = new System.Drawing.Point(639, 109);
-            this.txtActivityID.Name = "txtActivityID";
-            this.txtActivityID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtActivityID.Size = new System.Drawing.Size(131, 32);
-            this.txtActivityID.TabIndex = 9;
-            this.txtActivityID.TextChanged += new System.EventHandler(this.txtActivityID_TextChanged);
             // 
             // btnShowAll
             // 
@@ -267,11 +257,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtActivityID
+            // 
+            this.txtActivityID.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivityID.Location = new System.Drawing.Point(639, 109);
+            this.txtActivityID.Name = "txtActivityID";
+            this.txtActivityID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtActivityID.Size = new System.Drawing.Size(131, 32);
+            this.txtActivityID.TabIndex = 21;
+            // 
             // ActivitiesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 456);
+            this.Controls.Add(this.txtActivityID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdateActivity);
             this.Controls.Add(this.btnAddActivity);
@@ -283,7 +283,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtActivityID);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtDescription);
@@ -308,7 +307,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.TextBox txtActivityID;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
@@ -321,5 +319,6 @@
         private System.Windows.Forms.Button btnAddActivity;
         private System.Windows.Forms.Button btnUpdateActivity;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtActivityID;
     }
 }
