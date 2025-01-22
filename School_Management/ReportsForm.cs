@@ -18,36 +18,35 @@ namespace School_Management
             LoadReportTypes();
         }
 
-        // تحميل أنواع التقارير في ComboBox
         private void LoadReportTypes()
         {
             cmbReportType.Items.Add("الحضور");
             cmbReportType.Items.Add("الدرجات");
             cmbReportType.Items.Add("الأنشطة");
             cmbReportType.Items.Add("المزامنة");
-            cmbReportType.SelectedIndex = 0; // تحديد العنصر الأول افتراضيًا
-        }
-        private void ReportsForm_Load (object sender, EventArgs e)
-        {
-           
+            cmbReportType.SelectedIndex = 0;
         }
 
-        // حدث عند النقر على زر "عرض التقرير"
+        private void ReportsForm_Load(object sender, EventArgs e)
+        {
+        }
+
         private void btnShowReport_Click(object sender, EventArgs e)
         {
             string selectedReport = cmbReportType.SelectedItem.ToString();
-            DateTime selectedDate = dtpReportDate.Value;
+            DateTime startDate = dtpStartDate.Value;
+            DateTime endDate = dtpEndDate.Value;
 
             switch (selectedReport)
             {
                 case "الحضور":
-                    ShowAttendanceReport(selectedDate);
+                    ShowAttendanceReport(startDate, endDate);
                     break;
                 case "الدرجات":
-                    ShowGradesReport(selectedDate);
+                    ShowGradesReport(startDate, endDate);
                     break;
                 case "الأنشطة":
-                    ShowActivitiesReport(selectedDate);
+                    ShowActivitiesReport(startDate, endDate);
                     break;
                 case "المزامنة":
                     ShowSyncReport();
@@ -55,19 +54,19 @@ namespace School_Management
             }
         }
 
-        // عرض تقرير الحضور
-        private void ShowAttendanceReport(DateTime date)
+        private void ShowAttendanceReport(DateTime startDate, DateTime endDate)
         {
             string query = @"
                 SELECT s.Name AS StudentName, a.Date, a.Status 
                 FROM Attendance a
                 INNER JOIN Students s ON a.StudentID = s.StudentID
-                WHERE a.Date = @Date";
+                WHERE a.Date BETWEEN @StartDate AND @EndDate";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Date", date.Date);
+                command.Parameters.AddWithValue("@StartDate", startDate.Date);
+                command.Parameters.AddWithValue("@EndDate", endDate.Date);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -76,20 +75,20 @@ namespace School_Management
             }
         }
 
-        // عرض تقرير الدرجات
-        private void ShowGradesReport(DateTime date)
+        private void ShowGradesReport(DateTime startDate, DateTime endDate)
         {
             string query = @"
                 SELECT s.Name AS StudentName, sub.SubjectName, g.Marks, g.ExamDate 
                 FROM Grades g
                 INNER JOIN Students s ON g.StudentID = s.StudentID
                 INNER JOIN Subjects sub ON g.SubjectID = sub.SubjectID
-                WHERE g.ExamDate = @ExamDate";
+                WHERE g.ExamDate BETWEEN @StartDate AND @EndDate";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@ExamDate", date.Date);
+                command.Parameters.AddWithValue("@StartDate", startDate.Date);
+                command.Parameters.AddWithValue("@EndDate", endDate.Date);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -98,19 +97,19 @@ namespace School_Management
             }
         }
 
-        // عرض تقرير الأنشطة
-        private void ShowActivitiesReport(DateTime date)
+        private void ShowActivitiesReport(DateTime startDate, DateTime endDate)
         {
             string query = @"
                 SELECT a.Name AS ActivityName, a.Description, a.Date, c.ClassName 
                 FROM Activities a
                 LEFT JOIN Classes c ON a.ClassID = c.ClassID
-                WHERE a.Date = @ActivityDate";
+                WHERE a.Date BETWEEN @StartDate AND @EndDate";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@ActivityDate", date.Date);
+                command.Parameters.AddWithValue("@StartDate", startDate.Date);
+                command.Parameters.AddWithValue("@EndDate", endDate.Date);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -119,7 +118,32 @@ namespace School_Management
             }
         }
 
-        // حدث عند النقر على زر "تصدير التقرير"
+        private void ShowSyncReport()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = @"
+                SELECT TableName, LastSyncDate, Status 
+                FROM CloudSync
+                ORDER BY LastSyncDate DESC";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dgvReport.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء استرداد تقرير المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnExportReport_Click(object sender, EventArgs e)
         {
             if (dgvReport.DataSource != null)
@@ -141,22 +165,17 @@ namespace School_Management
             }
         }
 
-        // تصدير البيانات إلى Excel
         private void ExportToExcel(DataGridView dataGridView, string fileName)
         {
-            // يمكنك استخدام مكتبة مثل "EPPlus" لتصدير البيانات إلى Excel.
-            // هذا مثال بسيط:
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             excel.Workbooks.Add();
             Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)excel.ActiveSheet;
 
-            // تصدير العناوين
             for (int i = 1; i <= dataGridView.Columns.Count; i++)
             {
                 worksheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
             }
 
-            // تصدير البيانات
             for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 for (int j = 0; j < dataGridView.Columns.Count; j++)
@@ -192,18 +211,15 @@ namespace School_Management
 
         private void ExportToPDF(DataGridView dataGridView, string fileName)
         {
-            // إنشاء مستند PDF
             Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 10f, 0f);
             PdfWriter.GetInstance(pdfDoc, new FileStream(fileName, FileMode.Create));
             pdfDoc.Open();
 
-            // إنشاء جدول في PDF
             PdfPTable pdfTable = new PdfPTable(dataGridView.Columns.Count);
             pdfTable.DefaultCell.Padding = 3;
             pdfTable.WidthPercentage = 100;
             pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
 
-            // إضافة عناوين الأعمدة
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
@@ -211,7 +227,6 @@ namespace School_Management
                 pdfTable.AddCell(cell);
             }
 
-            // إضافة بيانات الصفوف
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -220,57 +235,26 @@ namespace School_Management
                 }
             }
 
-            // إضافة الجدول إلى المستند
             pdfDoc.Add(pdfTable);
             pdfDoc.Close();
         }
 
-        private void ShowSyncReport()
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    // استرداد بيانات المزامنة
-                    string query = @"
-                SELECT TableName, LastSyncDate, Status 
-                FROM CloudSync
-                ORDER BY LastSyncDate DESC";
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    dgvReport.DataSource = dataTable;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("حدث خطأ أثناء استرداد تقرير المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnSyncReport_Click(object sender, EventArgs e)
         {
             try
             {
-                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    // استرداد عدد السجلات التي تمت مزامنتها
                     string countQuery = "SELECT COUNT(*) FROM Students WHERE IsSynced = 1";
                     SqlCommand countCommand = new SqlCommand(countQuery, connection);
                     int syncedCount = Convert.ToInt32(countCommand.ExecuteScalar());
 
-                    // استرداد تاريخ آخر مزامنة
                     string lastSyncQuery = "SELECT MAX(LastSyncDate) FROM CloudSync WHERE TableName = 'Students'";
                     SqlCommand lastSyncCommand = new SqlCommand(lastSyncQuery, connection);
                     object lastSyncDate = lastSyncCommand.ExecuteScalar();
 
-                    // عرض التقرير
                     string reportMessage = $"عدد السجلات التي تمت مزامنتها: {syncedCount}\n";
                     reportMessage += lastSyncDate != DBNull.Value ? $"تاريخ آخر مزامنة: {lastSyncDate}" : "لم تتم مزامنة أي بيانات بعد.";
                     MessageBox.Show(reportMessage, "تقرير المزامنة", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -280,6 +264,17 @@ namespace School_Management
             {
                 MessageBox.Show("حدث خطأ أثناء استرداد تقرير المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClearResults_Click()
+        {
+            dgvReport.DataSource = null;
+            dgvReport.Rows.Clear();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
