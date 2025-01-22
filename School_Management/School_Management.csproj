@@ -273,6 +273,9 @@
     <EmbeddedResource Include="SubjectManagementForm.resx">
       <DependentUpon>SubjectManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SyncDB.resx">
+      <DependentUpon>SyncDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherManagementForm.resx">
       <DependentUpon>TeacherManagementForm.cs</DependentUpon>
     </EmbeddedResource>

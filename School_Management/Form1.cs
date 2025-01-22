@@ -28,8 +28,11 @@ namespace School_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
-            f.Show();
+            //Form2 f = new Form2();
+            //f.Show();
+            SyncDB syncDB = new SyncDB();
+            syncDB.ShowDialog();
+
         }
     }
 }

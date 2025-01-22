@@ -107,7 +107,8 @@ namespace School_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            SyncDB syncDB = new SyncDB();
+            syncDB.ShowDialog();
         }
 
         private void syncTimer_Click(object sender, EventArgs e)
