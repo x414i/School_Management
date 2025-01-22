@@ -49,6 +49,7 @@
             this.cmbClasses.FormattingEnabled = true;
             this.cmbClasses.Location = new System.Drawing.Point(21, 30);
             this.cmbClasses.Name = "cmbClasses";
+            this.cmbClasses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbClasses.Size = new System.Drawing.Size(260, 32);
             this.cmbClasses.TabIndex = 0;
             // 
@@ -56,9 +57,10 @@
             // 
             this.btnLoadStudents.Location = new System.Drawing.Point(279, 34);
             this.btnLoadStudents.Name = "btnLoadStudents";
+            this.btnLoadStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnLoadStudents.Size = new System.Drawing.Size(98, 76);
             this.btnLoadStudents.TabIndex = 1;
-            this.btnLoadStudents.Text = "Load Students";
+            this.btnLoadStudents.Text = "تحديث";
             this.btnLoadStudents.UseVisualStyleBackColor = true;
             this.btnLoadStudents.Click += new System.EventHandler(this.btnLoadStudents_Click_1);
             // 
@@ -66,9 +68,10 @@
             // 
             this.btnSaveAttendance.Location = new System.Drawing.Point(149, 34);
             this.btnSaveAttendance.Name = "btnSaveAttendance";
+            this.btnSaveAttendance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSaveAttendance.Size = new System.Drawing.Size(98, 76);
             this.btnSaveAttendance.TabIndex = 2;
-            this.btnSaveAttendance.Text = "Save Attendance";
+            this.btnSaveAttendance.Text = "حفظ";
             this.btnSaveAttendance.UseVisualStyleBackColor = true;
             this.btnSaveAttendance.Click += new System.EventHandler(this.btnSaveAttendance_Click_1);
             // 
@@ -76,9 +79,10 @@
             // 
             this.btnClose.Location = new System.Drawing.Point(14, 34);
             this.btnClose.Name = "btnClose";
+            this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(98, 76);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "إغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
@@ -87,6 +91,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Cairo", 10F);
             this.dtpDate.Location = new System.Drawing.Point(21, 78);
             this.dtpDate.Name = "dtpDate";
+            this.dtpDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dtpDate.Size = new System.Drawing.Size(260, 32);
             this.dtpDate.TabIndex = 4;
             // 
@@ -97,8 +102,11 @@
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudents.Location = new System.Drawing.Point(-1, 171);
             this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvStudents.Size = new System.Drawing.Size(800, 278);
             this.dgvStudents.TabIndex = 5;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
+            this.dgvStudents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellValueChanged);
             // 
             // label1
             // 
@@ -106,9 +114,10 @@
             this.label1.Font = new System.Drawing.Font("Cairo", 10F);
             this.label1.Location = new System.Drawing.Point(289, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 26);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(47, 26);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Clasess";
+            this.label1.Text = "الصف";
             // 
             // label2
             // 
@@ -116,9 +125,10 @@
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
             this.label2.Location = new System.Drawing.Point(307, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 26);
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(46, 26);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Date";
+            this.label2.Text = "التاريخ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
@@ -129,6 +139,7 @@
             this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(392, 140);
             this.panel1.TabIndex = 8;
             // 
@@ -140,6 +151,7 @@
             this.panel2.Controls.Add(this.cmbClasses);
             this.panel2.Location = new System.Drawing.Point(429, 12);
             this.panel2.Name = "panel2";
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel2.Size = new System.Drawing.Size(359, 140);
             this.panel2.TabIndex = 9;
             // 

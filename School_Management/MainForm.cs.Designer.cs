@@ -207,6 +207,7 @@
             // 
             // btnManageActivities
             // 
+            this.btnManageActivities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageActivities.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageActivities.Image = ((System.Drawing.Image)(resources.GetObject("btnManageActivities.Image")));
             this.btnManageActivities.Location = new System.Drawing.Point(632, 398);
@@ -214,18 +215,19 @@
             this.btnManageActivities.Size = new System.Drawing.Size(120, 100);
             this.btnManageActivities.TabIndex = 12;
             this.btnManageActivities.Text = "Manage Activities";
-            this.btnManageActivities.UseVisualStyleBackColor = true;
+            this.btnManageActivities.UseVisualStyleBackColor = false;
             this.btnManageActivities.Click += new System.EventHandler(this.btnManageActivities_Click_1);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button1.Font = new System.Drawing.Font("Cairo", 10F);
             this.button1.Location = new System.Drawing.Point(128, 277);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 100);
             this.button1.TabIndex = 14;
             this.button1.Text = "Users";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSync
@@ -254,6 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 501);
             this.Controls.Add(this.btnManageClasses);
             this.Controls.Add(this.btnManageTeachers);

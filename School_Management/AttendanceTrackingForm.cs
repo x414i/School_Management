@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace School_Management
 {
@@ -14,6 +15,7 @@ namespace School_Management
         private void AttendanceTrackingForm_Load(object sender, EventArgs e)
         {
             LoadClassesIntoDropdown();
+            LoadStudentsData();
         }
 
         private void LoadClassesIntoDropdown()
@@ -25,8 +27,15 @@ namespace School_Management
                 {
                     string query = "SELECT ClassID, ClassName FROM Classes";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
+
+                 
+                    DataRow allClassesRow = dataTable.NewRow();
+                    allClassesRow["ClassID"] = -1; 
+                    allClassesRow["ClassName"] = "جميع الصفوف";
+                    dataTable.Rows.InsertAt(allClassesRow, 0);
+
                     cmbClasses.DisplayMember = "ClassName";
                     cmbClasses.ValueMember = "ClassID";
                     cmbClasses.DataSource = dataTable;
@@ -37,14 +46,13 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading classes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void LoadStudentsData()
         {
             try
             {
                 if (cmbClasses.SelectedValue == null)
                 {
-                    MessageBox.Show("Please select a class first.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("يرجى اختيار صف دراسي أولاً.", "خطأ في التحقق", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -52,25 +60,87 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT StudentID, Name FROM Students WHERE ClassID = @ClassID";
+                    string query;
+                    if (classID == -1)
+                    {
+                        query = @"SELECT 
+                             s.StudentID, 
+                             s.Name, 
+                             CASE WHEN a.Status = 'Present' THEN 1 ELSE 0 END AS Status 
+                          FROM Students s
+                          LEFT JOIN Attendance a 
+                          ON s.StudentID = a.StudentID AND a.Date = @Date";
+                    }
+                    else
+                    {
+                        query = @"SELECT 
+                             s.StudentID, 
+                             s.Name, 
+                             CASE WHEN a.Status = 'Present' THEN 1 ELSE 0 END AS Status 
+                          FROM Students s
+                          LEFT JOIN Attendance a 
+                          ON s.StudentID = a.StudentID AND a.Date = @Date
+                          WHERE s.ClassID = @ClassID";
+                    }
+
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    adapter.SelectCommand.Parameters.AddWithValue("@ClassID", classID);
-                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.SelectCommand.Parameters.AddWithValue("@Date", dtpDate.Value.Date);
+                    if (classID != -1)
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@ClassID", classID);
+                    }
+
+                    DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
+
+                    // إضافة عمود IsDirty لتتبع التعديلات
+                    if (!dataTable.Columns.Contains("IsDirty"))
+                    {
+                        dataTable.Columns.Add("IsDirty", typeof(bool)).DefaultValue = false;
+                    }
 
                     dgvStudents.DataSource = dataTable;
 
-                    if (!dgvStudents.Columns.Contains("Status"))
+                    // تعريب أسماء الأعمدة
+                    if (dgvStudents.Columns["StudentID"] != null)
                     {
-                        dgvStudents.Columns.Add(new DataGridViewCheckBoxColumn() { HeaderText = "Status", Name = "Status" });
+                        dgvStudents.Columns["StudentID"].HeaderText = "معرف الطالب";
+                    }
+                    if (dgvStudents.Columns["Name"] != null)
+                    {
+                        dgvStudents.Columns["Name"].HeaderText = "اسم الطالب";
+                    }
+
+                    // تعديل عمود الحضور ليكون CheckBox
+                    if (dgvStudents.Columns["Status"] != null && !(dgvStudents.Columns["Status"] is DataGridViewCheckBoxColumn))
+                    {
+                        DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn
+                        {
+                            DataPropertyName = "Status",
+                            HeaderText = "حضور",
+                            Name = "Status",
+                            TrueValue = 1,
+                            FalseValue = 0,
+                            IndeterminateValue = DBNull.Value
+                        };
+                        dgvStudents.Columns.Remove("Status");
+                        dgvStudents.Columns.Add(checkBoxColumn);
+                    }
+
+                    // إخفاء عمود IsDirty
+                    if (dgvStudents.Columns["IsDirty"] != null)
+                    {
+                        dgvStudents.Columns["IsDirty"].Visible = false;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("حدث خطأ أثناء تحميل البيانات: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
         private void btnLoadStudents_Click_1(object sender, EventArgs e)
         {
             LoadStudentsData();
@@ -82,7 +152,7 @@ namespace School_Management
             {
                 if (dgvStudents.Rows.Count == 0)
                 {
-                    MessageBox.Show("No students to save attendance for.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("لا يوجد طلاب لحفظ الحضور.", "خطأ في التحقق", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -90,33 +160,43 @@ namespace School_Management
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Attendance (StudentID, Date, Status) VALUES (@StudentID, @Date, @Status)";
 
                     foreach (DataGridViewRow row in dgvStudents.Rows)
                     {
                         if (row.Cells["StudentID"].Value != null)
                         {
-                            SqlCommand command = new SqlCommand(query, connection);
-                            command.Parameters.AddWithValue("@StudentID", row.Cells["StudentID"].Value);
-                            command.Parameters.AddWithValue("@Date", dtpDate.Value.Date);
-
-                            // تعيين القيمة المناسبة لعمود Status
+                            int studentID = Convert.ToInt32(row.Cells["StudentID"].Value);
+                            DateTime date = dtpDate.Value.Date;
                             bool isPresent = Convert.ToBoolean(row.Cells["Status"].Value);
-                            string status = isPresent ? "Present" : "Absent";  // تأكد من أن هذه القيم تتوافق مع القيود
-                            command.Parameters.AddWithValue("@Status", status);
 
-                            command.ExecuteNonQuery();
+                            string upsertQuery = @"
+                        IF EXISTS (SELECT 1 FROM Attendance WHERE StudentID = @StudentID AND Date = @Date)
+                            UPDATE Attendance SET Status = @Status WHERE StudentID = @StudentID AND Date = @Date
+                        ELSE
+                            INSERT INTO Attendance (StudentID, Date, Status) VALUES (@StudentID, @Date, @Status)";
+                            using (SqlCommand upsertCommand = new SqlCommand(upsertQuery, connection))
+                            {
+                                upsertCommand.Parameters.AddWithValue("@StudentID", studentID);
+                                upsertCommand.Parameters.AddWithValue("@Date", date);
+                                upsertCommand.Parameters.AddWithValue("@Status", isPresent ? "Present" : "Absent");
+                                upsertCommand.ExecuteNonQuery();
+                            }
                         }
                     }
 
-                    MessageBox.Show("Attendance saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("تم حفظ الحضور بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // إعادة تحميل البيانات بعد الحفظ
+                    LoadStudentsData();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("حدث خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -124,10 +204,22 @@ namespace School_Management
 
         private void label2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
-    }
+        private void dgvStudents_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvStudents.Columns["IsDirty"] != null && e.ColumnIndex == dgvStudents.Columns["Status"].Index)
+            {
+                dgvStudents.Rows[e.RowIndex].Cells["IsDirty"].Value = true;
+            }
+        }
 
-        
-    }
 
+
+    }
+}
