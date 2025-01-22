@@ -93,7 +93,6 @@ namespace School_Management
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
-                    // إضافة عمود IsDirty لتتبع التعديلات
                     if (!dataTable.Columns.Contains("IsDirty"))
                     {
                         dataTable.Columns.Add("IsDirty", typeof(bool)).DefaultValue = false;
@@ -101,7 +100,6 @@ namespace School_Management
 
                     dgvStudents.DataSource = dataTable;
 
-                    // تعريب أسماء الأعمدة
                     if (dgvStudents.Columns["StudentID"] != null)
                     {
                         dgvStudents.Columns["StudentID"].HeaderText = "معرف الطالب";
@@ -111,7 +109,6 @@ namespace School_Management
                         dgvStudents.Columns["Name"].HeaderText = "اسم الطالب";
                     }
 
-                    // تعديل عمود الحضور ليكون CheckBox
                     if (dgvStudents.Columns["Status"] != null && !(dgvStudents.Columns["Status"] is DataGridViewCheckBoxColumn))
                     {
                         DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn
@@ -127,7 +124,6 @@ namespace School_Management
                         dgvStudents.Columns.Add(checkBoxColumn);
                     }
 
-                    // إخفاء عمود IsDirty
                     if (dgvStudents.Columns["IsDirty"] != null)
                     {
                         dgvStudents.Columns["IsDirty"].Visible = false;
@@ -140,7 +136,6 @@ namespace School_Management
             }
         }
 
-        
         private void btnLoadStudents_Click_1(object sender, EventArgs e)
         {
             LoadStudentsData();
@@ -186,7 +181,6 @@ namespace School_Management
 
                     MessageBox.Show("تم حفظ الحضور بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // إعادة تحميل البيانات بعد الحفظ
                     LoadStudentsData();
                 }
             }
@@ -218,8 +212,6 @@ namespace School_Management
                 dgvStudents.Rows[e.RowIndex].Cells["IsDirty"].Value = true;
             }
         }
-
-
 
     }
 }
