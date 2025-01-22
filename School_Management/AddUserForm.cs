@@ -14,29 +14,23 @@ namespace School_Management
             InitializeComponent();
         }
 
-        private void AddUserForm_Load(object sender, EventArgs e)
-        {
-            // تعبئة ComboBox بالأدوار
-            cmbRole.Items.Add("Admin");
-            cmbRole.Items.Add("Teacher");
-            cmbRole.Items.Add("Parent");
-            cmbRole.SelectedIndex = 0; // تحديد العنصر الأول افتراضيًا
-            LoadUsers();
-        }
+        
 
         //function load user to gridview
         private void LoadUsers()
         {
-            // add column to gridview
-            dgvUsers.ColumnCount = 2;
-            dgvUsers.Columns[0].Name = "Username";
-            dgvUsers.Columns[1].Name = "Role";
+            dgvUsers.Rows.Clear(); // مسح الصفوف الحالية
+            dgvUsers.Columns.Clear(); // مسح الأعمدة الحالية
+
+            // إضافة الأعمدة
+            dgvUsers.Columns.Add("Username", "Username");
+
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Username, Role FROM Users";
+                    string query = "SELECT Username FROM Users";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -46,7 +40,7 @@ namespace School_Management
                             {
                                 while (reader.Read())
                                 {
-                                    dgvUsers.Rows.Add(reader["Username"], reader["Role"]);
+                                    dgvUsers.Rows.Add(reader["Username"]);
                                 }
                             }
                         }
@@ -59,11 +53,14 @@ namespace School_Management
             }
         }
 
+        private void AddUserForm_Load(object sender, EventArgs e)
+        {
+            LoadUsers(); 
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            string role = cmbRole.SelectedItem.ToString(); // الحصول على الدور المحدد
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -76,13 +73,27 @@ namespace School_Management
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Users (Username, Password, Role) VALUES (@Username, @Password, @Role)";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    // التحقق من عدم تكرار اسم المستخدم
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@Username", username);
+                        int userCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("Username already exists. Please choose a different username.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // إضافة المستخدم
+                    string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@Username", username);
                         command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); // تشفير كلمة المرور
-                        command.Parameters.AddWithValue("@Role", role); // استخدام الدور المحدد
 
                         int rowsAffected = command.ExecuteNonQuery();
 
@@ -90,6 +101,7 @@ namespace School_Management
                         {
                             MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields(); // مسح الحقول
+                            LoadUsers(); // تحديث DataGridView
                         }
                         else
                         {
@@ -103,22 +115,18 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void ClearFields()
         {
             txtUsername.Clear();
             txtPassword.Clear();
-            cmbRole.SelectedIndex = 0; // إعادة تعيين ComboBox إلى القيمة الافتراضية
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //edit user selected in gridview
             if (dgvUsers.SelectedRows.Count > 0)
             {
                 string username = txtUsername.Text.Trim();
                 string password = txtPassword.Text.Trim();
-                string role = cmbRole.SelectedItem.ToString(); // الحصول على الدور المحدد
 
                 if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
@@ -131,13 +139,12 @@ namespace School_Management
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        string query = "UPDATE Users SET Password = @Password, Role = @Role WHERE Username = @Username";
+                        string query = "UPDATE Users SET Password = @Password WHERE Username = @Username";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@Username", username);
                             command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); // تشفير كلمة المرور
-                            command.Parameters.AddWithValue("@Role", role); // استخدام الدور المحدد
 
                             int rowsAffected = command.ExecuteNonQuery();
 
@@ -145,6 +152,7 @@ namespace School_Management
                             {
                                 MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearFields(); // مسح الحقول
+                                LoadUsers(); // تحديث DataGridView
                             }
                             else
                             {
@@ -163,10 +171,8 @@ namespace School_Management
                 MessageBox.Show("Please select a user to edit.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //delete user selected in gridview
             if (dgvUsers.SelectedRows.Count > 0)
             {
                 string username = txtUsername.Text.Trim();
@@ -188,6 +194,7 @@ namespace School_Management
                             {
                                 MessageBox.Show("User deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearFields(); // مسح الحقول
+                                LoadUsers(); // تحديث DataGridView
                             }
                             else
                             {
@@ -206,11 +213,36 @@ namespace School_Management
                 MessageBox.Show("Please select a user to delete.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
            
             this.Close();
+        }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvUsers.SelectedRows.Count > 0)
+            {
+                // الحصول على الصف المحدد
+                DataGridViewRow row = dgvUsers.SelectedRows[0];
+
+                // تعبئة الحقول
+                txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? string.Empty;
+                txtPassword.Clear(); // مسح حقل كلمة المرور
+
+            }
+        }
+        private void dgvUsers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvUsers.SelectedRows.Count > 0)
+            {
+                // الحصول على الصف المحدد
+                DataGridViewRow row = dgvUsers.SelectedRows[0];
+
+                // تعبئة الحقول
+                txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? string.Empty;
+                txtPassword.Clear(); // مسح حقل كلمة المرور
+            }
         }
     }
 }

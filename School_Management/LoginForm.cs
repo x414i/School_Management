@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using BCrypt.Net; // تثبيت المكتبة عبر NuGet: Install-Package BCrypt.Net-Next
-
+using BCrypt.Net;
 namespace School_Management
 {
     public partial class LoginForm : Form
@@ -33,7 +32,7 @@ namespace School_Management
                     connection.Open();
 
                     // Query to get user details
-                    string query = "SELECT Password, Role FROM Users WHERE Username = @Username";
+                    string query = "SELECT Password FROM Users WHERE Username = @Username";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -44,29 +43,15 @@ namespace School_Management
                             if (reader.Read())
                             {
                                 string hashedPassword = reader["Password"].ToString();
-                                string role = reader["Role"].ToString();
 
                                 // Verify the password
                                 if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
                                 {
-                                    MessageBox.Show("Login successful! Role: " + role, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    // Redirect to the appropriate form based on role
-                                    switch (role)
-                                    {
-                                        case "Admin":
-                                            MainForm adminForm = new MainForm();
-                                            adminForm.Show();
-                                            break;
-                                        case "Teacher":
-                                            //TeacherForm teacherForm = new TeacherForm();
-                                            //teacherForm.Show();
-                                            break;
-                                        case "Parent":
-                                            //ParentForm parentForm = new ParentForm();
-                                            //parentForm.Show();
-                                            break;
-                                    }
+                                    // Redirect to the main form
+                                    MainForm mainForm = new MainForm();
+                                    mainForm.Show();
 
                                     this.Hide(); // Hide the login form
                                 }
@@ -96,12 +81,11 @@ namespace School_Management
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // يمكنك إضافة أي تهيئة إضافية هنا
+            
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-            // يمكنك إضافة أي منطق إضافي هنا
         }
     }
 }

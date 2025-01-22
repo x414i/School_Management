@@ -34,12 +34,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,35 +49,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label1.Location = new System.Drawing.Point(329, 18);
+            this.label1.Font = new System.Drawing.Font("Cairo", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(270, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 26);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(279, 50);
             this.label1.TabIndex = 0;
-            this.label1.Text = "user Control";
+            this.label1.Text = "التحكم بالمستخدمين ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtUsername.Location = new System.Drawing.Point(27, 41);
+            this.txtUsername.Location = new System.Drawing.Point(217, 59);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(154, 32);
+            this.txtUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtUsername.Size = new System.Drawing.Size(339, 32);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(27, 86);
+            this.txtPassword.Location = new System.Drawing.Point(217, 104);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(154, 32);
+            this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPassword.Size = new System.Drawing.Size(339, 32);
             this.txtPassword.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(235, 13);
+            this.btnSave.Location = new System.Drawing.Point(235, 42);
             this.btnSave.Name = "btnSave";
+            this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSave.Size = new System.Drawing.Size(80, 80);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "حفظ";
@@ -91,29 +94,24 @@
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(-1, 275);
+            this.dgvUsers.Location = new System.Drawing.Point(385, 275);
             this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(797, 174);
+            this.dgvUsers.Size = new System.Drawing.Size(411, 305);
             this.dgvUsers.TabIndex = 4;
-            // 
-            // cmbRole
-            // 
-            this.cmbRole.Font = new System.Drawing.Font("Cairo", 10F);
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Location = new System.Drawing.Point(27, 135);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(154, 32);
-            this.cmbRole.TabIndex = 5;
+            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
+            this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEdit.Location = new System.Drawing.Point(235, 102);
+            this.btnEdit.Location = new System.Drawing.Point(235, 203);
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEdit.Size = new System.Drawing.Size(80, 80);
             this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "btnEdit";
+            this.btnEdit.Text = "تعديل";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -121,11 +119,12 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(22, 13);
+            this.btnDelete.Location = new System.Drawing.Point(22, 42);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDelete.Size = new System.Drawing.Size(80, 80);
             this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "btnDelete";
+            this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -133,8 +132,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(212, 44);
+            this.label2.Location = new System.Drawing.Point(587, 62);
             this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(97, 26);
             this.label2.TabIndex = 8;
             this.label2.Text = "اسم المستخدم";
@@ -143,37 +143,26 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label3.Location = new System.Drawing.Point(234, 89);
+            this.label3.Location = new System.Drawing.Point(609, 107);
             this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(78, 26);
             this.label3.TabIndex = 9;
             this.label3.Text = "كلمة المرور";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label4.Location = new System.Drawing.Point(265, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 26);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "الدور";
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbRole);
             this.groupBox1.Font = new System.Drawing.Font("Cairo", 10F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(449, 71);
+            this.groupBox1.Location = new System.Drawing.Point(35, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(321, 198);
+            this.groupBox1.Size = new System.Drawing.Size(735, 182);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "انشاء مستخدم ";
@@ -186,19 +175,21 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.panel1.Location = new System.Drawing.Point(21, 71);
+            this.panel1.Location = new System.Drawing.Point(35, 275);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 198);
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panel1.Size = new System.Drawing.Size(344, 305);
             this.panel1.TabIndex = 12;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.button1.Location = new System.Drawing.Point(22, 99);
+            this.button1.Location = new System.Drawing.Point(22, 203);
             this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(80, 80);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
+            this.button1.Text = "اغلاق";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -206,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 579);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvUsers);
@@ -230,12 +221,10 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
