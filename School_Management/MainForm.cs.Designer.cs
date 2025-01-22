@@ -195,7 +195,7 @@
             // 
             // btnManageParents
             // 
-            this.btnManageParents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageParents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageParents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageParents.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageParents.ForeColor = System.Drawing.Color.Black;

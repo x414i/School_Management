@@ -28,6 +28,23 @@ namespace School_Management
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
                     dgvParents.DataSource = dataTable;
+
+                    if (dgvParents.Columns["ParentID"] != null)
+                    {
+                        dgvParents.Columns["ParentID"].HeaderText = "رقم ولي الأمر";
+                    }
+                    if (dgvParents.Columns["Name"] != null)
+                    {
+                        dgvParents.Columns["Name"].HeaderText = "اسم ولي الأمر";
+                    }
+                    if (dgvParents.Columns["Phone"] != null)
+                    {
+                        dgvParents.Columns["Phone"].HeaderText = "رقم الهاتف";
+                    }
+                    if (dgvParents.Columns["Email"] != null)
+                    {
+                        dgvParents.Columns["Email"].HeaderText = "البريد الإلكتروني";
+                    }
                 }
             }
             catch (Exception ex)
@@ -39,7 +56,6 @@ namespace School_Management
         private void btnAddParent_Click(object sender, EventArgs e)
         {
 
-            // إضافة ولي أمر جديد مباشرةً إذا كانت الحقول تحتوي على بيانات
             if (!string.IsNullOrEmpty(txtParentName.Text) || !string.IsNullOrEmpty(txtPhoneNumber.Text) || !string.IsNullOrEmpty(txtEmail.Text))
             {
                 string query = "INSERT INTO Parents (Name, Phone, Email) VALUES (@ParentName, @PhoneNumber, @Email)";
@@ -228,6 +244,11 @@ namespace School_Management
         }
 
         private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvParents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

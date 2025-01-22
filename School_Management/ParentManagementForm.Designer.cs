@@ -57,33 +57,36 @@
             // btnAddParent
             // 
             this.btnAddParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddParent.Location = new System.Drawing.Point(21, 9);
+            this.btnAddParent.Location = new System.Drawing.Point(21, 19);
             this.btnAddParent.Name = "btnAddParent";
+            this.btnAddParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddParent.Size = new System.Drawing.Size(109, 59);
             this.btnAddParent.TabIndex = 0;
-            this.btnAddParent.Text = "Add Parent";
+            this.btnAddParent.Text = "اضافة";
             this.btnAddParent.UseVisualStyleBackColor = true;
             this.btnAddParent.Click += new System.EventHandler(this.btnAddParent_Click);
             // 
             // btnEditParent
             // 
             this.btnEditParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditParent.Location = new System.Drawing.Point(21, 74);
+            this.btnEditParent.Location = new System.Drawing.Point(21, 84);
             this.btnEditParent.Name = "btnEditParent";
+            this.btnEditParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditParent.Size = new System.Drawing.Size(109, 59);
             this.btnEditParent.TabIndex = 1;
-            this.btnEditParent.Text = "Edit Parent";
+            this.btnEditParent.Text = "تعديل";
             this.btnEditParent.UseVisualStyleBackColor = true;
             this.btnEditParent.Click += new System.EventHandler(this.btnEditParent_Click);
             // 
             // btnDeleteParent
             // 
             this.btnDeleteParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteParent.Location = new System.Drawing.Point(21, 139);
+            this.btnDeleteParent.Location = new System.Drawing.Point(21, 149);
             this.btnDeleteParent.Name = "btnDeleteParent";
+            this.btnDeleteParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteParent.Size = new System.Drawing.Size(109, 59);
             this.btnDeleteParent.TabIndex = 2;
-            this.btnDeleteParent.Text = "Delete Parent";
+            this.btnDeleteParent.Text = "حذف";
             this.btnDeleteParent.UseVisualStyleBackColor = true;
             this.btnDeleteParent.Click += new System.EventHandler(this.btnDeleteParent_Click);
             // 
@@ -92,20 +95,22 @@
             this.btnSaveParent.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnSaveParent.Location = new System.Drawing.Point(21, 214);
             this.btnSaveParent.Name = "btnSaveParent";
+            this.btnSaveParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSaveParent.Size = new System.Drawing.Size(109, 59);
             this.btnSaveParent.TabIndex = 3;
-            this.btnSaveParent.Text = "Save";
+            this.btnSaveParent.Text = "حفظ";
             this.btnSaveParent.UseVisualStyleBackColor = true;
             this.btnSaveParent.Click += new System.EventHandler(this.btnSaveParent_Click);
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(21, 289);
+            this.btnClose.Location = new System.Drawing.Point(21, 286);
             this.btnClose.Name = "btnClose";
+            this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(109, 59);
             this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "إغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -114,6 +119,7 @@
             this.txtParentID.Font = new System.Drawing.Font("Cairo", 10F);
             this.txtParentID.Location = new System.Drawing.Point(294, 15);
             this.txtParentID.Name = "txtParentID";
+            this.txtParentID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtParentID.Size = new System.Drawing.Size(126, 32);
             this.txtParentID.TabIndex = 5;
             this.txtParentID.TextChanged += new System.EventHandler(this.txtParentID_TextChanged);
@@ -123,6 +129,7 @@
             this.txtParentName.Font = new System.Drawing.Font("Cairo", 10F);
             this.txtParentName.Location = new System.Drawing.Point(294, 61);
             this.txtParentName.Name = "txtParentName";
+            this.txtParentName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtParentName.Size = new System.Drawing.Size(126, 32);
             this.txtParentName.TabIndex = 6;
             // 
@@ -131,6 +138,7 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Cairo", 10F);
             this.txtPhoneNumber.Location = new System.Drawing.Point(21, 61);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPhoneNumber.Size = new System.Drawing.Size(149, 32);
             this.txtPhoneNumber.TabIndex = 7;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
@@ -142,8 +150,10 @@
             this.dgvParents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParents.Location = new System.Drawing.Point(176, 140);
             this.dgvParents.Name = "dgvParents";
+            this.dgvParents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvParents.Size = new System.Drawing.Size(750, 354);
             this.dgvParents.TabIndex = 8;
+            this.dgvParents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParents_CellContentClick);
             // 
             // label1
             // 
@@ -151,6 +161,7 @@
             this.label1.Font = new System.Drawing.Font("Cairo", 10F);
             this.label1.Location = new System.Drawing.Point(432, 18);
             this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(102, 26);
             this.label1.TabIndex = 9;
             this.label1.Text = "معرف ولي الامر";
@@ -162,6 +173,7 @@
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
             this.label2.Location = new System.Drawing.Point(443, 64);
             this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(91, 26);
             this.label2.TabIndex = 10;
             this.label2.Text = "اسم ولي الامر";
@@ -172,6 +184,7 @@
             this.label3.Font = new System.Drawing.Font("Cairo", 10F);
             this.label3.Location = new System.Drawing.Point(201, 64);
             this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(77, 26);
             this.label3.TabIndex = 11;
             this.label3.Text = "رقم الهاتف";
@@ -183,6 +196,7 @@
             this.label4.Font = new System.Drawing.Font("Cairo", 10F);
             this.label4.Location = new System.Drawing.Point(175, 24);
             this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(101, 26);
             this.label4.TabIndex = 13;
             this.label4.Text = "البريد الالكتروني";
@@ -193,6 +207,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Cairo", 10F);
             this.txtEmail.Location = new System.Drawing.Point(21, 21);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtEmail.Size = new System.Drawing.Size(149, 32);
             this.txtEmail.TabIndex = 12;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
@@ -200,8 +215,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(12, 57);
+            this.btnSearch.Location = new System.Drawing.Point(3, 35);
             this.btnSearch.Name = "btnSearch";
+            this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(87, 39);
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "بحث";
@@ -211,17 +227,19 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(55, 15);
+            this.txtSearch.Location = new System.Drawing.Point(98, 39);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(201, 32);
+            this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtSearch.Size = new System.Drawing.Size(212, 32);
             this.txtSearch.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label5.Location = new System.Drawing.Point(262, 18);
+            this.label5.Location = new System.Drawing.Point(316, 42);
             this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(35, 26);
             this.label5.TabIndex = 16;
             this.label5.Text = "بحث";
@@ -232,9 +250,10 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.panel1.Location = new System.Drawing.Point(600, 24);
+            this.panel1.Location = new System.Drawing.Point(560, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 100);
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panel1.Size = new System.Drawing.Size(354, 100);
             this.panel1.TabIndex = 17;
             // 
             // panel2
@@ -247,6 +266,7 @@
             this.panel2.Font = new System.Drawing.Font("Cairo", 10F);
             this.panel2.Location = new System.Drawing.Point(12, 140);
             this.panel2.Name = "panel2";
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel2.Size = new System.Drawing.Size(158, 354);
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
@@ -264,6 +284,7 @@
             this.panel3.Font = new System.Drawing.Font("Cairo", 10F);
             this.panel3.Location = new System.Drawing.Point(12, 24);
             this.panel3.Name = "panel3";
+            this.panel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel3.Size = new System.Drawing.Size(542, 100);
             this.panel3.TabIndex = 19;
             // 
