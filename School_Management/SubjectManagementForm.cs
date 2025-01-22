@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 
 namespace School_Management
 {
+    //remove commints all the code
     public partial class SubjectManagementForm : Form
     {
         public SubjectManagementForm()
@@ -24,7 +25,6 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // Corrected query
                     string query = "SELECT s.SubjectID, s.SubjectName, t.Name AS TeacherName " +
                                    "FROM Subjects s " +
                                    "JOIN Teachers t ON s.TeacherID = t.TeacherID";
@@ -33,6 +33,19 @@ namespace School_Management
                     adapter.Fill(dataTable);
                     dgvSubjects.DataSource = dataTable;
                 }
+                if (dgvSubjects.Columns["SubjectID"] != null)
+                {
+                    dgvSubjects.Columns["SubjectID"].HeaderText = "رقم قيد المادة";
+                }
+                if (dgvSubjects.Columns["SubjectName"] != null)
+                {
+                    dgvSubjects.Columns["SubjectName"].HeaderText = "اسم المادة";
+                }
+                if (dgvSubjects.Columns["TeacherName"] != null)
+                {
+                    dgvSubjects.Columns["TeacherName"].HeaderText = " اسم الاستاذ";
+                }
+                
             }
             catch (Exception ex)
             {
