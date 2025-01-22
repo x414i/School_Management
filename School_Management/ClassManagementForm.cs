@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Mysqlx.Crud;
+using System.Xml.Linq;
 
 namespace School_Management
 {
@@ -29,6 +31,19 @@ namespace School_Management
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
                     dgvClasses.DataSource = dataTable;
+                    if (dgvClasses.Columns["ClassID"] != null)
+                    {
+                        dgvClasses.Columns["ClassID"].HeaderText = "رقم الصف ";
+                    }
+                    if (dgvClasses.Columns["ClassName"] != null)
+                    {
+                        dgvClasses.Columns["ClassName"].HeaderText = "اسم الصف";
+                    }
+                    if (dgvClasses.Columns["Level"] != null)
+                    {
+                        dgvClasses.Columns["Level"].HeaderText = "المرحلة";
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -62,6 +77,7 @@ namespace School_Management
                     command.ExecuteNonQuery();
                     MessageBox.Show("Class added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadClassesData();
+                    ClearFields();
                 }
             }
             catch (Exception ex)
@@ -103,6 +119,7 @@ namespace School_Management
                     command.ExecuteNonQuery();
                     MessageBox.Show("Class updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadClassesData();
+                    ClearFields();
                 }
             }
             catch (Exception ex)
@@ -134,6 +151,7 @@ namespace School_Management
                     command.ExecuteNonQuery();
                     MessageBox.Show("Class deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadClassesData();
+                    ClearFields();
                 }
             }
             catch (Exception ex)
@@ -147,5 +165,24 @@ namespace School_Management
             this.Close();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ClearFields()
+        {
+            txtClassName.Clear();
+            txtLevel.Clear();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvClasses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -339,40 +339,7 @@ namespace School_Management
             }
         }
 
-        // private void AddActivity()
-        //{
-        //    if (string.IsNullOrEmpty(txtName.Text) || dtpDate.Value == null)
-        //    {
-        //        MessageBox.Show("Please provide all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    try
-        //    {
-        //        string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
-        //        using (SqlConnection connection = new SqlConnection(connectionString))
-        //        {
-        //            connection.Open();
-
-        //            string query = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
-        //            SqlCommand command = new SqlCommand(query, connection);
-        //            command.Parameters.AddWithValue("@Name", txtName.Text);
-        //            command.Parameters.AddWithValue("@Description", txtDescription.Text);
-        //            command.Parameters.AddWithValue("@Date", dtpDate.Value);
-        //            command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
-
-        //            command.ExecuteNonQuery();
-        //            MessageBox.Show("Activity added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        //            ClearFields();
-        //            LoadActivities(); // تحديث DataGridView بعد الإضافة
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+       
 
         private void btnAddUpdateActivity_Click(object sender, EventArgs e)
         {
@@ -457,47 +424,7 @@ namespace School_Management
             }
         }
        
-        //private void UpdateActivity()
-        //{
-        //    if (string.IsNullOrEmpty(txtActivityID.Text))
-        //    {
-        //        MessageBox.Show("Please select an activity to update.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    if (string.IsNullOrEmpty(txtName.Text) || dtpDate.Value == null)
-        //    {
-        //        MessageBox.Show("Please provide all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    try
-        //    {
-        //        string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
-        //        using (SqlConnection connection = new SqlConnection(connectionString))
-        //        {
-        //            connection.Open();
-
-        //            string query = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
-        //            SqlCommand command = new SqlCommand(query, connection);
-        //            command.Parameters.AddWithValue("@Name", txtName.Text);
-        //            command.Parameters.AddWithValue("@Description", txtDescription.Text);
-        //            command.Parameters.AddWithValue("@Date", dtpDate.Value);
-        //            command.Parameters.AddWithValue("@ClassID", (cmbClass.SelectedItem as ComboBoxItem)?.Value ?? DBNull.Value);
-        //            command.Parameters.AddWithValue("@ActivityID", Convert.ToInt32(txtActivityID.Text));
-
-        //            command.ExecuteNonQuery();
-        //            MessageBox.Show("Activity updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        //            ClearFields();
-        //            LoadActivities(); // تحديث DataGridView بعد التعديل
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+     
         private void btnUpdateActivity_Click(object sender, EventArgs e)
         {
             UpdateActivity();

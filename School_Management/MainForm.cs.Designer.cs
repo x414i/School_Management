@@ -153,14 +153,16 @@
             // 
             // btnTrackAttendance
             // 
+            this.btnTrackAttendance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnTrackAttendance.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnTrackAttendance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnTrackAttendance.Image = ((System.Drawing.Image)(resources.GetObject("btnTrackAttendance.Image")));
             this.btnTrackAttendance.Location = new System.Drawing.Point(506, 398);
             this.btnTrackAttendance.Name = "btnTrackAttendance";
             this.btnTrackAttendance.Size = new System.Drawing.Size(120, 100);
             this.btnTrackAttendance.TabIndex = 8;
             this.btnTrackAttendance.Text = "الحضور";
-            this.btnTrackAttendance.UseVisualStyleBackColor = true;
+            this.btnTrackAttendance.UseVisualStyleBackColor = false;
             this.btnTrackAttendance.Click += new System.EventHandler(this.btnTrackAttendance_Click_1);
             // 
             // btnManageSubjects

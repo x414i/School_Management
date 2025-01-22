@@ -49,9 +49,10 @@
             this.btnAddClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClass.Location = new System.Drawing.Point(238, 0);
             this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddClass.Size = new System.Drawing.Size(102, 74);
             this.btnAddClass.TabIndex = 0;
-            this.btnAddClass.Text = "Add Class";
+            this.btnAddClass.Text = "اضافة صف";
             this.btnAddClass.UseVisualStyleBackColor = true;
             this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click_1);
             // 
@@ -60,9 +61,10 @@
             this.btnEditClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditClass.Location = new System.Drawing.Point(38, 3);
             this.btnEditClass.Name = "btnEditClass";
+            this.btnEditClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditClass.Size = new System.Drawing.Size(102, 74);
             this.btnEditClass.TabIndex = 1;
-            this.btnEditClass.Text = "Edit Class";
+            this.btnEditClass.Text = "تعديل صف";
             this.btnEditClass.UseVisualStyleBackColor = true;
             this.btnEditClass.Click += new System.EventHandler(this.btnEditClass_Click_1);
             // 
@@ -71,9 +73,10 @@
             this.btnDeleteClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClass.Location = new System.Drawing.Point(38, 83);
             this.btnDeleteClass.Name = "btnDeleteClass";
+            this.btnDeleteClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteClass.Size = new System.Drawing.Size(102, 74);
             this.btnDeleteClass.TabIndex = 2;
-            this.btnDeleteClass.Text = "Delete Class";
+            this.btnDeleteClass.Text = "حذف الصف";
             this.btnDeleteClass.UseVisualStyleBackColor = true;
             this.btnDeleteClass.Click += new System.EventHandler(this.btnDeleteClass_Click_1);
             // 
@@ -82,9 +85,10 @@
             this.btnClose.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(238, 83);
             this.btnClose.Name = "btnClose";
+            this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(102, 74);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "اغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
@@ -93,6 +97,7 @@
             this.txtLevel.Font = new System.Drawing.Font("Cairo", 10F);
             this.txtLevel.Location = new System.Drawing.Point(19, 85);
             this.txtLevel.Name = "txtLevel";
+            this.txtLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLevel.Size = new System.Drawing.Size(285, 32);
             this.txtLevel.TabIndex = 4;
             // 
@@ -101,6 +106,7 @@
             this.txtClassName.Font = new System.Drawing.Font("Cairo", 10F);
             this.txtClassName.Location = new System.Drawing.Point(19, 40);
             this.txtClassName.Name = "txtClassName";
+            this.txtClassName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtClassName.Size = new System.Drawing.Size(285, 32);
             this.txtClassName.TabIndex = 5;
             // 
@@ -108,11 +114,14 @@
             // 
             this.dgvClasses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClasses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvClasses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClasses.Location = new System.Drawing.Point(-1, 174);
             this.dgvClasses.Name = "dgvClasses";
+            this.dgvClasses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvClasses.Size = new System.Drawing.Size(799, 282);
             this.dgvClasses.TabIndex = 6;
+            this.dgvClasses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasses_CellContentClick);
             // 
             // label1
             // 
@@ -120,19 +129,22 @@
             this.label1.Font = new System.Drawing.Font("Cairo", 10F);
             this.label1.Location = new System.Drawing.Point(322, 43);
             this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(47, 26);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Grade";
+            this.label1.Text = "الصف";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(326, 88);
+            this.label2.Location = new System.Drawing.Point(316, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 26);
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(53, 26);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Level";
+            this.label2.Text = "المرحلة";
             // 
             // panel1
             // 
@@ -142,6 +154,7 @@
             this.panel1.Controls.Add(this.txtClassName);
             this.panel1.Location = new System.Drawing.Point(412, 8);
             this.panel1.Name = "panel1";
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(376, 160);
             this.panel1.TabIndex = 9;
             // 
@@ -153,13 +166,16 @@
             this.panel2.Controls.Add(this.btnAddClass);
             this.panel2.Location = new System.Drawing.Point(12, 8);
             this.panel2.Name = "panel2";
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel2.Size = new System.Drawing.Size(385, 160);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // ClassManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
