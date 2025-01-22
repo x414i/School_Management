@@ -141,6 +141,7 @@
             // 
             // btnEnterGrades
             // 
+            this.btnEnterGrades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEnterGrades.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnEnterGrades.Image = ((System.Drawing.Image)(resources.GetObject("btnEnterGrades.Image")));
             this.btnEnterGrades.Location = new System.Drawing.Point(758, 398);
@@ -148,7 +149,7 @@
             this.btnEnterGrades.Size = new System.Drawing.Size(120, 100);
             this.btnEnterGrades.TabIndex = 7;
             this.btnEnterGrades.Text = "درجات";
-            this.btnEnterGrades.UseVisualStyleBackColor = true;
+            this.btnEnterGrades.UseVisualStyleBackColor = false;
             this.btnEnterGrades.Click += new System.EventHandler(this.btnEnterGrades_Click_1);
             // 
             // btnTrackAttendance
