@@ -48,7 +48,6 @@ namespace School_Management
             LoadStudentsData();
             LoadClassesAndParents();
                 }
-
         private void LoadStudentsData()
         {
             try
@@ -100,7 +99,6 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading students data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
         private void btnAddStudent_Click_1(object sender, EventArgs e)
         {
             try
@@ -281,13 +279,10 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dtpBirthDate_ValueChanged(object sender, EventArgs e)
         {
 
         }
-
-       
         private void label6_Click(object sender, EventArgs e)
         {
 

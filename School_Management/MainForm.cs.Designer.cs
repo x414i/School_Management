@@ -60,7 +60,7 @@
             // 
             // btnManageStudents
             // 
-            this.btnManageStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageStudents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageStudents.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageStudents.ForeColor = System.Drawing.Color.Black;
@@ -75,7 +75,7 @@
             // 
             // btnManageTeachers
             // 
-            this.btnManageTeachers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageTeachers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageTeachers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageTeachers.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageTeachers.ForeColor = System.Drawing.Color.Black;
@@ -168,7 +168,7 @@
             // 
             // btnManageSubjects
             // 
-            this.btnManageSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageSubjects.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageSubjects.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageSubjects.ForeColor = System.Drawing.Color.Black;

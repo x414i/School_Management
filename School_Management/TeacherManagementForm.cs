@@ -13,8 +13,8 @@ namespace School_Management
 
         private void TeacherManagementForm_Load_1(object sender, EventArgs e)
         {
-            // Load teacher data into DataGridView
             LoadTeachersData();
+            LoadSubjects();
         }
 
         private void LoadTeachersData()
@@ -29,6 +29,19 @@ namespace School_Management
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
                     dgvTeachers.DataSource = dataTable;
+
+                    if (dgvTeachers.Columns["TeacherID"] != null)
+                    {
+                        dgvTeachers.Columns["TeacherID"].HeaderText = "رقم الاستاذ ";
+                    }
+                    if (dgvTeachers.Columns["Name"] != null)
+                    {
+                        dgvTeachers.Columns["Name"].HeaderText = "اسم الاستاذ";
+                    }
+                    if (dgvTeachers.Columns["Specialization"] != null)
+                    {
+                        dgvTeachers.Columns["Specialization"].HeaderText = " المادة";
+                    }
                 }
             }
             catch (Exception ex)
@@ -37,14 +50,37 @@ namespace School_Management
             }
         }
 
+        private void LoadSubjects()
+        {
+            try
+            {
+                string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT SubjectID, SubjectName FROM Subjects";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+
+                    // تعيين البيانات إلى ComboBox
+                    cmbSubject.DataSource = dataTable;
+                    cmbSubject.DisplayMember = "SubjectName"; // ما سيتم عرضه في ComboBox
+                    cmbSubject.ValueMember = "SubjectID";     // القيمة المرتبطة بكل عنصر
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading subjects: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
             try
             {
                 string name = txtName.Text.Trim();
-                string subject = txtSubject.Text.Trim();
+                int subjectID = Convert.ToInt32(cmbSubject.SelectedValue); // الحصول على SubjectID المحدد
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(subject))
+                if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -53,15 +89,16 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Teachers (Name, Specialization) VALUES (@Name, @Subject)";
+                    string query = "INSERT INTO Teachers (Name, Specialization) VALUES (@Name, @SubjectID)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@Subject", subject);
+                    command.Parameters.AddWithValue("@SubjectID", subjectID);
 
                     connection.Open();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Teacher added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadTeachersData();
+                    clearFeild();
                 }
             }
             catch (Exception ex)
@@ -69,7 +106,14 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void clearFeild()
+        {
+            txtName.Text = "";
+            cmbSubject.SelectedIndex = 0;
+            cmbSubject.Items.Clear();
+            txtEmail.Text = "";
+            txtPhone.Text = "";
+        }
         private void btnEditTeacher_Click_1(object sender, EventArgs e)
         {
             try
@@ -82,9 +126,9 @@ namespace School_Management
 
                 int teacherID = Convert.ToInt32(dgvTeachers.SelectedRows[0].Cells["TeacherID"].Value);
                 string name = txtName.Text.Trim();
-                string subject = txtSubject.Text.Trim();
+                int subjectID = Convert.ToInt32(cmbSubject.SelectedValue); // الحصول على SubjectID المحدد
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(subject))
+                if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -93,22 +137,34 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @Subject WHERE TeacherID = @TeacherID";
+                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @SubjectID WHERE TeacherID = @TeacherID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@Subject", subject);
+                    command.Parameters.AddWithValue("@SubjectID", subjectID);
                     command.Parameters.AddWithValue("@TeacherID", teacherID);
 
                     connection.Open();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Teacher updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadTeachersData();
+                    clearFeild();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvTeachers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvTeachers.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgvTeachers.SelectedRows[0];
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                cmbSubject.SelectedValue = row.Cells["Specialization"].Value; 
+            }
+            clearFeild();
         }
 
         private void btnDeleteTeacher_Click_1(object sender, EventArgs e)
