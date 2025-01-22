@@ -56,6 +56,7 @@
             this.clbTables.Name = "clbTables";
             this.clbTables.Size = new System.Drawing.Size(137, 112);
             this.clbTables.TabIndex = 3;
+            this.clbTables.SelectedIndexChanged += new System.EventHandler(this.clbTables_SelectedIndexChanged);
             // 
             // btnStartSync
             // 

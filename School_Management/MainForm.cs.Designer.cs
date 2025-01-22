@@ -44,7 +44,6 @@
             this.btnManageActivities = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSync = new System.Windows.Forms.Button();
-            this.syncTimer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +79,7 @@
             this.btnManageTeachers.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageTeachers.ForeColor = System.Drawing.Color.Black;
             this.btnManageTeachers.Image = ((System.Drawing.Image)(resources.GetObject("btnManageTeachers.Image")));
-            this.btnManageTeachers.Location = new System.Drawing.Point(758, 171);
+            this.btnManageTeachers.Location = new System.Drawing.Point(761, 277);
             this.btnManageTeachers.Name = "btnManageTeachers";
             this.btnManageTeachers.Size = new System.Drawing.Size(120, 100);
             this.btnManageTeachers.TabIndex = 2;
@@ -90,6 +89,7 @@
             // 
             // btnViewReports
             // 
+            this.btnViewReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnViewReports.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnViewReports.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReports.Image")));
             this.btnViewReports.Location = new System.Drawing.Point(254, 277);
@@ -97,7 +97,7 @@
             this.btnViewReports.Size = new System.Drawing.Size(120, 100);
             this.btnViewReports.TabIndex = 3;
             this.btnViewReports.Text = "View Reports";
-            this.btnViewReports.UseVisualStyleBackColor = true;
+            this.btnViewReports.UseVisualStyleBackColor = false;
             this.btnViewReports.Click += new System.EventHandler(this.btnViewReports_Click_1);
             // 
             // btnLogout
@@ -144,7 +144,7 @@
             this.btnEnterGrades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEnterGrades.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnEnterGrades.Image = ((System.Drawing.Image)(resources.GetObject("btnEnterGrades.Image")));
-            this.btnEnterGrades.Location = new System.Drawing.Point(758, 398);
+            this.btnEnterGrades.Location = new System.Drawing.Point(632, 398);
             this.btnEnterGrades.Name = "btnEnterGrades";
             this.btnEnterGrades.Size = new System.Drawing.Size(120, 100);
             this.btnEnterGrades.TabIndex = 7;
@@ -158,7 +158,7 @@
             this.btnTrackAttendance.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnTrackAttendance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnTrackAttendance.Image = ((System.Drawing.Image)(resources.GetObject("btnTrackAttendance.Image")));
-            this.btnTrackAttendance.Location = new System.Drawing.Point(506, 398);
+            this.btnTrackAttendance.Location = new System.Drawing.Point(380, 398);
             this.btnTrackAttendance.Name = "btnTrackAttendance";
             this.btnTrackAttendance.Size = new System.Drawing.Size(120, 100);
             this.btnTrackAttendance.TabIndex = 8;
@@ -183,14 +183,15 @@
             // 
             // btnManageTimetable
             // 
+            this.btnManageTimetable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageTimetable.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageTimetable.Image = ((System.Drawing.Image)(resources.GetObject("btnManageTimetable.Image")));
-            this.btnManageTimetable.Location = new System.Drawing.Point(380, 398);
+            this.btnManageTimetable.Location = new System.Drawing.Point(254, 398);
             this.btnManageTimetable.Name = "btnManageTimetable";
             this.btnManageTimetable.Size = new System.Drawing.Size(120, 100);
             this.btnManageTimetable.TabIndex = 10;
             this.btnManageTimetable.Text = "الجدول الزمني";
-            this.btnManageTimetable.UseVisualStyleBackColor = true;
+            this.btnManageTimetable.UseVisualStyleBackColor = false;
             this.btnManageTimetable.Click += new System.EventHandler(this.btnManageTimetable_Click_1);
             // 
             // btnManageParents
@@ -200,7 +201,7 @@
             this.btnManageParents.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageParents.ForeColor = System.Drawing.Color.Black;
             this.btnManageParents.Image = ((System.Drawing.Image)(resources.GetObject("btnManageParents.Image")));
-            this.btnManageParents.Location = new System.Drawing.Point(758, 277);
+            this.btnManageParents.Location = new System.Drawing.Point(761, 398);
             this.btnManageParents.Name = "btnManageParents";
             this.btnManageParents.Size = new System.Drawing.Size(120, 100);
             this.btnManageParents.TabIndex = 11;
@@ -213,7 +214,7 @@
             this.btnManageActivities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageActivities.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageActivities.Image = ((System.Drawing.Image)(resources.GetObject("btnManageActivities.Image")));
-            this.btnManageActivities.Location = new System.Drawing.Point(632, 398);
+            this.btnManageActivities.Location = new System.Drawing.Point(506, 398);
             this.btnManageActivities.Name = "btnManageActivities";
             this.btnManageActivities.Size = new System.Drawing.Size(120, 100);
             this.btnManageActivities.TabIndex = 12;
@@ -236,24 +237,13 @@
             // btnSync
             // 
             this.btnSync.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSync.Location = new System.Drawing.Point(254, 398);
+            this.btnSync.Location = new System.Drawing.Point(128, 398);
             this.btnSync.Name = "btnSync";
             this.btnSync.Size = new System.Drawing.Size(120, 100);
             this.btnSync.TabIndex = 15;
-            this.btnSync.Text = "btnSync";
+            this.btnSync.Text = "المزامنة";
             this.btnSync.UseVisualStyleBackColor = true;
             this.btnSync.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // syncTimer
-            // 
-            this.syncTimer.Font = new System.Drawing.Font("Cairo", 10F);
-            this.syncTimer.Location = new System.Drawing.Point(128, 398);
-            this.syncTimer.Name = "syncTimer";
-            this.syncTimer.Size = new System.Drawing.Size(120, 100);
-            this.syncTimer.TabIndex = 16;
-            this.syncTimer.Text = "syncTimer";
-            this.syncTimer.UseVisualStyleBackColor = true;
-            this.syncTimer.Click += new System.EventHandler(this.syncTimer_Click);
             // 
             // MainForm
             // 
@@ -264,7 +254,6 @@
             this.Controls.Add(this.btnManageClasses);
             this.Controls.Add(this.btnManageTeachers);
             this.Controls.Add(this.btnManageSubjects);
-            this.Controls.Add(this.syncTimer);
             this.Controls.Add(this.btnManageStudents);
             this.Controls.Add(this.btnSync);
             this.Controls.Add(this.btnManageParents);
@@ -302,6 +291,5 @@
         private System.Windows.Forms.Button btnManageActivities;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSync;
-        private System.Windows.Forms.Button syncTimer;
     }
 }

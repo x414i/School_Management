@@ -13,10 +13,8 @@ namespace School_Management
         {
             InitializeComponent();
         }
-
         private void btnSync_Click(object sender, EventArgs e)
         {
-            // تعطيل الزر أثناء المزامنة لتجنب النقرات المتكررة
             btnSync.Enabled = false;
             txtLog.AppendText("Synchronization started...\r\n");
 
@@ -25,7 +23,6 @@ namespace School_Management
                 string sqlServerConnectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 string mySqlConnectionString = "Server=localhost;Database=SchoolManagement;User Id=root;Password=;";
 
-                // قائمة الجداول التي سيتم مزامنتها
                 var tablesToSync = new[]
                 {
                     new { TableName = "Students", Columns = "Name, DateOfBirth, ClassID, ParentID" },
@@ -50,11 +47,9 @@ namespace School_Management
             }
             finally
             {
-                // إعادة تفعيل الزر بعد الانتهاء
                 btnSync.Enabled = true;
             }
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
              try
@@ -79,13 +74,10 @@ namespace School_Management
                 txtLog.AppendText($"Error loading tables: {ex.Message}\r\n");
             }
         }
-
-
         private void AppendLog(string message)
         {
             txtLog.AppendText($"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}\r\n");
         }
-
         private string GenerateInsertQuery(string tableName, DataRow row)
         {
             // قائمة بأسماء الأعمدة
@@ -110,7 +102,6 @@ namespace School_Management
             string query = $"INSERT INTO {tableName} ({columnsString}) VALUES ({valuesString});";
             return query;
         }
-
         private void SyncTable(string tableName)
         {
             try
@@ -147,8 +138,6 @@ namespace School_Management
                 txtLog.AppendText($"Error during synchronization for table {tableName}: {ex.Message}\r\n");
             }
         }
-
-
         private void SyncTable(string sqlServerConnectionString, string mySqlConnectionString, string tableName, string columns)
         {
             txtLog.AppendText($"Synchronizing table: {tableName}...\r\n");
@@ -203,7 +192,6 @@ namespace School_Management
                 txtLog.AppendText($"Synchronization completed for table: {tableName}.\r\n");
             }
         }
-
         private string[] GetParameterPlaceholders(string[] columns)
         {
             string[] placeholders = new string[columns.Length];
@@ -213,7 +201,6 @@ namespace School_Management
             }
             return placeholders;
         }
-
         private void btnStartSync_Click(object sender, EventArgs e)
         {
             foreach (var item in clbTables.CheckedItems)
@@ -231,5 +218,9 @@ namespace School_Management
             }
         }
 
+        private void clbTables_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

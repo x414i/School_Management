@@ -10,13 +10,11 @@ namespace School_Management
         {
             InitializeComponent();
         }
-
         private void TimetableManagementForm_Load(object sender, EventArgs e)
         {
             LoadTimetable();
             LoadDropdowns();
         }
-
         private void LoadTimetable()
         {
             try
@@ -78,8 +76,6 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading the timetable: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
         private void LoadDropdowns()
         {
             try
@@ -140,7 +136,6 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading dropdown data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnAddLesson_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmbClass.Text) || string.IsNullOrEmpty(cmbSubject.Text) || string.IsNullOrEmpty(cmbTeacher.Text) || string.IsNullOrEmpty(cmbDay.Text) || string.IsNullOrEmpty(cmbTime.Text))
@@ -231,9 +226,6 @@ namespace School_Management
                 MessageBox.Show("Please select a lesson to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-
-
         private void btnSaveLesson_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmbClass.Text) || string.IsNullOrEmpty(cmbSubject.Text) || string.IsNullOrEmpty(cmbTeacher.Text) || string.IsNullOrEmpty(cmbDay.Text) || string.IsNullOrEmpty(cmbTime.Text))

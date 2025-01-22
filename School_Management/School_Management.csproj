@@ -203,6 +203,12 @@
     <Compile Include="SubjectManagementForm.Designer.cs">
       <DependentUpon>SubjectManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SyncDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyncDB.Designer.cs">
+      <DependentUpon>SyncDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="SyncService.cs" />
     <Compile Include="TeacherManagementForm.cs">
       <SubType>Form</SubType>
