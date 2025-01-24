@@ -24,6 +24,7 @@ namespace School_Management
             cmbReportType.Items.Add("الدرجات");
             cmbReportType.Items.Add("الأنشطة");
             cmbReportType.Items.Add("المزامنة");
+            cmbReportType.Items.Add("الأساتذة"); // إضافة تقرير الأساتذة
             cmbReportType.SelectedIndex = 0;
         }
 
@@ -50,6 +51,9 @@ namespace School_Management
                     break;
                 case "المزامنة":
                     ShowSyncReport();
+                    break;
+                case "الأساتذة": // عرض تقرير الأساتذة
+                    ShowTeachersReport();
                     break;
             }
         }
@@ -141,6 +145,29 @@ namespace School_Management
             catch (Exception ex)
             {
                 MessageBox.Show("حدث خطأ أثناء استرداد تقرير المزامنة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ShowTeachersReport()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                SELECT t.TeacherID, t.Name, t.Specialization 
+                FROM Teachers t";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dgvReport.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء استرداد تقرير الأساتذة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
