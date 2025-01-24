@@ -415,7 +415,8 @@ namespace School_Management
             cmbReportType.Items.Add("الدرجات");
             cmbReportType.Items.Add("الأنشطة");
             cmbReportType.Items.Add("المزامنة");
-            cmbReportType.Items.Add("الأساتذة"); // إضافة تقرير الأساتذة
+            cmbReportType.Items.Add("الأساتذة");
+            cmbReportType.Items.Add("الطلاب");
             cmbReportType.SelectedIndex = 0;
         }
 
@@ -443,8 +444,11 @@ namespace School_Management
                 case "المزامنة":
                     ShowSyncReport();
                     break;
-                case "الأساتذة": // عرض تقرير الأساتذة
+                case "الأساتذة":
                     ShowTeachersReport();
+                    break;
+                case "الطلاب":
+                    ShowStudentsReport();
                     break;
             }
         }
@@ -555,7 +559,6 @@ namespace School_Management
 
                     dgvReport.DataSource = dataTable;
 
-                    // تعيين عناوين الأعمدة
                     if (dgvReport.Columns["TeacherID"] != null)
                     {
                         dgvReport.Columns["TeacherID"].HeaderText = "رقم الأستاذ";
@@ -581,6 +584,52 @@ namespace School_Management
             catch (Exception ex)
             {
                 MessageBox.Show("حدث خطأ أثناء استرداد تقرير الأساتذة: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ShowStudentsReport()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                SELECT s.StudentID, s.Name, s.DateOfBirth, c.ClassName, p.Name AS ParentName 
+                FROM Students s
+                INNER JOIN Classes c ON s.ClassID = c.ClassID
+                LEFT JOIN Parents p ON s.ParentID = p.ParentID";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dgvReport.DataSource = dataTable;
+
+                    if (dgvReport.Columns["StudentID"] != null)
+                    {
+                        dgvReport.Columns["StudentID"].HeaderText = "رقم الطالب";
+                    }
+                    if (dgvReport.Columns["Name"] != null)
+                    {
+                        dgvReport.Columns["Name"].HeaderText = "اسم الطالب";
+                    }
+                    if (dgvReport.Columns["DateOfBirth"] != null)
+                    {
+                        dgvReport.Columns["DateOfBirth"].HeaderText = "تاريخ الميلاد";
+                    }
+                    if (dgvReport.Columns["ClassName"] != null)
+                    {
+                        dgvReport.Columns["ClassName"].HeaderText = "الصف";
+                    }
+                    if (dgvReport.Columns["ParentName"] != null)
+                    {
+                        dgvReport.Columns["ParentName"].HeaderText = "اسم ولي الأمر";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء استرداد تقرير الطلاب: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -714,7 +763,6 @@ namespace School_Management
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
