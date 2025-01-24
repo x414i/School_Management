@@ -35,7 +35,7 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT TeacherID, Name, Specialization FROM Teachers";
+                    string query = "SELECT TeacherID, Name, Specialization, Phone, Email FROM Teachers";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
@@ -52,6 +52,14 @@ namespace School_Management
                     if (dgvTeachers.Columns["Specialization"] != null)
                     {
                         dgvTeachers.Columns["Specialization"].HeaderText = " المادة";
+                    }
+                    if (dgvTeachers.Columns["Phone"] != null)
+                    {
+                        dgvTeachers.Columns["Phone"].HeaderText = "رقم الهاتف";
+                    }
+                    if (dgvTeachers.Columns["Email"] != null)
+                    {
+                        dgvTeachers.Columns["Email"].HeaderText = "البريد الإلكتروني";
                     }
                 }
             }
@@ -89,8 +97,10 @@ namespace School_Management
             {
                 string name = txtName.Text.Trim();
                 string subjectName = cmbSubject.Text;
+                string phone = txtPhone.Text.Trim();
+                string email = txtEmail.Text.Trim();
 
-                if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1)
+                if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1 || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(email))
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -99,10 +109,12 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Teachers (Name, Specialization) VALUES (@Name, @SubjectName)";
+                    string query = "INSERT INTO Teachers (Name, Specialization, Phone, Email) VALUES (@Name, @SubjectName, @Phone, @Email)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@SubjectName", subjectName);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Email", email);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -131,8 +143,10 @@ namespace School_Management
                 int teacherID = Convert.ToInt32(dgvTeachers.SelectedRows[0].Cells["TeacherID"].Value);
                 string name = txtName.Text.Trim();
                 string subjectName = cmbSubject.Text;
+                string phone = txtPhone.Text.Trim();
+                string email = txtEmail.Text.Trim();
 
-                if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1)
+                if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1 || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(email))
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -141,10 +155,12 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @SubjectName WHERE TeacherID = @TeacherID";
+                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @SubjectName, Phone = @Phone, Email = @Email WHERE TeacherID = @TeacherID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@SubjectName", subjectName);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@TeacherID", teacherID);
 
                     connection.Open();
@@ -167,6 +183,8 @@ namespace School_Management
                 DataGridViewRow row = dgvTeachers.SelectedRows[0];
                 txtName.Text = row.Cells["Name"].Value.ToString();
                 cmbSubject.Text = row.Cells["Specialization"].Value.ToString();
+                txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+                txtEmail.Text = row.Cells["Email"].Value?.ToString();
             }
         }
 
@@ -215,7 +233,7 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT TeacherID, Name, Specialization FROM Teachers WHERE Name LIKE @SearchTerm OR Specialization LIKE @SearchTerm";
+                    string query = "SELECT TeacherID, Name, Specialization, Phone, Email FROM Teachers WHERE Name LIKE @SearchTerm OR Specialization LIKE @SearchTerm";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     adapter.SelectCommand.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
                     System.Data.DataTable dataTable = new System.Data.DataTable();

@@ -36,11 +36,11 @@
             this.btnSyncReport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
@@ -54,6 +54,7 @@
             this.cmbReportType.FormattingEnabled = true;
             this.cmbReportType.Location = new System.Drawing.Point(108, 62);
             this.cmbReportType.Name = "cmbReportType";
+            this.cmbReportType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbReportType.Size = new System.Drawing.Size(397, 32);
             this.cmbReportType.TabIndex = 0;
             // 
@@ -64,6 +65,7 @@
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReport.Location = new System.Drawing.Point(154, 220);
             this.dgvReport.Name = "dgvReport";
+            this.dgvReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvReport.Size = new System.Drawing.Size(706, 329);
             this.dgvReport.TabIndex = 2;
             // 
@@ -72,6 +74,7 @@
             this.btnShowReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowReport.Location = new System.Drawing.Point(3, 72);
             this.btnShowReport.Name = "btnShowReport";
+            this.btnShowReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnShowReport.Size = new System.Drawing.Size(121, 60);
             this.btnShowReport.TabIndex = 3;
             this.btnShowReport.Text = "تحديث";
@@ -83,6 +86,7 @@
             this.btnExportReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportReport.Location = new System.Drawing.Point(3, 3);
             this.btnExportReport.Name = "btnExportReport";
+            this.btnExportReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnExportReport.Size = new System.Drawing.Size(121, 63);
             this.btnExportReport.TabIndex = 4;
             this.btnExportReport.Text = "إكسيل";
@@ -94,6 +98,7 @@
             this.btnExportToPDF.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportToPDF.Location = new System.Drawing.Point(3, 138);
             this.btnExportToPDF.Name = "btnExportToPDF";
+            this.btnExportToPDF.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnExportToPDF.Size = new System.Drawing.Size(121, 60);
             this.btnExportToPDF.TabIndex = 5;
             this.btnExportToPDF.Text = "PDF";
@@ -105,6 +110,7 @@
             this.btnSyncReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSyncReport.Location = new System.Drawing.Point(3, 204);
             this.btnSyncReport.Name = "btnSyncReport";
+            this.btnSyncReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSyncReport.Size = new System.Drawing.Size(121, 60);
             this.btnSyncReport.TabIndex = 6;
             this.btnSyncReport.Text = "تقرير المزامنة";
@@ -117,6 +123,7 @@
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
             this.label2.Location = new System.Drawing.Point(562, 62);
             this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(69, 26);
             this.label2.TabIndex = 8;
             this.label2.Text = "نوع التقرير";
@@ -131,8 +138,50 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(154, 103);
             this.panel1.Name = "panel1";
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(706, 111);
             this.panel1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label4.Location = new System.Drawing.Point(562, 18);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(68, 26);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "التاريخ من";
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Font = new System.Drawing.Font("Cairo", 10F);
+            this.dtpStartDate.Location = new System.Drawing.Point(339, 18);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpStartDate.Size = new System.Drawing.Size(166, 32);
+            this.dtpStartDate.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label3.Location = new System.Drawing.Point(299, 22);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(30, 26);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "الى";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Font = new System.Drawing.Font("Cairo", 10F);
+            this.dtpEndDate.Location = new System.Drawing.Point(108, 18);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpEndDate.Size = new System.Drawing.Size(178, 32);
+            this.dtpEndDate.TabIndex = 9;
             // 
             // panel2
             // 
@@ -143,51 +192,16 @@
             this.panel2.Controls.Add(this.btnExportToPDF);
             this.panel2.Location = new System.Drawing.Point(12, 217);
             this.panel2.Name = "panel2";
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel2.Size = new System.Drawing.Size(136, 332);
             this.panel2.TabIndex = 10;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.Font = new System.Drawing.Font("Cairo", 10F);
-            this.dtpEndDate.Location = new System.Drawing.Point(108, 18);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(178, 32);
-            this.dtpEndDate.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label3.Location = new System.Drawing.Point(299, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 26);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "الى";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label4.Location = new System.Drawing.Point(562, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 26);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "التاريخ من";
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.Font = new System.Drawing.Font("Cairo", 10F);
-            this.dtpStartDate.Location = new System.Drawing.Point(339, 18);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(166, 32);
-            this.dtpStartDate.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 269);
             this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(121, 60);
             this.button1.TabIndex = 7;
             this.button1.Text = "تقرير المزامنة";
@@ -199,6 +213,7 @@
             this.label1.Font = new System.Drawing.Font("Cairo", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(385, 30);
             this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(108, 50);
             this.label1.TabIndex = 12;
             this.label1.Text = "التقارير";
