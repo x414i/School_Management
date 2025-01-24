@@ -102,6 +102,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnLogout.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.Location = new System.Drawing.Point(2, 277);
@@ -109,11 +110,12 @@
             this.btnLogout.Size = new System.Drawing.Size(120, 100);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnExit.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.Location = new System.Drawing.Point(2, 398);
@@ -121,7 +123,7 @@
             this.btnExit.Size = new System.Drawing.Size(120, 100);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = " Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // btnManageClasses
@@ -236,13 +238,14 @@
             // 
             // btnSync
             // 
+            this.btnSync.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnSync.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnSync.Location = new System.Drawing.Point(128, 398);
             this.btnSync.Name = "btnSync";
             this.btnSync.Size = new System.Drawing.Size(120, 100);
             this.btnSync.TabIndex = 15;
             this.btnSync.Text = "المزامنة";
-            this.btnSync.UseVisualStyleBackColor = true;
+            this.btnSync.UseVisualStyleBackColor = false;
             this.btnSync.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm

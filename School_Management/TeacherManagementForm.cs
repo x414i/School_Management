@@ -20,11 +20,14 @@ namespace School_Management
         private void clearFeild()
         {
             txtName.Text = "";
-            cmbSubject.SelectedIndex = 0;
-            cmbSubject.Items.Clear();
             txtEmail.Text = "";
             txtPhone.Text = "";
+            if (cmbSubject.Items.Count > 0)
+            {
+                cmbSubject.SelectedIndex = 0;
+            }
         }
+
         private void LoadTeachersData()
         {
             try
@@ -57,6 +60,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading teacher data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void LoadSubjects()
         {
             try
@@ -64,15 +68,13 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT SubjectID, SubjectName FROM Subjects";
+                    string query = "SELECT SubjectName FROM Subjects";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
 
-                    // تعيين البيانات إلى ComboBox
                     cmbSubject.DataSource = dataTable;
-                    cmbSubject.DisplayMember = "SubjectName"; // ما سيتم عرضه في ComboBox
-                    cmbSubject.ValueMember = "SubjectID";     // القيمة المرتبطة بكل عنصر
+                    cmbSubject.DisplayMember = "SubjectName";
                 }
             }
             catch (Exception ex)
@@ -80,12 +82,13 @@ namespace School_Management
                 MessageBox.Show("An error occurred while loading subjects: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
             try
             {
                 string name = txtName.Text.Trim();
-                int subjectID = Convert.ToInt32(cmbSubject.SelectedValue); // الحصول على SubjectID المحدد
+                string subjectName = cmbSubject.Text;
 
                 if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1)
                 {
@@ -96,15 +99,16 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Teachers (Name, Specialization) VALUES (@Name, @SubjectID)";
+                    string query = "INSERT INTO Teachers (Name, Specialization) VALUES (@Name, @SubjectName)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@SubjectID", subjectID);
+                    command.Parameters.AddWithValue("@SubjectName", subjectName);
 
                     connection.Open();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Teacher added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadTeachersData();
+                    LoadSubjects();
                     clearFeild();
                 }
             }
@@ -113,6 +117,7 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnEditTeacher_Click_1(object sender, EventArgs e)
         {
             try
@@ -125,7 +130,7 @@ namespace School_Management
 
                 int teacherID = Convert.ToInt32(dgvTeachers.SelectedRows[0].Cells["TeacherID"].Value);
                 string name = txtName.Text.Trim();
-                int subjectID = Convert.ToInt32(cmbSubject.SelectedValue); // الحصول على SubjectID المحدد
+                string subjectName = cmbSubject.Text;
 
                 if (string.IsNullOrEmpty(name) || cmbSubject.SelectedIndex == -1)
                 {
@@ -136,10 +141,10 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @SubjectID WHERE TeacherID = @TeacherID";
+                    string query = "UPDATE Teachers SET Name = @Name, Specialization = @SubjectName WHERE TeacherID = @TeacherID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@SubjectID", subjectID);
+                    command.Parameters.AddWithValue("@SubjectName", subjectName);
                     command.Parameters.AddWithValue("@TeacherID", teacherID);
 
                     connection.Open();
@@ -161,9 +166,8 @@ namespace School_Management
             {
                 DataGridViewRow row = dgvTeachers.SelectedRows[0];
                 txtName.Text = row.Cells["Name"].Value.ToString();
-                cmbSubject.SelectedValue = row.Cells["Specialization"].Value; 
+                cmbSubject.Text = row.Cells["Specialization"].Value.ToString();
             }
-            clearFeild();
         }
 
         private void btnDeleteTeacher_Click_1(object sender, EventArgs e)
@@ -227,12 +231,10 @@ namespace School_Management
 
         private void label6_Click(object sender, EventArgs e)
         {
-
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
