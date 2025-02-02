@@ -88,7 +88,6 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    // التحقق من عدم تكرار اسم المستخدم
                     string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
@@ -102,20 +101,19 @@ namespace School_Management
                         }
                     }
 
-                    // إضافة المستخدم
                     string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@Username", username);
-                        command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); // تشفير كلمة المرور
+                        command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); 
 
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearFields(); // مسح الحقول
-                            LoadUsers(); // تحديث DataGridView
+                            ClearFields(); 
+                            LoadUsers(); 
                         }
                         else
                         {
@@ -158,15 +156,15 @@ namespace School_Management
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@Username", username);
-                            command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); // تشفير كلمة المرور
+                            command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); 
 
                             int rowsAffected = command.ExecuteNonQuery();
 
                             if (rowsAffected > 0)
                             {
                                 MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ClearFields(); // مسح الحقول
-                                LoadUsers(); // تحديث DataGridView
+                                ClearFields();
+                                LoadUsers(); 
                             }
                             else
                             {
