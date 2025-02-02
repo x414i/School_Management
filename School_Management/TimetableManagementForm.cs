@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace School_Management
 {
@@ -14,6 +15,23 @@ namespace School_Management
         {
             LoadTimetable();
             LoadDropdowns();
+            LoadTheme();
+        }
+
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //panel1.BackColor = ThemeColor.SecondaryColor;
+            //panel1.BackColor = ThemeColor.PrimaryColor;
         }
         private void LoadTimetable()
         {
@@ -116,14 +134,12 @@ namespace School_Management
                     teacherReader.Close();
                 }
 
-                // إضافة الأيام
                 cmbDay.Items.Add("الاحد");
                 cmbDay.Items.Add("الإثنين");
                 cmbDay.Items.Add("الثلاثاء");
                 cmbDay.Items.Add("الأربعاء");
                 cmbDay.Items.Add("الخميس");
 
-                // إضافة الأوقات
                 cmbTime.Items.Add("08:00");
                 cmbTime.Items.Add("09:00");
                 cmbTime.Items.Add("10:00");
@@ -186,9 +202,8 @@ namespace School_Management
                 cmbSubject.Text = dgvTimetable.SelectedRows[0].Cells["SubjectName"].Value.ToString();
                 cmbTeacher.Text = dgvTimetable.SelectedRows[0].Cells["TeacherName"].Value.ToString();
                 cmbDay.Text = dgvTimetable.SelectedRows[0].Cells["Day"].Value.ToString();
-                cmbTime.Text = dgvTimetable.SelectedRows[0].Cells["Time"].Value.ToString(); // استخدام الوقت المحدد
+                cmbTime.Text = dgvTimetable.SelectedRows[0].Cells["Time"].Value.ToString(); 
 
-                // الحصول على TimetableID من الجدول
                 var timetableID = dgvTimetable.SelectedRows[0].Cells["TimetableID"].Value.ToString();
             }
             else
@@ -242,7 +257,7 @@ namespace School_Management
                     connection.Open();
                     string query;
 
-                    if (dgvTimetable.SelectedRows.Count == 0) // إذا لم يتم تحديد صف (إضافة جديد)
+                    if (dgvTimetable.SelectedRows.Count == 0) 
                     {
                         query = @"
                     INSERT INTO Timetable (ClassID, SubjectID, TeacherID, Day, Time)
@@ -252,7 +267,7 @@ namespace School_Management
                         (SELECT TeacherID FROM Teachers WHERE Name = @TeacherName),
                         @Day, @Time)";
                     }
-                    else // إذا تم تحديد صف (تعديل)
+                    else
                     {
                         int timetableID = Convert.ToInt32(dgvTimetable.SelectedRows[0].Cells["TimetableID"].Value);
                         query = @"
@@ -270,9 +285,9 @@ namespace School_Management
                     command.Parameters.AddWithValue("@SubjectName", cmbSubject.Text);
                     command.Parameters.AddWithValue("@TeacherName", cmbTeacher.Text);
                     command.Parameters.AddWithValue("@Day", cmbDay.Text);
-                    command.Parameters.AddWithValue("@Time", cmbTime.Text); // استخدام الوقت المحدد
+                    command.Parameters.AddWithValue("@Time", cmbTime.Text); 
 
-                    if (dgvTimetable.SelectedRows.Count > 0) // إذا كان التعديل
+                    if (dgvTimetable.SelectedRows.Count > 0) 
                     {
                         int timetableID = Convert.ToInt32(dgvTimetable.SelectedRows[0].Cells["TimetableID"].Value);
                         command.Parameters.AddWithValue("@TimetableID", timetableID);

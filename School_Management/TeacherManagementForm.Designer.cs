@@ -45,11 +45,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.cmbSubject = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeachers)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -74,8 +72,10 @@
             // 
             // btnAddTeacher
             // 
+            this.btnAddTeacher.FlatAppearance.BorderSize = 0;
+            this.btnAddTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddTeacher.Location = new System.Drawing.Point(220, 10);
+            this.btnAddTeacher.Location = new System.Drawing.Point(205, 77);
             this.btnAddTeacher.Name = "btnAddTeacher";
             this.btnAddTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddTeacher.Size = new System.Drawing.Size(123, 83);
@@ -86,8 +86,10 @@
             // 
             // btnEditTeacher
             // 
+            this.btnEditTeacher.FlatAppearance.BorderSize = 0;
+            this.btnEditTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditTeacher.Location = new System.Drawing.Point(29, 10);
+            this.btnEditTeacher.Location = new System.Drawing.Point(30, 77);
             this.btnEditTeacher.Name = "btnEditTeacher";
             this.btnEditTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditTeacher.Size = new System.Drawing.Size(123, 83);
@@ -98,8 +100,10 @@
             // 
             // btnDeleteTeacher
             // 
+            this.btnDeleteTeacher.FlatAppearance.BorderSize = 0;
+            this.btnDeleteTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteTeacher.Location = new System.Drawing.Point(220, 102);
+            this.btnDeleteTeacher.Location = new System.Drawing.Point(30, 180);
             this.btnDeleteTeacher.Name = "btnDeleteTeacher";
             this.btnDeleteTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteTeacher.Size = new System.Drawing.Size(123, 83);
@@ -110,8 +114,10 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(29, 97);
+            this.btnClose.Location = new System.Drawing.Point(205, 181);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(123, 83);
@@ -247,18 +253,6 @@
             this.panel1.Size = new System.Drawing.Size(573, 199);
             this.panel1.TabIndex = 17;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnDeleteTeacher);
-            this.panel2.Controls.Add(this.btnAddTeacher);
-            this.panel2.Controls.Add(this.btnEditTeacher);
-            this.panel2.Location = new System.Drawing.Point(2, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(358, 199);
-            this.panel2.TabIndex = 18;
-            // 
             // cmbSubject
             // 
             this.cmbSubject.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,9 +267,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 536);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnDeleteTeacher);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnAddTeacher);
             this.Controls.Add(this.dgvTeachers);
+            this.Controls.Add(this.btnEditTeacher);
             this.Controls.Add(this.label1);
             this.Name = "TeacherManagementForm";
             this.Text = "TeacherManagementForm";
@@ -283,7 +280,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeachers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,7 +304,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cmbSubject;
     }
 }

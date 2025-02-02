@@ -165,6 +165,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,7 @@
     <Compile Include="TeacherManagementForm.Designer.cs">
       <DependentUpon>TeacherManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemeColor.cs" />
     <Compile Include="TimetableManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.cs.resx">
       <DependentUpon>MainForm.cs.cs</DependentUpon>

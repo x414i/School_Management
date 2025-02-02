@@ -39,11 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +78,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(235, 42);
+            this.btnSave.Location = new System.Drawing.Point(121, 301);
             this.btnSave.Name = "btnSave";
             this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSave.Size = new System.Drawing.Size(80, 80);
@@ -106,7 +104,7 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEdit.Location = new System.Drawing.Point(235, 203);
+            this.btnEdit.Location = new System.Drawing.Point(270, 289);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEdit.Size = new System.Drawing.Size(80, 80);
@@ -119,7 +117,7 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(22, 42);
+            this.btnDelete.Location = new System.Drawing.Point(121, 419);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDelete.Size = new System.Drawing.Size(80, 80);
@@ -167,24 +165,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "انشاء مستخدم ";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.panel1.Location = new System.Drawing.Point(35, 275);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(344, 305);
-            this.panel1.TabIndex = 12;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.button1.Location = new System.Drawing.Point(22, 203);
+            this.button1.Location = new System.Drawing.Point(270, 419);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(80, 80);
@@ -198,7 +182,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 579);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.label1);
@@ -208,7 +195,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +212,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
-using BCrypt.Net; // تأكد من إضافة هذا السطر
+using BCrypt.Net; 
 
 namespace School_Management
 {
@@ -12,17 +13,30 @@ namespace School_Management
         public AddUserForm()
         {
             InitializeComponent();
+            LoadTheme();
         }
 
-        
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //panel1.BackColor = ThemeColor.SecondaryColor;
+            //panel1.BackColor = ThemeColor.PrimaryColor;
+        }
 
-        //function load user to gridview
         private void LoadUsers()
         {
-            dgvUsers.Rows.Clear(); // مسح الصفوف الحالية
-            dgvUsers.Columns.Clear(); // مسح الأعمدة الحالية
+            dgvUsers.Rows.Clear(); 
+            dgvUsers.Columns.Clear(); 
 
-            // إضافة الأعمدة
             dgvUsers.Columns.Add("Username", "Username");
 
             try
@@ -193,8 +207,8 @@ namespace School_Management
                             if (rowsAffected > 0)
                             {
                                 MessageBox.Show("User deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ClearFields(); // مسح الحقول
-                                LoadUsers(); // تحديث DataGridView
+                                ClearFields(); 
+                                LoadUsers(); 
                             }
                             else
                             {
@@ -223,12 +237,10 @@ namespace School_Management
         {
             if (dgvUsers.SelectedRows.Count > 0)
             {
-                // الحصول على الصف المحدد
                 DataGridViewRow row = dgvUsers.SelectedRows[0];
 
-                // تعبئة الحقول
                 txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? string.Empty;
-                txtPassword.Clear(); // مسح حقل كلمة المرور
+                txtPassword.Clear();
 
             }
         }
@@ -236,12 +248,10 @@ namespace School_Management
         {
             if (dgvUsers.SelectedRows.Count > 0)
             {
-                // الحصول على الصف المحدد
                 DataGridViewRow row = dgvUsers.SelectedRows[0];
 
-                // تعبئة الحقول
                 txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? string.Empty;
-                txtPassword.Clear(); // مسح حقل كلمة المرور
+                txtPassword.Clear(); 
             }
         }
     }

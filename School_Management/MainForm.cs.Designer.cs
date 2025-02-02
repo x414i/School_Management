@@ -64,7 +64,7 @@
             this.btnManageStudents.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageStudents.ForeColor = System.Drawing.Color.Black;
             this.btnManageStudents.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStudents.Image")));
-            this.btnManageStudents.Location = new System.Drawing.Point(380, 277);
+            this.btnManageStudents.Location = new System.Drawing.Point(380, 202);
             this.btnManageStudents.Name = "btnManageStudents";
             this.btnManageStudents.Size = new System.Drawing.Size(120, 100);
             this.btnManageStudents.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.btnManageTeachers.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageTeachers.ForeColor = System.Drawing.Color.Black;
             this.btnManageTeachers.Image = ((System.Drawing.Image)(resources.GetObject("btnManageTeachers.Image")));
-            this.btnManageTeachers.Location = new System.Drawing.Point(761, 277);
+            this.btnManageTeachers.Location = new System.Drawing.Point(761, 202);
             this.btnManageTeachers.Name = "btnManageTeachers";
             this.btnManageTeachers.Size = new System.Drawing.Size(120, 100);
             this.btnManageTeachers.TabIndex = 2;
@@ -175,7 +175,7 @@
             this.btnManageSubjects.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnManageSubjects.ForeColor = System.Drawing.Color.Black;
             this.btnManageSubjects.Image = ((System.Drawing.Image)(resources.GetObject("btnManageSubjects.Image")));
-            this.btnManageSubjects.Location = new System.Drawing.Point(506, 277);
+            this.btnManageSubjects.Location = new System.Drawing.Point(520, 186);
             this.btnManageSubjects.Name = "btnManageSubjects";
             this.btnManageSubjects.Size = new System.Drawing.Size(120, 100);
             this.btnManageSubjects.TabIndex = 9;

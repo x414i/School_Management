@@ -48,10 +48,8 @@
             this.btnUpdateActivity = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtActivityID = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,9 +67,10 @@
             // 
             // btnDeleteActivity
             // 
+            this.btnDeleteActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteActivity.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteActivity.Image")));
-            this.btnDeleteActivity.Location = new System.Drawing.Point(49, 109);
+            this.btnDeleteActivity.Location = new System.Drawing.Point(16, 275);
             this.btnDeleteActivity.Name = "btnDeleteActivity";
             this.btnDeleteActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteActivity.Size = new System.Drawing.Size(80, 80);
@@ -123,9 +122,10 @@
             // 
             // btnShowAll
             // 
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAll.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAll.Image")));
-            this.btnShowAll.Location = new System.Drawing.Point(49, 209);
+            this.btnShowAll.Location = new System.Drawing.Point(16, 375);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnShowAll.Size = new System.Drawing.Size(80, 80);
@@ -135,9 +135,10 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(49, 7);
+            this.btnSearch.Location = new System.Drawing.Point(16, 189);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(80, 80);
@@ -230,8 +231,9 @@
             // 
             // btnAddActivity
             // 
+            this.btnAddActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddActivity.Location = new System.Drawing.Point(166, 7);
+            this.btnAddActivity.Location = new System.Drawing.Point(169, 189);
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddActivity.Size = new System.Drawing.Size(80, 80);
@@ -242,8 +244,9 @@
             // 
             // btnUpdateActivity
             // 
+            this.btnUpdateActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateActivity.Location = new System.Drawing.Point(166, 109);
+            this.btnUpdateActivity.Location = new System.Drawing.Point(169, 279);
             this.btnUpdateActivity.Name = "btnUpdateActivity";
             this.btnUpdateActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnUpdateActivity.Size = new System.Drawing.Size(80, 80);
@@ -254,8 +257,9 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(166, 209);
+            this.button1.Location = new System.Drawing.Point(169, 375);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(80, 80);
@@ -272,19 +276,6 @@
             this.txtActivityID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtActivityID.Size = new System.Drawing.Size(187, 32);
             this.txtActivityID.TabIndex = 21;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnAddActivity);
-            this.panel1.Controls.Add(this.btnUpdateActivity);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.btnDeleteActivity);
-            this.panel1.Controls.Add(this.btnShowAll);
-            this.panel1.Location = new System.Drawing.Point(12, 182);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(277, 300);
-            this.panel1.TabIndex = 22;
             // 
             // panel2
             // 
@@ -304,20 +295,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(895, 163);
             this.panel2.TabIndex = 23;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // ActivitiesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 483);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdateActivity);
+            this.Controls.Add(this.btnAddActivity);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvActivities);
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.btnDeleteActivity);
+            this.Controls.Add(this.btnSearch);
             this.Name = "ActivitiesManagementForm";
             this.Text = "ActivitiesManagementForm";
             this.Load += new System.EventHandler(this.ActivitiesManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -345,7 +341,6 @@
         private System.Windows.Forms.Button btnUpdateActivity;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtActivityID;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }
 }

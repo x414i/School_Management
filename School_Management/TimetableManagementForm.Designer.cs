@@ -47,12 +47,10 @@
             this.btnDeleteLesson = new System.Windows.Forms.Button();
             this.btnSaveLesson = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbTime = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,8 +180,10 @@
             // 
             // btnAddLesson
             // 
+            this.btnAddLesson.FlatAppearance.BorderSize = 0;
+            this.btnAddLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddLesson.Location = new System.Drawing.Point(143, 8);
+            this.btnAddLesson.Location = new System.Drawing.Point(150, 69);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(91, 34);
             this.btnAddLesson.TabIndex = 10;
@@ -193,8 +193,10 @@
             // 
             // btnEditLesson
             // 
+            this.btnEditLesson.FlatAppearance.BorderSize = 0;
+            this.btnEditLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditLesson.Location = new System.Drawing.Point(12, 8);
+            this.btnEditLesson.Location = new System.Drawing.Point(19, 69);
             this.btnEditLesson.Name = "btnEditLesson";
             this.btnEditLesson.Size = new System.Drawing.Size(107, 34);
             this.btnEditLesson.TabIndex = 11;
@@ -204,8 +206,10 @@
             // 
             // btnDeleteLesson
             // 
+            this.btnDeleteLesson.FlatAppearance.BorderSize = 0;
+            this.btnDeleteLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteLesson.Location = new System.Drawing.Point(143, 59);
+            this.btnDeleteLesson.Location = new System.Drawing.Point(150, 120);
             this.btnDeleteLesson.Name = "btnDeleteLesson";
             this.btnDeleteLesson.Size = new System.Drawing.Size(91, 39);
             this.btnDeleteLesson.TabIndex = 12;
@@ -215,8 +219,10 @@
             // 
             // btnSaveLesson
             // 
+            this.btnSaveLesson.FlatAppearance.BorderSize = 0;
+            this.btnSaveLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSaveLesson.Location = new System.Drawing.Point(12, 55);
+            this.btnSaveLesson.Location = new System.Drawing.Point(19, 116);
             this.btnSaveLesson.Name = "btnSaveLesson";
             this.btnSaveLesson.Size = new System.Drawing.Size(107, 43);
             this.btnSaveLesson.TabIndex = 13;
@@ -226,26 +232,16 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(47, 132);
+            this.btnClose.Location = new System.Drawing.Point(54, 193);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(148, 35);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "إغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnAddLesson);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnEditLesson);
-            this.panel1.Controls.Add(this.btnSaveLesson);
-            this.panel1.Controls.Add(this.btnDeleteLesson);
-            this.panel1.Location = new System.Drawing.Point(0, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 221);
-            this.panel1.TabIndex = 15;
             // 
             // panel2
             // 
@@ -264,6 +260,15 @@
             this.panel2.Size = new System.Drawing.Size(517, 227);
             this.panel2.TabIndex = 16;
             // 
+            // cmbTime
+            // 
+            this.cmbTime.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTime.FormattingEnabled = true;
+            this.cmbTime.Location = new System.Drawing.Point(121, 183);
+            this.cmbTime.Name = "cmbTime";
+            this.cmbTime.Size = new System.Drawing.Size(295, 32);
+            this.cmbTime.TabIndex = 11;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -274,28 +279,22 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "الوقت";
             // 
-            // cmbTime
-            // 
-            this.cmbTime.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTime.FormattingEnabled = true;
-            this.cmbTime.Location = new System.Drawing.Point(121, 183);
-            this.cmbTime.Name = "cmbTime";
-            this.cmbTime.Size = new System.Drawing.Size(295, 32);
-            this.cmbTime.TabIndex = 11;
-            // 
             // TimetableManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.btnAddLesson);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvTimetable);
+            this.Controls.Add(this.btnSaveLesson);
+            this.Controls.Add(this.btnEditLesson);
+            this.Controls.Add(this.btnDeleteLesson);
             this.Name = "TimetableManagementForm";
             this.Text = "TimetableManagementForm";
             this.Load += new System.EventHandler(this.TimetableManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -323,7 +322,6 @@
         private System.Windows.Forms.Button btnDeleteLesson;
         private System.Windows.Forms.Button btnSaveLesson;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTime;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace School_Management
 {
@@ -11,6 +12,22 @@ namespace School_Management
             InitializeComponent();
         }
 
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+               
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //panel1.BackColor = ThemeColor.SecondaryColor;
+            //panel1.BackColor = ThemeColor.PrimaryColor;
+        }
         private void TeacherManagementForm_Load_1(object sender, EventArgs e)
         {
             LoadTeachersData();

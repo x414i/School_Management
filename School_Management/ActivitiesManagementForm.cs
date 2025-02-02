@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace School_Management
@@ -17,6 +18,7 @@ namespace School_Management
         {
             LoadActivities();
             LoadClassesDropdown();
+            LoadTheme();
         }
 
         private void LoadActivities()
@@ -42,11 +44,10 @@ namespace School_Management
 
                     dgvActivities.DataSource = dataTable;
 
-                    // تغيير أسماء الأعمدة إلى العربية
                     if (dgvActivities.Columns["ActivityID"] != null)
                     {
                         dgvActivities.Columns["ActivityID"].HeaderText = "معرف النشاط";
-                        dgvActivities.Columns["ActivityID"].Visible = false; // إخفاء العمود إذا لزم الأمر
+                        dgvActivities.Columns["ActivityID"].Visible = false; 
                     }
                     if (dgvActivities.Columns["Name"] != null)
                     {
@@ -232,28 +233,23 @@ namespace School_Management
 
         private void dgvActivities_SelectionChanged(object sender, EventArgs e)
         {
-            // التحقق من وجود صفوف محددة
             if (dgvActivities.SelectedRows.Count > 0)
             {
-                // الحصول على الصف المحدد
                 DataGridViewRow row = dgvActivities.SelectedRows[0];
 
-                // تعبئة الحقول بالبيانات من الصف المحدد
                 txtActivityID.Text = row.Cells["ActivityID"].Value?.ToString() ?? string.Empty;
                 txtName.Text = row.Cells["Name"].Value?.ToString() ?? string.Empty;
                 txtDescription.Text = row.Cells["Description"].Value?.ToString() ?? string.Empty;
 
-                // تعبئة حقل التاريخ
                 if (DateTime.TryParse(row.Cells["Date"].Value?.ToString(), out DateTime date))
                 {
                     dtpDate.Value = date;
                 }
                 else
                 {
-                    dtpDate.Value = DateTime.Now; // قيمة افتراضية إذا كان التاريخ غير صالح
+                    dtpDate.Value = DateTime.Now; 
                 }
 
-                // تعبئة القائمة المنسدلة (ComboBox)
                 var className = row.Cells["ClassName"].Value?.ToString() ?? string.Empty;
                 foreach (ComboBoxItem item in cmbClass.Items)
                 {
@@ -285,10 +281,8 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    // إذا تم اختيار "All Classes"
                     if ((cmbClass.SelectedItem as ComboBoxItem)?.Value == DBNull.Value)
                     {
-                        // جلب جميع الفصول
                         string getClassesQuery = "SELECT ClassID FROM Classes";
                         SqlCommand getClassesCommand = new SqlCommand(getClassesQuery, connection);
                         SqlDataReader reader = getClassesCommand.ExecuteReader();
@@ -300,7 +294,6 @@ namespace School_Management
                         }
                         reader.Close();
 
-                        // إدراج النشاط لكل فصل
                         foreach (int classID in classIDs)
                         {
                             string insertQuery = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
@@ -317,7 +310,6 @@ namespace School_Management
                     }
                     else
                     {
-                        // إدراج النشاط لفصل محدد
                         string insertQuery = "INSERT INTO Activities (Name, Description, Date, ClassID) VALUES (@Name, @Description, @Date, @ClassID)";
                         SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
                         insertCommand.Parameters.AddWithValue("@Name", txtName.Text);
@@ -330,7 +322,7 @@ namespace School_Management
                     }
 
                     ClearFields();
-                    LoadActivities(); // تحديث DataGridView بعد الإضافة
+                    LoadActivities(); 
                 }
             }
             catch (Exception ex)
@@ -368,10 +360,8 @@ namespace School_Management
                 {
                     connection.Open();
 
-                    // إذا تم اختيار "All Classes"
                     if ((cmbClass.SelectedItem as ComboBoxItem)?.Value == DBNull.Value)
                     {
-                        // جلب جميع الفصول
                         string getClassesQuery = "SELECT ClassID FROM Classes";
                         SqlCommand getClassesCommand = new SqlCommand(getClassesQuery, connection);
                         SqlDataReader reader = getClassesCommand.ExecuteReader();
@@ -383,7 +373,7 @@ namespace School_Management
                         }
                         reader.Close();
 
-                        // تحديث النشاط لكل فصل
+                        
                         foreach (int classID in classIDs)
                         {
                             string updateQuery = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
@@ -401,7 +391,7 @@ namespace School_Management
                     }
                     else
                     {
-                        // تحديث النشاط لفصل محدد
+                        
                         string updateQuery = "UPDATE Activities SET Name = @Name, Description = @Description, Date = @Date, ClassID = @ClassID WHERE ActivityID = @ActivityID";
                         SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
                         updateCommand.Parameters.AddWithValue("@Name", txtName.Text);
@@ -415,7 +405,7 @@ namespace School_Management
                     }
 
                     ClearFields();
-                    LoadActivities(); // تحديث DataGridView بعد التعديل
+                    LoadActivities();
                 }
             }
             catch (Exception ex)
@@ -423,8 +413,25 @@ namespace School_Management
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
-     
+
+        
+
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //panel1.BackColor = ThemeColor.SecondaryColor;
+            //panel1.BackColor = ThemeColor.PrimaryColor;
+        }
+
         private void btnUpdateActivity_Click(object sender, EventArgs e)
         {
             UpdateActivity();
@@ -493,6 +500,11 @@ namespace School_Management
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
