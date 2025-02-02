@@ -34,6 +34,8 @@
             // 
             // btnStartSync
             // 
+            this.btnStartSync.FlatAppearance.BorderSize = 0;
+            this.btnStartSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartSync.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartSync.Location = new System.Drawing.Point(457, 30);
             this.btnStartSync.Name = "btnStartSync";
