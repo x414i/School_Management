@@ -40,12 +40,10 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbReportType
@@ -71,8 +69,10 @@
             // 
             // btnShowReport
             // 
+            this.btnShowReport.FlatAppearance.BorderSize = 0;
+            this.btnShowReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowReport.Location = new System.Drawing.Point(3, 72);
+            this.btnShowReport.Location = new System.Drawing.Point(15, 185);
             this.btnShowReport.Name = "btnShowReport";
             this.btnShowReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnShowReport.Size = new System.Drawing.Size(121, 60);
@@ -83,8 +83,10 @@
             // 
             // btnExportReport
             // 
+            this.btnExportReport.FlatAppearance.BorderSize = 0;
+            this.btnExportReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportReport.Location = new System.Drawing.Point(3, 3);
+            this.btnExportReport.Location = new System.Drawing.Point(12, 251);
             this.btnExportReport.Name = "btnExportReport";
             this.btnExportReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnExportReport.Size = new System.Drawing.Size(121, 63);
@@ -95,8 +97,10 @@
             // 
             // btnExportToPDF
             // 
+            this.btnExportToPDF.FlatAppearance.BorderSize = 0;
+            this.btnExportToPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportToPDF.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportToPDF.Location = new System.Drawing.Point(3, 138);
+            this.btnExportToPDF.Location = new System.Drawing.Point(12, 320);
             this.btnExportToPDF.Name = "btnExportToPDF";
             this.btnExportToPDF.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnExportToPDF.Size = new System.Drawing.Size(121, 60);
@@ -107,8 +111,10 @@
             // 
             // btnSyncReport
             // 
+            this.btnSyncReport.FlatAppearance.BorderSize = 0;
+            this.btnSyncReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyncReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSyncReport.Location = new System.Drawing.Point(3, 204);
+            this.btnSyncReport.Location = new System.Drawing.Point(15, 403);
             this.btnSyncReport.Name = "btnSyncReport";
             this.btnSyncReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSyncReport.Size = new System.Drawing.Size(121, 60);
@@ -183,23 +189,12 @@
             this.dtpEndDate.Size = new System.Drawing.Size(178, 32);
             this.dtpEndDate.TabIndex = 9;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnExportReport);
-            this.panel2.Controls.Add(this.btnShowReport);
-            this.panel2.Controls.Add(this.btnSyncReport);
-            this.panel2.Controls.Add(this.btnExportToPDF);
-            this.panel2.Location = new System.Drawing.Point(12, 217);
-            this.panel2.Name = "panel2";
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(136, 332);
-            this.panel2.TabIndex = 10;
-            // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 269);
+            this.button1.Location = new System.Drawing.Point(15, 479);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(121, 60);
@@ -223,8 +218,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 551);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnSyncReport);
+            this.Controls.Add(this.btnShowReport);
+            this.Controls.Add(this.btnExportToPDF);
+            this.Controls.Add(this.btnExportReport);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvReport);
             this.Name = "ReportsForm";
@@ -233,7 +232,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,7 +247,6 @@
         private System.Windows.Forms.Button btnSyncReport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label label3;

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Drawing;
 
 namespace School_Management
 {
@@ -33,8 +34,24 @@ namespace School_Management
 
         private void ReportsForm_Load(object sender, EventArgs e)
         {
+            LoadTheme();
         }
 
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //panel1.BackColor = ThemeColor.SecondaryColor;
+            //panel1.BackColor = ThemeColor.PrimaryColor;
+        }
         private void btnShowReport_Click(object sender, EventArgs e)
         {
             string selectedReport = cmbReportType.SelectedItem.ToString();

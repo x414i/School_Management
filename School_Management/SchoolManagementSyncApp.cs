@@ -12,9 +12,8 @@ namespace School_Management
         {
             InitializeComponent();
 
-            // تهيئة Timer
             syncTimer = new Timer();
-            syncTimer.Interval = 1 * 60 * 1000; // كل 5 دقائق
+            syncTimer.Interval = 1 * 60 * 1000; 
             syncTimer.Tick += SyncTimer_Tick;
             syncTimer.Start();
         }
@@ -30,7 +29,6 @@ namespace School_Management
             {
                 SyncService syncService = new SyncService();
 
-                // مزامنة الجداول
                 syncService.SyncTable("Students");
                 syncService.SyncTable("Teachers");
                 syncService.SyncTable("Classes");
