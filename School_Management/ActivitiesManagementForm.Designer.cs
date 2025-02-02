@@ -67,6 +67,7 @@
             // 
             // btnDeleteActivity
             // 
+            this.btnDeleteActivity.FlatAppearance.BorderSize = 0;
             this.btnDeleteActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteActivity.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteActivity.Image")));
@@ -122,6 +123,7 @@
             // 
             // btnShowAll
             // 
+            this.btnShowAll.FlatAppearance.BorderSize = 0;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAll.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAll.Image")));
@@ -135,6 +137,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
@@ -231,6 +234,7 @@
             // 
             // btnAddActivity
             // 
+            this.btnAddActivity.FlatAppearance.BorderSize = 0;
             this.btnAddActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddActivity.Location = new System.Drawing.Point(169, 189);
@@ -244,6 +248,7 @@
             // 
             // btnUpdateActivity
             // 
+            this.btnUpdateActivity.FlatAppearance.BorderSize = 0;
             this.btnUpdateActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateActivity.Location = new System.Drawing.Point(169, 279);
@@ -257,6 +262,7 @@
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(169, 375);
