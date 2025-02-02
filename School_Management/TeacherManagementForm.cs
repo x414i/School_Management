@@ -32,6 +32,7 @@ namespace School_Management
         {
             LoadTeachersData();
             LoadSubjects();
+            LoadTheme();
         }
 
         private void clearFeild()
