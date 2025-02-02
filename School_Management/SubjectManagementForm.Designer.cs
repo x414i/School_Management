@@ -37,10 +37,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,8 +75,10 @@
             // 
             // btnAddSubject
             // 
+            this.btnAddSubject.FlatAppearance.BorderSize = 0;
+            this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddSubject.Location = new System.Drawing.Point(112, 9);
+            this.btnAddSubject.Location = new System.Drawing.Point(177, 334);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddSubject.Size = new System.Drawing.Size(97, 38);
@@ -89,8 +89,10 @@
             // 
             // btnEditSubject
             // 
+            this.btnEditSubject.FlatAppearance.BorderSize = 0;
+            this.btnEditSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditSubject.Location = new System.Drawing.Point(-1, 9);
+            this.btnEditSubject.Location = new System.Drawing.Point(64, 334);
             this.btnEditSubject.Name = "btnEditSubject";
             this.btnEditSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditSubject.Size = new System.Drawing.Size(98, 38);
@@ -101,8 +103,10 @@
             // 
             // btnDeleteSubject
             // 
+            this.btnDeleteSubject.FlatAppearance.BorderSize = 0;
+            this.btnDeleteSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteSubject.Location = new System.Drawing.Point(112, 53);
+            this.btnDeleteSubject.Location = new System.Drawing.Point(177, 378);
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteSubject.Size = new System.Drawing.Size(97, 38);
@@ -113,8 +117,10 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(-1, 53);
+            this.btnClose.Location = new System.Drawing.Point(64, 378);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(98, 38);
@@ -146,18 +152,6 @@
             this.label2.Text = "اسم الاستاذ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnDeleteSubject);
-            this.panel1.Controls.Add(this.btnEditSubject);
-            this.panel1.Controls.Add(this.btnAddSubject);
-            this.panel1.Location = new System.Drawing.Point(56, 322);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(220, 104);
-            this.panel1.TabIndex = 9;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.cmbTeachers);
@@ -175,14 +169,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnDeleteSubject);
+            this.Controls.Add(this.btnEditSubject);
             this.Controls.Add(this.dgvSubjects);
+            this.Controls.Add(this.btnAddSubject);
             this.Name = "SubjectManagementForm";
             this.Text = "SubjectManagementForm";
             this.Load += new System.EventHandler(this.SubjectManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -200,7 +196,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }
 }

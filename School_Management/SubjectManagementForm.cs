@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace School_Management
 {
@@ -16,8 +17,24 @@ namespace School_Management
         {
             LoadSubjectsData();
             LoadTeachersIntoDropdown();
+            LoadTheme();
         }
 
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //panel1.BackColor = ThemeColor.SecondaryColor;
+            //panel1.BackColor = ThemeColor.PrimaryColor;
+        }
         private void LoadSubjectsData()
         {
             try
@@ -61,14 +78,14 @@ namespace School_Management
                 string connectionString = "Server=DESKTOP-J4JJ3J7\\SQLEXPRESS;Database=SchoolManagement;Trusted_Connection=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // Corrected query
+                    
                     string query = "SELECT TeacherID, Name AS TeacherName FROM Teachers";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
 
-                    // Set DisplayMember and ValueMember for the ComboBox
-                    cmbTeachers.DisplayMember = "TeacherName"; // Alias used in the query
+                   
+                    cmbTeachers.DisplayMember = "TeacherName"; 
                     cmbTeachers.ValueMember = "TeacherID";
                     cmbTeachers.DataSource = dataTable;
                 }
