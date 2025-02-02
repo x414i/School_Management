@@ -14,7 +14,6 @@ namespace School_Management
         public SyncDB()
         {
             InitializeComponent();
-            LoadTheme();
         }
         private void LoadTheme()
         {
@@ -224,6 +223,12 @@ namespace School_Management
             txtLog.SelectionColor = color;
             txtLog.AppendText($"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}\r\n");
             txtLog.SelectionColor = txtLog.ForeColor;
+        }
+
+        private void SyncDB_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+
         }
     }
 }

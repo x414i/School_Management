@@ -67,6 +67,7 @@
             this.Controls.Add(this.btnStartSync);
             this.Name = "SyncDB";
             this.Text = "SyncDB";
+            this.Load += new System.EventHandler(this.SyncDB_Load);
             this.ResumeLayout(false);
 
         }
