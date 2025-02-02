@@ -42,11 +42,11 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnEditGrade = new System.Windows.Forms.Button();
             this.btnDeleteGrade = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrades)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,8 +54,10 @@
             // 
             // btnSaveGrade
             // 
+            this.btnSaveGrade.FlatAppearance.BorderSize = 0;
+            this.btnSaveGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveGrade.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSaveGrade.Location = new System.Drawing.Point(166, 235);
+            this.btnSaveGrade.Location = new System.Drawing.Point(725, 369);
             this.btnSaveGrade.Name = "btnSaveGrade";
             this.btnSaveGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSaveGrade.Size = new System.Drawing.Size(121, 62);
@@ -66,8 +68,10 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(26, 235);
+            this.btnClose.Location = new System.Drawing.Point(585, 369);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(106, 62);
@@ -176,7 +180,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(151, 18);
+            this.txtSearch.Location = new System.Drawing.Point(6, 13);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSearch.Size = new System.Drawing.Size(229, 32);
@@ -184,8 +188,10 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(27, 15);
+            this.btnSearch.Location = new System.Drawing.Point(62, 70);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(79, 35);
@@ -198,22 +204,28 @@
             // 
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.panel1.Location = new System.Drawing.Point(12, 70);
+            this.panel1.Location = new System.Drawing.Point(180, 62);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(529, 58);
+            this.panel1.Size = new System.Drawing.Size(361, 58);
             this.panel1.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label5.Location = new System.Drawing.Point(301, 13);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(43, 26);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "البحث";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnEditGrade);
-            this.panel2.Controls.Add(this.btnDeleteGrade);
-            this.panel2.Controls.Add(this.btnSaveGrade);
             this.panel2.Controls.Add(this.cmbStudents);
             this.panel2.Controls.Add(this.cmbSubjects);
-            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtGrade);
             this.panel2.Controls.Add(this.label3);
@@ -224,19 +236,36 @@
             this.panel2.Location = new System.Drawing.Point(548, 134);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(314, 377);
+            this.panel2.Size = new System.Drawing.Size(314, 229);
             this.panel2.TabIndex = 14;
             // 
-            // label5
+            // btnEditGrade
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label5.Location = new System.Drawing.Point(446, 18);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(43, 26);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "البحث";
+            this.btnEditGrade.FlatAppearance.BorderSize = 0;
+            this.btnEditGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditGrade.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnEditGrade.Location = new System.Drawing.Point(725, 441);
+            this.btnEditGrade.Name = "btnEditGrade";
+            this.btnEditGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnEditGrade.Size = new System.Drawing.Size(121, 62);
+            this.btnEditGrade.TabIndex = 10;
+            this.btnEditGrade.Text = "تعديل";
+            this.btnEditGrade.UseVisualStyleBackColor = true;
+            this.btnEditGrade.Click += new System.EventHandler(this.btnEditGrade_Click);
+            // 
+            // btnDeleteGrade
+            // 
+            this.btnDeleteGrade.FlatAppearance.BorderSize = 0;
+            this.btnDeleteGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteGrade.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnDeleteGrade.Location = new System.Drawing.Point(585, 441);
+            this.btnDeleteGrade.Name = "btnDeleteGrade";
+            this.btnDeleteGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnDeleteGrade.Size = new System.Drawing.Size(106, 62);
+            this.btnDeleteGrade.TabIndex = 11;
+            this.btnDeleteGrade.Text = "حذف";
+            this.btnDeleteGrade.UseVisualStyleBackColor = true;
+            this.btnDeleteGrade.Click += new System.EventHandler(this.btnDeleteGrade_Click);
             // 
             // label6
             // 
@@ -249,39 +278,20 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "الدرجات";
             // 
-            // btnEditGrade
-            // 
-            this.btnEditGrade.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditGrade.Location = new System.Drawing.Point(166, 307);
-            this.btnEditGrade.Name = "btnEditGrade";
-            this.btnEditGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEditGrade.Size = new System.Drawing.Size(121, 62);
-            this.btnEditGrade.TabIndex = 10;
-            this.btnEditGrade.Text = "تعديل";
-            this.btnEditGrade.UseVisualStyleBackColor = true;
-            this.btnEditGrade.Click += new System.EventHandler(this.btnEditGrade_Click);
-            // 
-            // btnDeleteGrade
-            // 
-            this.btnDeleteGrade.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteGrade.Location = new System.Drawing.Point(26, 307);
-            this.btnDeleteGrade.Name = "btnDeleteGrade";
-            this.btnDeleteGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteGrade.Size = new System.Drawing.Size(106, 62);
-            this.btnDeleteGrade.TabIndex = 11;
-            this.btnDeleteGrade.Text = "حذف";
-            this.btnDeleteGrade.UseVisualStyleBackColor = true;
-            this.btnDeleteGrade.Click += new System.EventHandler(this.btnDeleteGrade_Click);
-            // 
             // GradesEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 505);
+            this.Controls.Add(this.btnEditGrade);
+            this.Controls.Add(this.btnDeleteGrade);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnSaveGrade);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvGrades);
+            this.Controls.Add(this.btnClose);
             this.Name = "GradesEntryForm";
             this.Text = "GradesEntryForm";
             this.Load += new System.EventHandler(this.GradesEntryForm_Load);
