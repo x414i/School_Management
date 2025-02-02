@@ -44,13 +44,11 @@
             this.cmbParent = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,8 +65,10 @@
             // 
             // btnAddStudent
             // 
+            this.btnAddStudent.FlatAppearance.BorderSize = 0;
+            this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStudent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddStudent.Location = new System.Drawing.Point(166, 6);
+            this.btnAddStudent.Location = new System.Drawing.Point(181, 361);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddStudent.Size = new System.Drawing.Size(143, 56);
@@ -79,8 +79,10 @@
             // 
             // btnEditStudent
             // 
+            this.btnEditStudent.FlatAppearance.BorderSize = 0;
+            this.btnEditStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditStudent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditStudent.Location = new System.Drawing.Point(166, 85);
+            this.btnEditStudent.Location = new System.Drawing.Point(181, 443);
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditStudent.Size = new System.Drawing.Size(143, 47);
@@ -91,8 +93,10 @@
             // 
             // btnDeleteStudent
             // 
+            this.btnDeleteStudent.FlatAppearance.BorderSize = 0;
+            this.btnDeleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteStudent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteStudent.Location = new System.Drawing.Point(0, 6);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(12, 361);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteStudent.Size = new System.Drawing.Size(143, 46);
@@ -103,8 +107,10 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(144, 118);
+            this.btnSearch.Location = new System.Drawing.Point(147, 252);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(174, 51);
@@ -115,8 +121,10 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(3, 85);
+            this.btnClose.Location = new System.Drawing.Point(12, 443);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(143, 47);
@@ -235,18 +243,6 @@
             this.panel1.Size = new System.Drawing.Size(388, 197);
             this.panel1.TabIndex = 18;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnAddStudent);
-            this.panel2.Controls.Add(this.btnDeleteStudent);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnEditStudent);
-            this.panel2.Location = new System.Drawing.Point(12, 325);
-            this.panel2.Name = "panel2";
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(312, 203);
-            this.panel2.TabIndex = 19;
-            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
@@ -260,11 +256,10 @@
             // 
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Location = new System.Drawing.Point(72, 120);
             this.panel3.Name = "panel3";
             this.panel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel3.Size = new System.Drawing.Size(416, 197);
+            this.panel3.Size = new System.Drawing.Size(416, 126);
             this.panel3.TabIndex = 20;
             // 
             // label6
@@ -284,8 +279,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 554);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnDeleteStudent);
+            this.Controls.Add(this.btnEditStudent);
+            this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.label1);
@@ -295,7 +294,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -321,7 +319,6 @@
         private System.Windows.Forms.ComboBox cmbParent;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
