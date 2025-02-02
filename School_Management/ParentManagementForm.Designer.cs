@@ -46,18 +46,18 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParents)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddParent
             // 
+            this.btnAddParent.FlatAppearance.BorderSize = 0;
+            this.btnAddParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddParent.Location = new System.Drawing.Point(21, 19);
+            this.btnAddParent.Location = new System.Drawing.Point(33, 153);
             this.btnAddParent.Name = "btnAddParent";
             this.btnAddParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddParent.Size = new System.Drawing.Size(109, 59);
@@ -68,8 +68,10 @@
             // 
             // btnEditParent
             // 
+            this.btnEditParent.FlatAppearance.BorderSize = 0;
+            this.btnEditParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditParent.Location = new System.Drawing.Point(21, 84);
+            this.btnEditParent.Location = new System.Drawing.Point(33, 218);
             this.btnEditParent.Name = "btnEditParent";
             this.btnEditParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditParent.Size = new System.Drawing.Size(109, 59);
@@ -80,8 +82,10 @@
             // 
             // btnDeleteParent
             // 
+            this.btnDeleteParent.FlatAppearance.BorderSize = 0;
+            this.btnDeleteParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteParent.Location = new System.Drawing.Point(21, 149);
+            this.btnDeleteParent.Location = new System.Drawing.Point(33, 294);
             this.btnDeleteParent.Name = "btnDeleteParent";
             this.btnDeleteParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteParent.Size = new System.Drawing.Size(109, 59);
@@ -92,8 +96,10 @@
             // 
             // btnSaveParent
             // 
+            this.btnSaveParent.FlatAppearance.BorderSize = 0;
+            this.btnSaveParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSaveParent.Location = new System.Drawing.Point(21, 214);
+            this.btnSaveParent.Location = new System.Drawing.Point(33, 359);
             this.btnSaveParent.Name = "btnSaveParent";
             this.btnSaveParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSaveParent.Size = new System.Drawing.Size(109, 59);
@@ -104,8 +110,10 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(21, 286);
+            this.btnClose.Location = new System.Drawing.Point(33, 424);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(109, 59);
@@ -214,8 +222,10 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(3, 35);
+            this.btnSearch.Location = new System.Drawing.Point(564, 56);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(87, 39);
@@ -227,7 +237,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(98, 39);
+            this.txtSearch.Location = new System.Drawing.Point(3, 39);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSearch.Size = new System.Drawing.Size(212, 32);
@@ -237,7 +247,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label5.Location = new System.Drawing.Point(316, 42);
+            this.label5.Location = new System.Drawing.Point(221, 42);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(35, 26);
@@ -246,30 +256,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.panel1.Location = new System.Drawing.Point(560, 24);
+            this.panel1.Location = new System.Drawing.Point(657, 24);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(354, 100);
+            this.panel1.Size = new System.Drawing.Size(257, 100);
             this.panel1.TabIndex = 17;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnEditParent);
-            this.panel2.Controls.Add(this.btnAddParent);
-            this.panel2.Controls.Add(this.btnDeleteParent);
-            this.panel2.Controls.Add(this.btnSaveParent);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.panel2.Location = new System.Drawing.Point(12, 140);
-            this.panel2.Name = "panel2";
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(158, 354);
-            this.panel2.TabIndex = 18;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -293,8 +287,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 497);
+            this.Controls.Add(this.btnSaveParent);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnDeleteParent);
+            this.Controls.Add(this.btnEditParent);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnAddParent);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvParents);
             this.Name = "ParentManagementForm";
@@ -303,7 +302,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvParents)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -330,7 +328,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
     }
 }
