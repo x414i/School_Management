@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace School_Management
 {       public partial class main : Form
         {
@@ -22,14 +24,12 @@ namespace School_Management
             public main()
             {
                 InitializeComponent();
-            //this.ControlBox = true; // لإخفاء أزرار التحكم
-            //this.MaximizeBox = true; // لإلغاء تفعيل زر التكبير
-            //this.MinimizeBox = true;
+            
             random = new Random();
-                btnUser.Visible = false;
-                //this.Text = string.Empty;
-                //this.ControlBox = false;
-                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            btnCloseChildForm.Visible = false;
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             }
             [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
             private extern static void ReleaseCapture();
@@ -66,7 +66,7 @@ namespace School_Management
                         panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                         ThemeColor.PrimaryColor = color;
                         ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                        btnUser.Visible = true;
+                    btnCloseChildForm.Visible = true;
                     }
                 }
             }
@@ -123,7 +123,7 @@ namespace School_Management
             panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
-            btnUser.Visible = false;
+            btnCloseChildForm.Visible = false;
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -252,6 +252,24 @@ namespace School_Management
         {
             OpenChildForm(new ClassManagementForm(), sender);
 
+        }
+
+        private void btnCloseChildForm_Click_2(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+                Reset();
+        }
+
+        private void panelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         //private void btnCloseChildForm_Click(object sender, EventArgs e)
