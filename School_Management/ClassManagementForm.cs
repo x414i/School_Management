@@ -199,5 +199,10 @@ namespace School_Management
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

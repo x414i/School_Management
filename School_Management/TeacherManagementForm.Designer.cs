@@ -57,9 +57,8 @@
             this.label1.Location = new System.Drawing.Point(329, 9);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(185, 50);
+            this.label1.Size = new System.Drawing.Size(0, 50);
             this.label1.TabIndex = 0;
-            this.label1.Text = "إدارة الاستاذة";
             // 
             // txtName
             // 
@@ -72,58 +71,66 @@
             // 
             // btnAddTeacher
             // 
+            this.btnAddTeacher.BackColor = System.Drawing.Color.Transparent;
             this.btnAddTeacher.FlatAppearance.BorderSize = 0;
             this.btnAddTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddTeacher.Location = new System.Drawing.Point(205, 77);
+            this.btnAddTeacher.ForeColor = System.Drawing.Color.White;
+            this.btnAddTeacher.Location = new System.Drawing.Point(546, 212);
             this.btnAddTeacher.Name = "btnAddTeacher";
             this.btnAddTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddTeacher.Size = new System.Drawing.Size(123, 83);
             this.btnAddTeacher.TabIndex = 3;
             this.btnAddTeacher.Text = "اضافة استاذ";
-            this.btnAddTeacher.UseVisualStyleBackColor = true;
+            this.btnAddTeacher.UseVisualStyleBackColor = false;
             this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
             // 
             // btnEditTeacher
             // 
+            this.btnEditTeacher.BackColor = System.Drawing.Color.Transparent;
             this.btnEditTeacher.FlatAppearance.BorderSize = 0;
             this.btnEditTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditTeacher.Location = new System.Drawing.Point(30, 77);
+            this.btnEditTeacher.ForeColor = System.Drawing.Color.White;
+            this.btnEditTeacher.Location = new System.Drawing.Point(417, 212);
             this.btnEditTeacher.Name = "btnEditTeacher";
             this.btnEditTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditTeacher.Size = new System.Drawing.Size(123, 83);
             this.btnEditTeacher.TabIndex = 4;
             this.btnEditTeacher.Text = "تعديل الاستاذ";
-            this.btnEditTeacher.UseVisualStyleBackColor = true;
+            this.btnEditTeacher.UseVisualStyleBackColor = false;
             this.btnEditTeacher.Click += new System.EventHandler(this.btnEditTeacher_Click_1);
             // 
             // btnDeleteTeacher
             // 
+            this.btnDeleteTeacher.BackColor = System.Drawing.Color.Transparent;
             this.btnDeleteTeacher.FlatAppearance.BorderSize = 0;
             this.btnDeleteTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteTeacher.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteTeacher.Location = new System.Drawing.Point(30, 180);
+            this.btnDeleteTeacher.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTeacher.Location = new System.Drawing.Point(-2, 225);
             this.btnDeleteTeacher.Name = "btnDeleteTeacher";
             this.btnDeleteTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteTeacher.Size = new System.Drawing.Size(123, 83);
             this.btnDeleteTeacher.TabIndex = 5;
             this.btnDeleteTeacher.Text = "حذف الاستاذ";
-            this.btnDeleteTeacher.UseVisualStyleBackColor = true;
+            this.btnDeleteTeacher.UseVisualStyleBackColor = false;
             this.btnDeleteTeacher.Click += new System.EventHandler(this.btnDeleteTeacher_Click_1);
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(205, 181);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(127, 225);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(123, 83);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "اغلاق";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // dgvTeachers
@@ -131,10 +138,11 @@
             this.dgvTeachers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTeachers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTeachers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTeachers.Location = new System.Drawing.Point(2, 282);
+            this.dgvTeachers.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTeachers.Location = new System.Drawing.Point(0, 316);
             this.dgvTeachers.Name = "dgvTeachers";
             this.dgvTeachers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvTeachers.Size = new System.Drawing.Size(937, 252);
+            this.dgvTeachers.Size = new System.Drawing.Size(683, 188);
             this.dgvTeachers.TabIndex = 7;
             this.dgvTeachers.SelectionChanged += new System.EventHandler(this.dgvTeachers_SelectionChanged);
             // 
@@ -212,14 +220,18 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(48, 147);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(271, 237);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(100, 33);
             this.btnSearch.TabIndex = 15;
             this.btnSearch.Text = "بحث";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label6
@@ -238,7 +250,6 @@
             // 
             this.panel1.Controls.Add(this.cmbSubject);
             this.panel1.Controls.Add(this.txtPhone);
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.txtName);
@@ -247,10 +258,11 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Location = new System.Drawing.Point(366, 78);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(573, 199);
+            this.panel1.Size = new System.Drawing.Size(683, 206);
             this.panel1.TabIndex = 17;
             // 
             // cmbSubject
@@ -266,16 +278,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 536);
+            this.ClientSize = new System.Drawing.Size(683, 504);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDeleteTeacher);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAddTeacher);
             this.Controls.Add(this.dgvTeachers);
             this.Controls.Add(this.btnEditTeacher);
             this.Controls.Add(this.label1);
             this.Name = "TeacherManagementForm";
-            this.Text = "TeacherManagementForm";
+            this.Text = "إدارة الاستاذة";
             this.Load += new System.EventHandler(this.TeacherManagementForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeachers)).EndInit();
             this.panel1.ResumeLayout(false);

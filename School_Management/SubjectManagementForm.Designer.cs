@@ -47,38 +47,42 @@
             this.dgvSubjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSubjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Location = new System.Drawing.Point(0, -1);
+            this.dgvSubjects.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvSubjects.Location = new System.Drawing.Point(0, 199);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvSubjects.Size = new System.Drawing.Size(800, 313);
+            this.dgvSubjects.Size = new System.Drawing.Size(618, 209);
             this.dgvSubjects.TabIndex = 0;
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // txtSubjectName
             // 
             this.txtSubjectName.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtSubjectName.Location = new System.Drawing.Point(107, 9);
+            this.txtSubjectName.Location = new System.Drawing.Point(59, 13);
             this.txtSubjectName.Name = "txtSubjectName";
             this.txtSubjectName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSubjectName.Size = new System.Drawing.Size(249, 32);
+            this.txtSubjectName.Size = new System.Drawing.Size(329, 32);
             this.txtSubjectName.TabIndex = 1;
+            this.txtSubjectName.TextChanged += new System.EventHandler(this.txtSubjectName_TextChanged);
             // 
             // cmbTeachers
             // 
             this.cmbTeachers.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbTeachers.FormattingEnabled = true;
-            this.cmbTeachers.Location = new System.Drawing.Point(107, 55);
+            this.cmbTeachers.Location = new System.Drawing.Point(59, 59);
             this.cmbTeachers.Name = "cmbTeachers";
             this.cmbTeachers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbTeachers.Size = new System.Drawing.Size(249, 32);
+            this.cmbTeachers.Size = new System.Drawing.Size(329, 32);
             this.cmbTeachers.TabIndex = 2;
+            this.cmbTeachers.SelectedIndexChanged += new System.EventHandler(this.cmbTeachers_SelectedIndexChanged);
             // 
             // btnAddSubject
             // 
             this.btnAddSubject.FlatAppearance.BorderSize = 0;
             this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddSubject.Location = new System.Drawing.Point(177, 334);
+            this.btnAddSubject.ForeColor = System.Drawing.Color.White;
+            this.btnAddSubject.Location = new System.Drawing.Point(468, 130);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddSubject.Size = new System.Drawing.Size(97, 38);
@@ -92,7 +96,8 @@
             this.btnEditSubject.FlatAppearance.BorderSize = 0;
             this.btnEditSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditSubject.Location = new System.Drawing.Point(64, 334);
+            this.btnEditSubject.ForeColor = System.Drawing.Color.White;
+            this.btnEditSubject.Location = new System.Drawing.Point(290, 130);
             this.btnEditSubject.Name = "btnEditSubject";
             this.btnEditSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditSubject.Size = new System.Drawing.Size(98, 38);
@@ -106,7 +111,8 @@
             this.btnDeleteSubject.FlatAppearance.BorderSize = 0;
             this.btnDeleteSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteSubject.Location = new System.Drawing.Point(177, 378);
+            this.btnDeleteSubject.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSubject.Location = new System.Drawing.Point(148, 130);
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteSubject.Size = new System.Drawing.Size(97, 38);
@@ -120,7 +126,8 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(64, 378);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(12, 130);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(98, 38);
@@ -133,18 +140,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label1.Location = new System.Drawing.Point(389, 12);
+            this.label1.Location = new System.Drawing.Point(421, 16);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(76, 26);
             this.label1.TabIndex = 7;
             this.label1.Text = "اسم المادة";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(385, 55);
+            this.label2.Location = new System.Drawing.Point(417, 59);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(80, 26);
@@ -158,17 +166,19 @@
             this.panel2.Controls.Add(this.txtSubjectName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(331, 322);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(469, 116);
+            this.panel2.Size = new System.Drawing.Size(618, 108);
             this.panel2.TabIndex = 10;
             // 
             // SubjectManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(618, 408);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnDeleteSubject);
@@ -176,7 +186,7 @@
             this.Controls.Add(this.dgvSubjects);
             this.Controls.Add(this.btnAddSubject);
             this.Name = "SubjectManagementForm";
-            this.Text = "SubjectManagementForm";
+            this.Text = "المواد";
             this.Load += new System.EventHandler(this.SubjectManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             this.panel2.ResumeLayout(false);

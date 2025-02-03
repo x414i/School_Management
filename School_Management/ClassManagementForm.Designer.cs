@@ -47,7 +47,8 @@
             this.btnAddClass.FlatAppearance.BorderSize = 0;
             this.btnAddClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClass.Location = new System.Drawing.Point(183, 16);
+            this.btnAddClass.ForeColor = System.Drawing.Color.White;
+            this.btnAddClass.Location = new System.Drawing.Point(202, 0);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddClass.Size = new System.Drawing.Size(102, 74);
@@ -61,7 +62,8 @@
             this.btnEditClass.FlatAppearance.BorderSize = 0;
             this.btnEditClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditClass.Location = new System.Drawing.Point(12, 13);
+            this.btnEditClass.ForeColor = System.Drawing.Color.White;
+            this.btnEditClass.Location = new System.Drawing.Point(202, 80);
             this.btnEditClass.Name = "btnEditClass";
             this.btnEditClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditClass.Size = new System.Drawing.Size(102, 74);
@@ -75,7 +77,8 @@
             this.btnDeleteClass.FlatAppearance.BorderSize = 0;
             this.btnDeleteClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteClass.Location = new System.Drawing.Point(12, 93);
+            this.btnDeleteClass.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteClass.Location = new System.Drawing.Point(51, 0);
             this.btnDeleteClass.Name = "btnDeleteClass";
             this.btnDeleteClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteClass.Size = new System.Drawing.Size(102, 74);
@@ -89,7 +92,8 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(183, 96);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(51, 85);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(102, 74);
@@ -122,10 +126,11 @@
             this.dgvClasses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvClasses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasses.Location = new System.Drawing.Point(-1, 174);
+            this.dgvClasses.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvClasses.Location = new System.Drawing.Point(0, 167);
             this.dgvClasses.Name = "dgvClasses";
             this.dgvClasses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvClasses.Size = new System.Drawing.Size(799, 282);
+            this.dgvClasses.Size = new System.Drawing.Size(726, 260);
             this.dgvClasses.TabIndex = 6;
             this.dgvClasses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasses_CellContentClick);
             // 
@@ -158,18 +163,20 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtLevel);
             this.panel1.Controls.Add(this.txtClassName);
-            this.panel1.Location = new System.Drawing.Point(412, 8);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(350, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(376, 160);
+            this.panel1.Size = new System.Drawing.Size(376, 167);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // ClassManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(726, 427);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddClass);
             this.Controls.Add(this.btnDeleteClass);
@@ -177,7 +184,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvClasses);
             this.Name = "ClassManagementForm";
-            this.Text = "ClassManagementForm";
+            this.Text = "الصفوف";
             this.Load += new System.EventHandler(this.ClassManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.panel1.ResumeLayout(false);

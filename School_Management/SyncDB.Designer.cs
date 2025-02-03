@@ -34,10 +34,12 @@
             // 
             // btnStartSync
             // 
+            this.btnStartSync.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStartSync.FlatAppearance.BorderSize = 0;
             this.btnStartSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartSync.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartSync.Location = new System.Drawing.Point(457, 30);
+            this.btnStartSync.ForeColor = System.Drawing.Color.White;
+            this.btnStartSync.Location = new System.Drawing.Point(98, 30);
             this.btnStartSync.Name = "btnStartSync";
             this.btnStartSync.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnStartSync.Size = new System.Drawing.Size(129, 42);
@@ -48,12 +50,13 @@
             // 
             // txtLog
             // 
-            this.txtLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtLog.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLog.Location = new System.Drawing.Point(41, 89);
+            this.txtLog.Location = new System.Drawing.Point(0, 93);
             this.txtLog.Name = "txtLog";
             this.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtLog.Size = new System.Drawing.Size(747, 302);
+            this.txtLog.Size = new System.Drawing.Size(577, 302);
             this.txtLog.TabIndex = 2;
             this.txtLog.Text = "";
             // 
@@ -62,11 +65,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(577, 395);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnStartSync);
             this.Name = "SyncDB";
-            this.Text = "SyncDB";
+            this.Text = "المزامنة";
             this.Load += new System.EventHandler(this.SyncDB_Load);
             this.ResumeLayout(false);
 

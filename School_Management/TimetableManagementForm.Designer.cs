@@ -65,11 +65,12 @@
             this.Teacher,
             this.Day,
             this.Time});
-            this.dgvTimetable.Location = new System.Drawing.Point(0, 291);
+            this.dgvTimetable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTimetable.Location = new System.Drawing.Point(0, 240);
             this.dgvTimetable.Name = "dgvTimetable";
             this.dgvTimetable.ReadOnly = true;
             this.dgvTimetable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvTimetable.Size = new System.Drawing.Size(803, 207);
+            this.dgvTimetable.Size = new System.Drawing.Size(621, 207);
             this.dgvTimetable.TabIndex = 0;
             // 
             // Class
@@ -106,43 +107,43 @@
             // 
             this.cmbDay.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbDay.FormattingEnabled = true;
-            this.cmbDay.Location = new System.Drawing.Point(120, 58);
+            this.cmbDay.Location = new System.Drawing.Point(329, 53);
             this.cmbDay.Name = "cmbDay";
-            this.cmbDay.Size = new System.Drawing.Size(296, 32);
+            this.cmbDay.Size = new System.Drawing.Size(205, 32);
             this.cmbDay.TabIndex = 1;
             // 
             // cmbSubject
             // 
             this.cmbSubject.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(120, 141);
+            this.cmbSubject.Location = new System.Drawing.Point(13, 50);
             this.cmbSubject.Name = "cmbSubject";
-            this.cmbSubject.Size = new System.Drawing.Size(296, 32);
+            this.cmbSubject.Size = new System.Drawing.Size(205, 32);
             this.cmbSubject.TabIndex = 2;
             // 
             // cmbTeacher
             // 
             this.cmbTeacher.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbTeacher.FormattingEnabled = true;
-            this.cmbTeacher.Location = new System.Drawing.Point(120, 11);
+            this.cmbTeacher.Location = new System.Drawing.Point(329, 6);
             this.cmbTeacher.Name = "cmbTeacher";
-            this.cmbTeacher.Size = new System.Drawing.Size(296, 32);
+            this.cmbTeacher.Size = new System.Drawing.Size(205, 32);
             this.cmbTeacher.TabIndex = 3;
             // 
             // cmbClass
             // 
             this.cmbClass.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(120, 101);
+            this.cmbClass.Location = new System.Drawing.Point(13, 10);
             this.cmbClass.Name = "cmbClass";
-            this.cmbClass.Size = new System.Drawing.Size(296, 32);
+            this.cmbClass.Size = new System.Drawing.Size(205, 32);
             this.cmbClass.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label1.Location = new System.Drawing.Point(444, 101);
+            this.label1.Location = new System.Drawing.Point(246, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 26);
             this.label1.TabIndex = 5;
@@ -152,7 +153,7 @@
             // 
             this.المادة.AutoSize = true;
             this.المادة.Font = new System.Drawing.Font("Cairo", 10F);
-            this.المادة.Location = new System.Drawing.Point(443, 144);
+            this.المادة.Location = new System.Drawing.Point(245, 53);
             this.المادة.Name = "المادة";
             this.المادة.Size = new System.Drawing.Size(48, 26);
             this.المادة.TabIndex = 6;
@@ -162,7 +163,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label3.Location = new System.Drawing.Point(444, 11);
+            this.label3.Location = new System.Drawing.Point(562, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 26);
             this.label3.TabIndex = 7;
@@ -172,7 +173,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label4.Location = new System.Drawing.Point(454, 58);
+            this.label4.Location = new System.Drawing.Point(572, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 26);
             this.label4.TabIndex = 8;
@@ -183,7 +184,8 @@
             this.btnAddLesson.FlatAppearance.BorderSize = 0;
             this.btnAddLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddLesson.Location = new System.Drawing.Point(150, 69);
+            this.btnAddLesson.ForeColor = System.Drawing.Color.White;
+            this.btnAddLesson.Location = new System.Drawing.Point(447, 183);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(91, 34);
             this.btnAddLesson.TabIndex = 10;
@@ -196,7 +198,8 @@
             this.btnEditLesson.FlatAppearance.BorderSize = 0;
             this.btnEditLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditLesson.Location = new System.Drawing.Point(19, 69);
+            this.btnEditLesson.ForeColor = System.Drawing.Color.White;
+            this.btnEditLesson.Location = new System.Drawing.Point(334, 189);
             this.btnEditLesson.Name = "btnEditLesson";
             this.btnEditLesson.Size = new System.Drawing.Size(107, 34);
             this.btnEditLesson.TabIndex = 11;
@@ -209,7 +212,8 @@
             this.btnDeleteLesson.FlatAppearance.BorderSize = 0;
             this.btnDeleteLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteLesson.Location = new System.Drawing.Point(150, 120);
+            this.btnDeleteLesson.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteLesson.Location = new System.Drawing.Point(237, 187);
             this.btnDeleteLesson.Name = "btnDeleteLesson";
             this.btnDeleteLesson.Size = new System.Drawing.Size(91, 39);
             this.btnDeleteLesson.TabIndex = 12;
@@ -222,7 +226,8 @@
             this.btnSaveLesson.FlatAppearance.BorderSize = 0;
             this.btnSaveLesson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveLesson.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSaveLesson.Location = new System.Drawing.Point(19, 116);
+            this.btnSaveLesson.ForeColor = System.Drawing.Color.White;
+            this.btnSaveLesson.Location = new System.Drawing.Point(124, 183);
             this.btnSaveLesson.Name = "btnSaveLesson";
             this.btnSaveLesson.Size = new System.Drawing.Size(107, 43);
             this.btnSaveLesson.TabIndex = 13;
@@ -235,9 +240,10 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(54, 193);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(13, 183);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(148, 35);
+            this.btnClose.Size = new System.Drawing.Size(105, 35);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "إغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -255,16 +261,17 @@
             this.panel2.Controls.Add(this.cmbDay);
             this.panel2.Controls.Add(this.cmbClass);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(271, 58);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(517, 227);
+            this.panel2.Size = new System.Drawing.Size(621, 134);
             this.panel2.TabIndex = 16;
             // 
             // cmbTime
             // 
             this.cmbTime.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTime.FormattingEnabled = true;
-            this.cmbTime.Location = new System.Drawing.Point(121, 183);
+            this.cmbTime.Location = new System.Drawing.Point(159, 99);
             this.cmbTime.Name = "cmbTime";
             this.cmbTime.Size = new System.Drawing.Size(295, 32);
             this.cmbTime.TabIndex = 11;
@@ -273,7 +280,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(443, 189);
+            this.label2.Location = new System.Drawing.Point(481, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 26);
             this.label2.TabIndex = 10;
@@ -283,7 +290,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(621, 447);
             this.Controls.Add(this.btnAddLesson);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnClose);

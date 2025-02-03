@@ -50,7 +50,7 @@
             // 
             this.cmbReportType.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbReportType.FormattingEnabled = true;
-            this.cmbReportType.Location = new System.Drawing.Point(108, 62);
+            this.cmbReportType.Location = new System.Drawing.Point(46, 61);
             this.cmbReportType.Name = "cmbReportType";
             this.cmbReportType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbReportType.Size = new System.Drawing.Size(397, 32);
@@ -61,21 +61,24 @@
             this.dgvReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(154, 220);
+            this.dgvReport.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvReport.Location = new System.Drawing.Point(0, 245);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvReport.Size = new System.Drawing.Size(706, 329);
+            this.dgvReport.Size = new System.Drawing.Size(600, 306);
             this.dgvReport.TabIndex = 2;
             // 
             // btnShowReport
             // 
+            this.btnShowReport.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnShowReport.FlatAppearance.BorderSize = 0;
             this.btnShowReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowReport.Location = new System.Drawing.Point(15, 185);
+            this.btnShowReport.ForeColor = System.Drawing.Color.White;
+            this.btnShowReport.Location = new System.Drawing.Point(242, 111);
             this.btnShowReport.Name = "btnShowReport";
             this.btnShowReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnShowReport.Size = new System.Drawing.Size(121, 60);
+            this.btnShowReport.Size = new System.Drawing.Size(121, 134);
             this.btnShowReport.TabIndex = 3;
             this.btnShowReport.Text = "تحديث";
             this.btnShowReport.UseVisualStyleBackColor = true;
@@ -83,13 +86,15 @@
             // 
             // btnExportReport
             // 
+            this.btnExportReport.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportReport.FlatAppearance.BorderSize = 0;
             this.btnExportReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportReport.Location = new System.Drawing.Point(12, 251);
+            this.btnExportReport.ForeColor = System.Drawing.Color.White;
+            this.btnExportReport.Location = new System.Drawing.Point(0, 111);
             this.btnExportReport.Name = "btnExportReport";
             this.btnExportReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnExportReport.Size = new System.Drawing.Size(121, 63);
+            this.btnExportReport.Size = new System.Drawing.Size(121, 134);
             this.btnExportReport.TabIndex = 4;
             this.btnExportReport.Text = "إكسيل";
             this.btnExportReport.UseVisualStyleBackColor = true;
@@ -97,13 +102,15 @@
             // 
             // btnExportToPDF
             // 
+            this.btnExportToPDF.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportToPDF.FlatAppearance.BorderSize = 0;
             this.btnExportToPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportToPDF.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportToPDF.Location = new System.Drawing.Point(12, 320);
+            this.btnExportToPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportToPDF.Location = new System.Drawing.Point(121, 111);
             this.btnExportToPDF.Name = "btnExportToPDF";
             this.btnExportToPDF.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnExportToPDF.Size = new System.Drawing.Size(121, 60);
+            this.btnExportToPDF.Size = new System.Drawing.Size(121, 134);
             this.btnExportToPDF.TabIndex = 5;
             this.btnExportToPDF.Text = "PDF";
             this.btnExportToPDF.UseVisualStyleBackColor = true;
@@ -111,13 +118,15 @@
             // 
             // btnSyncReport
             // 
+            this.btnSyncReport.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSyncReport.FlatAppearance.BorderSize = 0;
             this.btnSyncReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyncReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSyncReport.Location = new System.Drawing.Point(15, 403);
+            this.btnSyncReport.ForeColor = System.Drawing.Color.White;
+            this.btnSyncReport.Location = new System.Drawing.Point(363, 111);
             this.btnSyncReport.Name = "btnSyncReport";
             this.btnSyncReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSyncReport.Size = new System.Drawing.Size(121, 60);
+            this.btnSyncReport.Size = new System.Drawing.Size(121, 134);
             this.btnSyncReport.TabIndex = 6;
             this.btnSyncReport.Text = "تقرير المزامنة";
             this.btnSyncReport.UseVisualStyleBackColor = true;
@@ -127,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(562, 62);
+            this.label2.Location = new System.Drawing.Point(500, 61);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(69, 26);
@@ -142,17 +151,18 @@
             this.panel1.Controls.Add(this.dtpEndDate);
             this.panel1.Controls.Add(this.cmbReportType);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(154, 103);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(706, 111);
+            this.panel1.Size = new System.Drawing.Size(600, 111);
             this.panel1.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label4.Location = new System.Drawing.Point(562, 18);
+            this.label4.Location = new System.Drawing.Point(500, 17);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(68, 26);
@@ -162,7 +172,7 @@
             // dtpStartDate
             // 
             this.dtpStartDate.Font = new System.Drawing.Font("Cairo", 10F);
-            this.dtpStartDate.Location = new System.Drawing.Point(339, 18);
+            this.dtpStartDate.Location = new System.Drawing.Point(277, 17);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dtpStartDate.Size = new System.Drawing.Size(166, 32);
@@ -172,7 +182,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label3.Location = new System.Drawing.Point(299, 22);
+            this.label3.Location = new System.Drawing.Point(237, 21);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(30, 26);
@@ -183,7 +193,7 @@
             // dtpEndDate
             // 
             this.dtpEndDate.Font = new System.Drawing.Font("Cairo", 10F);
-            this.dtpEndDate.Location = new System.Drawing.Point(108, 18);
+            this.dtpEndDate.Location = new System.Drawing.Point(46, 17);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dtpEndDate.Size = new System.Drawing.Size(178, 32);
@@ -191,13 +201,15 @@
             // 
             // button1
             // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 479);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(484, 111);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(121, 60);
+            this.button1.Size = new System.Drawing.Size(121, 134);
             this.button1.TabIndex = 7;
             this.button1.Text = "تقرير المزامنة";
             this.button1.UseVisualStyleBackColor = true;
@@ -209,15 +221,14 @@
             this.label1.Location = new System.Drawing.Point(385, 30);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(108, 50);
+            this.label1.Size = new System.Drawing.Size(0, 50);
             this.label1.TabIndex = 12;
-            this.label1.Text = "التقارير";
             // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 551);
+            this.ClientSize = new System.Drawing.Size(600, 551);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSyncReport);
@@ -227,7 +238,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvReport);
             this.Name = "ReportsForm";
-            this.Text = "ReportsForm";
+            this.Text = "التقارير";
             this.Load += new System.EventHandler(this.ReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.panel1.ResumeLayout(false);

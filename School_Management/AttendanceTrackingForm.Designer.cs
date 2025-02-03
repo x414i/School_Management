@@ -55,6 +55,7 @@
             // 
             this.btnLoadStudents.FlatAppearance.BorderSize = 0;
             this.btnLoadStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadStudents.ForeColor = System.Drawing.Color.White;
             this.btnLoadStudents.Location = new System.Drawing.Point(307, 42);
             this.btnLoadStudents.Name = "btnLoadStudents";
             this.btnLoadStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -68,6 +69,7 @@
             // 
             this.btnSaveAttendance.FlatAppearance.BorderSize = 0;
             this.btnSaveAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveAttendance.ForeColor = System.Drawing.Color.White;
             this.btnSaveAttendance.Location = new System.Drawing.Point(177, 42);
             this.btnSaveAttendance.Name = "btnSaveAttendance";
             this.btnSaveAttendance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -81,6 +83,7 @@
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(42, 42);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -104,7 +107,8 @@
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(-1, 171);
+            this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvStudents.Location = new System.Drawing.Point(0, 172);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvStudents.Size = new System.Drawing.Size(800, 278);
@@ -137,20 +141,23 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dtpDate);
             this.panel2.Controls.Add(this.cmbClasses);
-            this.panel2.Location = new System.Drawing.Point(429, 12);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(441, 0);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(359, 140);
+            this.panel2.Size = new System.Drawing.Size(359, 172);
             this.panel2.TabIndex = 9;
             // 
             // AttendanceTrackingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnLoadStudents);
             this.Controls.Add(this.panel2);
