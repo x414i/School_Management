@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnSync = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
@@ -52,20 +51,22 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            this.panelDesktopPane.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(92)))), ((int)(((byte)(117)))));
-            this.panelMenu.Controls.Add(this.btnExit);
-            this.panelMenu.Controls.Add(this.btnUser);
-            this.panelMenu.Controls.Add(this.btnSync);
             this.panelMenu.Controls.Add(this.btnReport);
             this.panelMenu.Controls.Add(this.btnSchul);
+            this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnActive);
+            this.panelMenu.Controls.Add(this.btnSync);
             this.panelMenu.Controls.Add(this.btnGread);
             this.panelMenu.Controls.Add(this.btnAttend);
             this.panelMenu.Controls.Add(this.btnParent);
@@ -75,41 +76,24 @@
             this.panelMenu.Controls.Add(this.btnStu);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMenu.Location = new System.Drawing.Point(1082, 0);
+            this.panelMenu.Location = new System.Drawing.Point(854, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(282, 741);
+            this.panelMenu.Size = new System.Drawing.Size(180, 681);
             this.panelMenu.TabIndex = 2;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 620);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnExit.Size = new System.Drawing.Size(282, 33);
-            this.btnExit.TabIndex = 15;
-            this.btnExit.Text = "اغلاق";
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // btnUser
             // 
             this.btnUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUser.FlatAppearance.BorderSize = 0;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUser.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.White;
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUser.Location = new System.Drawing.Point(0, 575);
+            this.btnUser.Location = new System.Drawing.Point(0, 530);
             this.btnUser.Name = "btnUser";
             this.btnUser.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnUser.Size = new System.Drawing.Size(282, 45);
+            this.btnUser.Size = new System.Drawing.Size(180, 50);
             this.btnUser.TabIndex = 13;
             this.btnUser.Text = "مستخدمين";
             this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -121,13 +105,14 @@
             this.btnSync.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSync.FlatAppearance.BorderSize = 0;
             this.btnSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSync.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSync.ForeColor = System.Drawing.Color.White;
             this.btnSync.Image = ((System.Drawing.Image)(resources.GetObject("btnSync.Image")));
             this.btnSync.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSync.Location = new System.Drawing.Point(0, 530);
+            this.btnSync.Location = new System.Drawing.Point(0, 430);
             this.btnSync.Name = "btnSync";
             this.btnSync.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnSync.Size = new System.Drawing.Size(282, 45);
+            this.btnSync.Size = new System.Drawing.Size(180, 50);
             this.btnSync.TabIndex = 12;
             this.btnSync.Text = "مزامنة";
             this.btnSync.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -139,13 +124,14 @@
             this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 485);
+            this.btnReport.Location = new System.Drawing.Point(0, 630);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnReport.Size = new System.Drawing.Size(282, 45);
+            this.btnReport.Size = new System.Drawing.Size(180, 50);
             this.btnReport.TabIndex = 11;
             this.btnReport.Text = "التقارير";
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -157,13 +143,14 @@
             this.btnSchul.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSchul.FlatAppearance.BorderSize = 0;
             this.btnSchul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchul.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSchul.ForeColor = System.Drawing.Color.White;
             this.btnSchul.Image = ((System.Drawing.Image)(resources.GetObject("btnSchul.Image")));
             this.btnSchul.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSchul.Location = new System.Drawing.Point(0, 440);
+            this.btnSchul.Location = new System.Drawing.Point(0, 580);
             this.btnSchul.Name = "btnSchul";
             this.btnSchul.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnSchul.Size = new System.Drawing.Size(282, 45);
+            this.btnSchul.Size = new System.Drawing.Size(180, 50);
             this.btnSchul.TabIndex = 10;
             this.btnSchul.Text = "الجدول";
             this.btnSchul.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -175,13 +162,14 @@
             this.btnActive.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnActive.FlatAppearance.BorderSize = 0;
             this.btnActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActive.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActive.ForeColor = System.Drawing.Color.White;
             this.btnActive.Image = ((System.Drawing.Image)(resources.GetObject("btnActive.Image")));
             this.btnActive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActive.Location = new System.Drawing.Point(0, 395);
+            this.btnActive.Location = new System.Drawing.Point(0, 480);
             this.btnActive.Name = "btnActive";
             this.btnActive.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnActive.Size = new System.Drawing.Size(282, 45);
+            this.btnActive.Size = new System.Drawing.Size(180, 50);
             this.btnActive.TabIndex = 9;
             this.btnActive.Text = "انشطة";
             this.btnActive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -193,13 +181,14 @@
             this.btnGread.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGread.FlatAppearance.BorderSize = 0;
             this.btnGread.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGread.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGread.ForeColor = System.Drawing.Color.White;
             this.btnGread.Image = ((System.Drawing.Image)(resources.GetObject("btnGread.Image")));
             this.btnGread.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGread.Location = new System.Drawing.Point(0, 350);
+            this.btnGread.Location = new System.Drawing.Point(0, 380);
             this.btnGread.Name = "btnGread";
             this.btnGread.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnGread.Size = new System.Drawing.Size(282, 45);
+            this.btnGread.Size = new System.Drawing.Size(180, 50);
             this.btnGread.TabIndex = 8;
             this.btnGread.Text = "درجات";
             this.btnGread.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -211,13 +200,14 @@
             this.btnAttend.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAttend.FlatAppearance.BorderSize = 0;
             this.btnAttend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttend.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttend.ForeColor = System.Drawing.Color.White;
             this.btnAttend.Image = ((System.Drawing.Image)(resources.GetObject("btnAttend.Image")));
             this.btnAttend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAttend.Location = new System.Drawing.Point(0, 305);
+            this.btnAttend.Location = new System.Drawing.Point(0, 330);
             this.btnAttend.Name = "btnAttend";
             this.btnAttend.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnAttend.Size = new System.Drawing.Size(282, 45);
+            this.btnAttend.Size = new System.Drawing.Size(180, 50);
             this.btnAttend.TabIndex = 7;
             this.btnAttend.Text = "حضور";
             this.btnAttend.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -229,13 +219,14 @@
             this.btnParent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnParent.FlatAppearance.BorderSize = 0;
             this.btnParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnParent.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParent.ForeColor = System.Drawing.Color.White;
             this.btnParent.Image = ((System.Drawing.Image)(resources.GetObject("btnParent.Image")));
             this.btnParent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnParent.Location = new System.Drawing.Point(0, 260);
+            this.btnParent.Location = new System.Drawing.Point(0, 280);
             this.btnParent.Name = "btnParent";
             this.btnParent.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnParent.Size = new System.Drawing.Size(282, 45);
+            this.btnParent.Size = new System.Drawing.Size(180, 50);
             this.btnParent.TabIndex = 6;
             this.btnParent.Text = "اولياء الامور";
             this.btnParent.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -247,13 +238,14 @@
             this.btnClass.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClass.FlatAppearance.BorderSize = 0;
             this.btnClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClass.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClass.ForeColor = System.Drawing.Color.White;
             this.btnClass.Image = ((System.Drawing.Image)(resources.GetObject("btnClass.Image")));
             this.btnClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClass.Location = new System.Drawing.Point(0, 215);
+            this.btnClass.Location = new System.Drawing.Point(0, 230);
             this.btnClass.Name = "btnClass";
             this.btnClass.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnClass.Size = new System.Drawing.Size(282, 45);
+            this.btnClass.Size = new System.Drawing.Size(180, 50);
             this.btnClass.TabIndex = 5;
             this.btnClass.Text = "صفوف";
             this.btnClass.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -265,13 +257,14 @@
             this.btnSubjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubjects.FlatAppearance.BorderSize = 0;
             this.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubjects.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjects.ForeColor = System.Drawing.Color.White;
             this.btnSubjects.Image = ((System.Drawing.Image)(resources.GetObject("btnSubjects.Image")));
             this.btnSubjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubjects.Location = new System.Drawing.Point(0, 170);
+            this.btnSubjects.Location = new System.Drawing.Point(0, 180);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnSubjects.Size = new System.Drawing.Size(282, 45);
+            this.btnSubjects.Size = new System.Drawing.Size(180, 50);
             this.btnSubjects.TabIndex = 4;
             this.btnSubjects.Text = "مواد";
             this.btnSubjects.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -283,13 +276,14 @@
             this.btnTeacher.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTeacher.FlatAppearance.BorderSize = 0;
             this.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTeacher.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTeacher.ForeColor = System.Drawing.Color.White;
             this.btnTeacher.Image = ((System.Drawing.Image)(resources.GetObject("btnTeacher.Image")));
             this.btnTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTeacher.Location = new System.Drawing.Point(0, 125);
+            this.btnTeacher.Location = new System.Drawing.Point(0, 130);
             this.btnTeacher.Name = "btnTeacher";
             this.btnTeacher.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnTeacher.Size = new System.Drawing.Size(282, 45);
+            this.btnTeacher.Size = new System.Drawing.Size(180, 50);
             this.btnTeacher.TabIndex = 3;
             this.btnTeacher.Text = "الاستاذة";
             this.btnTeacher.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -301,13 +295,14 @@
             this.btnStu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStu.FlatAppearance.BorderSize = 0;
             this.btnStu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStu.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStu.ForeColor = System.Drawing.Color.White;
             this.btnStu.Image = ((System.Drawing.Image)(resources.GetObject("btnStu.Image")));
             this.btnStu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStu.Location = new System.Drawing.Point(0, 80);
             this.btnStu.Name = "btnStu";
             this.btnStu.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.btnStu.Size = new System.Drawing.Size(282, 45);
+            this.btnStu.Size = new System.Drawing.Size(180, 50);
             this.btnStu.TabIndex = 2;
             this.btnStu.Text = "طلاب";
             this.btnStu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -321,7 +316,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(282, 80);
+            this.panelLogo.Size = new System.Drawing.Size(180, 80);
             this.panelLogo.TabIndex = 1;
             // 
             // panelTitleBar
@@ -335,8 +330,9 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1082, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(854, 80);
             this.panelTitleBar.TabIndex = 3;
+            this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown_1);
             // 
             // btnCloseChildForm
@@ -360,21 +356,22 @@
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblTitle.Font = new System.Drawing.Font("Cairo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(485, 23);
+            this.lblTitle.Location = new System.Drawing.Point(371, 23);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(72, 27);
+            this.lblTitle.Size = new System.Drawing.Size(162, 40);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "HOME";
+            this.lblTitle.Text = "االصفحة الرئيسية";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktopPane
             // 
+            this.panelDesktopPane.Controls.Add(this.pictureBox1);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(0, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1082, 661);
+            this.panelDesktopPane.Size = new System.Drawing.Size(854, 601);
             this.panelDesktopPane.TabIndex = 4;
             // 
             // button1
@@ -433,24 +430,38 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.label1.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(117, 23);
+            this.label1.Location = new System.Drawing.Point(35, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 27);
+            this.label1.Size = new System.Drawing.Size(120, 36);
             this.label1.TabIndex = 19;
-            this.label1.Text = "HOME";
+            this.label1.Text = "ادارة المدارس";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(301, 99);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(380, 340);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(380, 340);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 741);
+            this.ClientSize = new System.Drawing.Size(1034, 681);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.MaximumSize = new System.Drawing.Size(1386, 788);
+            this.MinimumSize = new System.Drawing.Size(1050, 720);
             this.Name = "main";
             this.Text = "main";
             this.Load += new System.EventHandler(this.main_Load);
@@ -459,6 +470,8 @@
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelDesktopPane.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,11 +495,11 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelDesktopPane;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCloseChildForm;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

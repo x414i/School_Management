@@ -77,8 +77,9 @@ namespace School_Management
                 {
                     if (previousBtn.GetType() == typeof(Button))
                     {
-                        previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                        previousBtn.ForeColor = Color.Gainsboro;
+                    //previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.BackColor = Color.FromArgb(42, 92, 117);
+                    previousBtn.ForeColor = Color.Gainsboro;
                         previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     }
                 }
@@ -119,8 +120,9 @@ namespace School_Management
         private void Reset()
         {
             DisableButton();
-            lblTitle.Text = "HOME";
-            panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            lblTitle.Text = "الصفحة الرئيسية";
+            //panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            panelTitleBar.BackColor = Color.FromArgb(42, 92, 117);
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
             btnCloseChildForm.Visible = false;
@@ -270,6 +272,11 @@ namespace School_Management
         private void button3_Click_2(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         //private void btnCloseChildForm_Click(object sender, EventArgs e)

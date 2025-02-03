@@ -52,7 +52,7 @@
             // 
             // btnAddParent
             // 
-            this.btnAddParent.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddParent.BackColor = System.Drawing.Color.White;
             this.btnAddParent.FlatAppearance.BorderSize = 0;
             this.btnAddParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParent.Font = new System.Drawing.Font("Cairo", 10F);
@@ -62,27 +62,26 @@
             this.btnAddParent.Size = new System.Drawing.Size(122, 87);
             this.btnAddParent.TabIndex = 0;
             this.btnAddParent.Text = "اضافة";
-            this.btnAddParent.UseVisualStyleBackColor = true;
+            this.btnAddParent.UseVisualStyleBackColor = false;
             this.btnAddParent.Click += new System.EventHandler(this.btnAddParent_Click);
             // 
             // btnEditParent
             // 
-            this.btnEditParent.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnEditParent.BackColor = System.Drawing.Color.White;
             this.btnEditParent.FlatAppearance.BorderSize = 0;
             this.btnEditParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditParent.Location = new System.Drawing.Point(424, 168);
+            this.btnEditParent.Location = new System.Drawing.Point(406, 168);
             this.btnEditParent.Name = "btnEditParent";
             this.btnEditParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditParent.Size = new System.Drawing.Size(113, 87);
             this.btnEditParent.TabIndex = 1;
             this.btnEditParent.Text = "تعديل";
-            this.btnEditParent.UseVisualStyleBackColor = true;
+            this.btnEditParent.UseVisualStyleBackColor = false;
             this.btnEditParent.Click += new System.EventHandler(this.btnEditParent_Click);
             // 
             // btnDeleteParent
             // 
-            this.btnDeleteParent.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDeleteParent.FlatAppearance.BorderSize = 0;
             this.btnDeleteParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteParent.Font = new System.Drawing.Font("Cairo", 10F);
@@ -97,26 +96,25 @@
             // 
             // btnSaveParent
             // 
-            this.btnSaveParent.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSaveParent.BackColor = System.Drawing.Color.White;
             this.btnSaveParent.FlatAppearance.BorderSize = 0;
             this.btnSaveParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveParent.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSaveParent.Location = new System.Drawing.Point(315, 168);
+            this.btnSaveParent.Location = new System.Drawing.Point(291, 168);
             this.btnSaveParent.Name = "btnSaveParent";
             this.btnSaveParent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSaveParent.Size = new System.Drawing.Size(109, 87);
             this.btnSaveParent.TabIndex = 3;
             this.btnSaveParent.Text = "حفظ";
-            this.btnSaveParent.UseVisualStyleBackColor = true;
+            this.btnSaveParent.UseVisualStyleBackColor = false;
             this.btnSaveParent.Click += new System.EventHandler(this.btnSaveParent_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.Location = new System.Drawing.Point(125, 168);
+            this.btnClose.Location = new System.Drawing.Point(141, 168);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(124, 87);
@@ -228,17 +226,17 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(537, 168);
+            this.btnSearch.Location = new System.Drawing.Point(525, 168);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSearch.Size = new System.Drawing.Size(108, 87);
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "بحث";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // txtSearch

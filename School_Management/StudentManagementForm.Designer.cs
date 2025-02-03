@@ -44,8 +44,8 @@
             this.cmbParent = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,12 +62,11 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAddStudent.FlatAppearance.BorderSize = 0;
             this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStudent.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnAddStudent.ForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.Location = new System.Drawing.Point(174, 197);
+            this.btnAddStudent.Location = new System.Drawing.Point(142, 197);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddStudent.Size = new System.Drawing.Size(143, 129);
@@ -78,7 +77,6 @@
             // 
             // btnEditStudent
             // 
-            this.btnEditStudent.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEditStudent.FlatAppearance.BorderSize = 0;
             this.btnEditStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditStudent.Font = new System.Drawing.Font("Cairo", 10F);
@@ -94,12 +92,11 @@
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDeleteStudent.FlatAppearance.BorderSize = 0;
             this.btnDeleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteStudent.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnDeleteStudent.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStudent.Location = new System.Drawing.Point(460, 197);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(457, 197);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteStudent.Size = new System.Drawing.Size(143, 129);
@@ -110,15 +107,14 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(0, 197);
+            this.btnSearch.Location = new System.Drawing.Point(3, 197);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearch.Size = new System.Drawing.Size(174, 129);
+            this.btnSearch.Size = new System.Drawing.Size(144, 129);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "بحث";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -126,12 +122,11 @@
             // 
             // btnClose
             // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(603, 197);
+            this.btnClose.Location = new System.Drawing.Point(645, 197);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(143, 129);
@@ -149,7 +144,7 @@
             this.dgvStudents.Location = new System.Drawing.Point(0, 326);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvStudents.Size = new System.Drawing.Size(750, 228);
+            this.dgvStudents.Size = new System.Drawing.Size(791, 228);
             this.dgvStudents.TabIndex = 6;
             // 
             // txtName
@@ -255,18 +250,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(750, 197);
+            this.panel1.Size = new System.Drawing.Size(791, 197);
             this.panel1.TabIndex = 18;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(156, 132);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSearch.Size = new System.Drawing.Size(241, 32);
-            this.txtSearch.TabIndex = 16;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label6
             // 
@@ -280,11 +265,21 @@
             this.label6.Text = "بحث";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Cairo", 10F);
+            this.txtSearch.Location = new System.Drawing.Point(156, 132);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtSearch.Size = new System.Drawing.Size(241, 32);
+            this.txtSearch.TabIndex = 16;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // StudentManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 554);
+            this.ClientSize = new System.Drawing.Size(791, 554);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDeleteStudent);
             this.Controls.Add(this.btnEditStudent);
