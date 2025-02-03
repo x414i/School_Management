@@ -70,6 +70,7 @@ namespace School_Management
         private void AddUserForm_Load(object sender, EventArgs e)
         {
             LoadUsers(); 
+            LoadTheme();
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -251,6 +252,11 @@ namespace School_Management
                 txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? string.Empty;
                 txtPassword.Clear(); 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
