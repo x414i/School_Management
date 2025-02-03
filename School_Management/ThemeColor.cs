@@ -12,7 +12,9 @@ namespace School_Management
 
         public static Color PrimaryColor { get; set; }
         public static Color SecondaryColor { get; set; }
-        public static List<string> ColorList = new List<string>() { "#3F51B5",
+        public static List<string> ColorList = new List<string>() {
+            /*
+                                                                    "#3F51B5",
                                                                     "#009688",
                                                                     "#FF5722",
                                                                     "#607D8B",
@@ -38,7 +40,21 @@ namespace School_Management
                                                                     "#E4126B",
                                                                     "#43B76E",
                                                                     "#7BCFE9",
-                                                                    "#B71C46"};
+                                                                    "#B71C46"
+            */
+
+
+"#2A5C75" ,
+"#5E94AB",
+"#7BCFE9" ,
+"#0094BC" ,
+"#AA8C7E" ,
+"#C4B4A7" ,
+"#DDDFDE" ,
+"#0E3441",
+"#E41A4A" ,
+"#43B76E"
+        };
         public static Color ChangeColorBrightness(Color color, double correctionFactor)
         {
             double red = color.R;
