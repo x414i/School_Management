@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
@@ -270,6 +273,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
@@ -309,6 +313,73 @@
   <ItemGroup>
     <Content Include="App_Data\Scripts\MySql.sql" />
     <Content Include="App_Data\Scripts\script.sql" />
+    <Content Include="Logo.ico" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-update-40.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-update-30.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-update-16.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-search-40.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-search-30.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-search-16.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-save-40.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-save-30.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-save-16.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-pdf-40.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-pdf-30.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-pdf-16.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-load-40.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-load-30.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-load-16.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-cloud-sync-64.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-cloud-sync-32.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-cloud-sync-16.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-add-40.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-add-30.png" />
+    <None Include="icons\مجلد جديد\مجلد جديد\icons8-add-16.png" />
+    <None Include="icons\مجلد جديد\icons8-export-excel-32.png" />
+    <None Include="icons\مجلد جديد\icons8-delete-32.png" />
+    <None Include="icons\مجلد جديد\icons8-add-30.png" />
+    <None Include="icons\icons\icons8-users-40.png" />
+    <None Include="icons\icons\icons8-users-30.png" />
+    <None Include="icons\icons\icons8-users-16.png" />
+    <None Include="icons\icons\icons8-teacher-40.png" />
+    <None Include="icons\icons\icons8-teacher-30.png" />
+    <None Include="icons\icons\icons8-teacher-16.png" />
+    <None Include="icons\icons\icons8-students-40.png" />
+    <None Include="icons\icons\icons8-students-30.png" />
+    <None Include="icons\icons\icons8-students-16.png" />
+    <None Include="icons\icons\icons8-sport-net-80.png" />
+    <None Include="icons\icons\icons8-sport-net-40.png" />
+    <None Include="icons\icons\icons8-sport-net-30.png" />
+    <None Include="icons\icons\icons8-sport-net-16.png" />
+    <None Include="icons\icons\icons8-schedule-96.png" />
+    <None Include="icons\icons\icons8-schedule-48.png" />
+    <None Include="icons\icons\icons8-schedule-24.png" />
+    <None Include="icons\icons\icons8-report-96.png" />
+    <None Include="icons\icons\icons8-report-48.png" />
+    <None Include="icons\icons\icons8-report-24.png" />
+    <None Include="icons\icons\icons8-logout-80.png" />
+    <None Include="icons\icons\icons8-logout-40.png" />
+    <None Include="icons\icons\icons8-logout-30.png" />
+    <None Include="icons\icons\icons8-logout-16.png" />
+    <None Include="icons\icons\icons8-grades-60.png" />
+    <None Include="icons\icons\icons8-grades-30.png" />
+    <None Include="icons\icons\icons8-family-40.png" />
+    <None Include="icons\icons\icons8-family-30.png" />
+    <None Include="icons\icons\icons8-family-16.png" />
+    <None Include="icons\icons\icons8-emergency-exit-96.png" />
+    <None Include="icons\icons\icons8-emergency-exit-48.png" />
+    <None Include="icons\icons\icons8-emergency-exit-24.png" />
+    <None Include="icons\icons\icons8-cloud-sync-96.png" />
+    <None Include="icons\icons\icons8-cloud-sync-48.png" />
+    <None Include="icons\icons\icons8-cloud-sync-24.png" />
+    <None Include="icons\icons\icons8-classroom-52.png" />
+    <None Include="icons\icons\icons8-classroom-26.png" />
+    <None Include="icons\icons\icons8-book-40.png" />
+    <None Include="icons\icons\icons8-book-30.png" />
+    <None Include="icons\icons\icons8-book-16.png" />
+    <None Include="icons\icons\icons8-attendance-96.png" />
+    <None Include="icons\icons\icons8-attendance-64.png" />
+    <None Include="icons\icons\icons8-attendance-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -279,6 +279,11 @@ namespace School_Management
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void btnCloseChildForm_Click(object sender, EventArgs e)
         //{
 

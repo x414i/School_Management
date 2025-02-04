@@ -272,5 +272,10 @@ namespace School_Management
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
         }
+
+        private void dgvTeachers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

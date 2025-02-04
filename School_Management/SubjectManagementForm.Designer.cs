@@ -46,19 +46,21 @@
             // 
             this.dgvSubjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSubjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSubjects.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvSubjects.Location = new System.Drawing.Point(0, 199);
+            this.dgvSubjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSubjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvSubjects.Location = new System.Drawing.Point(0, 0);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvSubjects.Size = new System.Drawing.Size(618, 209);
+            this.dgvSubjects.Size = new System.Drawing.Size(1152, 568);
             this.dgvSubjects.TabIndex = 0;
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // txtSubjectName
             // 
             this.txtSubjectName.Font = new System.Drawing.Font("Cairo", 10F);
-            this.txtSubjectName.Location = new System.Drawing.Point(59, 13);
+            this.txtSubjectName.Location = new System.Drawing.Point(691, 39);
             this.txtSubjectName.Name = "txtSubjectName";
             this.txtSubjectName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSubjectName.Size = new System.Drawing.Size(329, 32);
@@ -69,7 +71,7 @@
             // 
             this.cmbTeachers.Font = new System.Drawing.Font("Cairo", 10F);
             this.cmbTeachers.FormattingEnabled = true;
-            this.cmbTeachers.Location = new System.Drawing.Point(59, 59);
+            this.cmbTeachers.Location = new System.Drawing.Point(691, 85);
             this.cmbTeachers.Name = "cmbTeachers";
             this.cmbTeachers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbTeachers.Size = new System.Drawing.Size(329, 32);
@@ -78,11 +80,11 @@
             // 
             // btnAddSubject
             // 
-            this.btnAddSubject.FlatAppearance.BorderSize = 0;
+            this.btnAddSubject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSubject.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnAddSubject.ForeColor = System.Drawing.Color.White;
-            this.btnAddSubject.Location = new System.Drawing.Point(468, 130);
+            this.btnAddSubject.Location = new System.Drawing.Point(498, 54);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAddSubject.Size = new System.Drawing.Size(97, 38);
@@ -93,11 +95,11 @@
             // 
             // btnEditSubject
             // 
-            this.btnEditSubject.FlatAppearance.BorderSize = 0;
+            this.btnEditSubject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnEditSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSubject.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnEditSubject.ForeColor = System.Drawing.Color.White;
-            this.btnEditSubject.Location = new System.Drawing.Point(290, 130);
+            this.btnEditSubject.Location = new System.Drawing.Point(344, 54);
             this.btnEditSubject.Name = "btnEditSubject";
             this.btnEditSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditSubject.Size = new System.Drawing.Size(98, 38);
@@ -108,11 +110,11 @@
             // 
             // btnDeleteSubject
             // 
-            this.btnDeleteSubject.FlatAppearance.BorderSize = 0;
+            this.btnDeleteSubject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnDeleteSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSubject.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnDeleteSubject.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteSubject.Location = new System.Drawing.Point(148, 130);
+            this.btnDeleteSubject.Location = new System.Drawing.Point(226, 54);
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDeleteSubject.Size = new System.Drawing.Size(97, 38);
@@ -123,11 +125,11 @@
             // 
             // btnClose
             // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(12, 130);
+            this.btnClose.Location = new System.Drawing.Point(114, 54);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnClose.Size = new System.Drawing.Size(98, 38);
@@ -140,7 +142,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label1.Location = new System.Drawing.Point(421, 16);
+            this.label1.Location = new System.Drawing.Point(1053, 42);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(76, 26);
@@ -152,7 +154,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(417, 59);
+            this.label2.Location = new System.Drawing.Point(1049, 85);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(80, 26);
@@ -162,15 +164,19 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.cmbTeachers);
             this.panel2.Controls.Add(this.txtSubjectName);
+            this.panel2.Controls.Add(this.btnDeleteSubject);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnEditSubject);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnAddSubject);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel2.Size = new System.Drawing.Size(618, 108);
+            this.panel2.Size = new System.Drawing.Size(1152, 146);
             this.panel2.TabIndex = 10;
             // 
             // SubjectManagementForm
@@ -178,13 +184,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(618, 408);
-            this.Controls.Add(this.btnClose);
+            this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnDeleteSubject);
-            this.Controls.Add(this.btnEditSubject);
             this.Controls.Add(this.dgvSubjects);
-            this.Controls.Add(this.btnAddSubject);
             this.Name = "SubjectManagementForm";
             this.Text = "المواد";
             this.Load += new System.EventHandler(this.SubjectManagementForm_Load);
