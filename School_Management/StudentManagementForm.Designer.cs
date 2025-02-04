@@ -61,62 +61,74 @@
             // 
             // btnAddStudent
             // 
+            this.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnAddStudent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStudent.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnAddStudent.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnAddStudent.Image = global::School_Management.Properties.Resources.icons8_add_301;
             this.btnAddStudent.Location = new System.Drawing.Point(60, 20);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAddStudent.Size = new System.Drawing.Size(63, 55);
+            this.btnAddStudent.Size = new System.Drawing.Size(100, 40);
             this.btnAddStudent.TabIndex = 1;
             this.btnAddStudent.Text = "إضافة";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddStudent.UseVisualStyleBackColor = false;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click_1);
             // 
             // btnEditStudent
             // 
+            this.btnEditStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnEditStudent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnEditStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStudent.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnEditStudent.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnEditStudent.Image = global::School_Management.Properties.Resources.icons8_update_30;
             this.btnEditStudent.Location = new System.Drawing.Point(60, 90);
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEditStudent.Size = new System.Drawing.Size(56, 55);
+            this.btnEditStudent.Size = new System.Drawing.Size(100, 40);
             this.btnEditStudent.TabIndex = 2;
             this.btnEditStudent.Text = "تعديل";
-            this.btnEditStudent.UseVisualStyleBackColor = true;
+            this.btnEditStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditStudent.UseVisualStyleBackColor = false;
             this.btnEditStudent.Click += new System.EventHandler(this.btnEditStudent_Click_1);
             // 
             // btnDeleteStudent
             // 
+            this.btnDeleteStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnDeleteStudent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnDeleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStudent.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnDeleteStudent.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnDeleteStudent.Image = global::School_Management.Properties.Resources.icons8_delete_32;
             this.btnDeleteStudent.Location = new System.Drawing.Point(60, 169);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteStudent.Size = new System.Drawing.Size(56, 56);
+            this.btnDeleteStudent.Size = new System.Drawing.Size(100, 40);
             this.btnDeleteStudent.TabIndex = 3;
             this.btnDeleteStudent.Text = "حذف";
-            this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteStudent.UseVisualStyleBackColor = false;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click_1);
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnSearch.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
-            this.btnSearch.Location = new System.Drawing.Point(387, 155);
+            this.btnSearch.Image = global::School_Management.Properties.Resources.icons8_search_30;
+            this.btnSearch.Location = new System.Drawing.Point(363, 126);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearch.Size = new System.Drawing.Size(58, 50);
+            this.btnSearch.Size = new System.Drawing.Size(100, 40);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "بحث";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnViewStudentDetails_Click);
             // 
             // dgvStudents
@@ -124,11 +136,11 @@
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvStudents.Location = new System.Drawing.Point(0, 0);
+            this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvStudents.Location = new System.Drawing.Point(0, 246);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvStudents.Size = new System.Drawing.Size(1152, 568);
+            this.dgvStudents.Size = new System.Drawing.Size(1152, 322);
             this.dgvStudents.TabIndex = 6;
             // 
             // txtName
@@ -154,11 +166,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label2.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(1046, 31);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(77, 26);
+            this.label2.Size = new System.Drawing.Size(78, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "اسم الطالب";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -166,11 +179,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label3.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(1072, 69);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(51, 26);
+            this.label3.Size = new System.Drawing.Size(49, 24);
             this.label3.TabIndex = 11;
             this.label3.Text = "الفصل";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -178,11 +192,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label4.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label4.Location = new System.Drawing.Point(573, 69);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(46, 26);
+            this.label4.Size = new System.Drawing.Size(48, 24);
             this.label4.TabIndex = 12;
             this.label4.Text = "التاريح";
             // 
@@ -210,16 +225,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label5.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(556, 26);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(63, 26);
+            this.label5.Size = new System.Drawing.Size(63, 24);
             this.label5.TabIndex = 15;
             this.label5.Text = "ولي الامر";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnDeleteStudent);
             this.panel1.Controls.Add(this.dtpBirthDate);
@@ -244,11 +261,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label6.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label6.Location = new System.Drawing.Point(791, 134);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(35, 26);
+            this.label6.Size = new System.Drawing.Size(34, 24);
             this.label6.TabIndex = 17;
             this.label6.Text = "بحث";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -267,6 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvStudents);

@@ -37,8 +37,8 @@
             this.btnStartSync.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStartSync.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnStartSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartSync.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartSync.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnStartSync.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartSync.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnStartSync.Image = global::School_Management.Properties.Resources.icons8_cloud_sync_32;
             this.btnStartSync.Location = new System.Drawing.Point(430, 31);
             this.btnStartSync.Name = "btnStartSync";
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnStartSync);

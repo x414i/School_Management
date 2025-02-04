@@ -58,34 +58,37 @@
             this.dgvActivities.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvActivities.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActivities.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvActivities.Location = new System.Drawing.Point(0, 0);
+            this.dgvActivities.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvActivities.Location = new System.Drawing.Point(0, 195);
             this.dgvActivities.Name = "dgvActivities";
             this.dgvActivities.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvActivities.Size = new System.Drawing.Size(1152, 568);
+            this.dgvActivities.Size = new System.Drawing.Size(1152, 373);
             this.dgvActivities.TabIndex = 0;
             this.dgvActivities.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivities_CellContentClick);
             // 
             // btnDeleteActivity
             // 
+            this.btnDeleteActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnDeleteActivity.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(180)))), ((int)(((byte)(167)))));
             this.btnDeleteActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteActivity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnDeleteActivity.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteActivity.Image")));
-            this.btnDeleteActivity.Location = new System.Drawing.Point(21, 63);
+            this.btnDeleteActivity.Location = new System.Drawing.Point(109, 114);
             this.btnDeleteActivity.Name = "btnDeleteActivity";
             this.btnDeleteActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteActivity.Size = new System.Drawing.Size(80, 80);
+            this.btnDeleteActivity.Size = new System.Drawing.Size(100, 40);
             this.btnDeleteActivity.TabIndex = 3;
             this.btnDeleteActivity.Text = "حذف";
             this.btnDeleteActivity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeleteActivity.UseVisualStyleBackColor = true;
+            this.btnDeleteActivity.UseVisualStyleBackColor = false;
             this.btnDeleteActivity.Click += new System.EventHandler(this.btnDeleteActivity_Click);
             // 
             // cmbClass
             // 
-            this.cmbClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbClass.BackColor = System.Drawing.Color.White;
+            this.cmbClass.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.cmbClass.FormattingEnabled = true;
             this.cmbClass.Location = new System.Drawing.Point(487, 88);
             this.cmbClass.Name = "cmbClass";
@@ -96,7 +99,9 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.BackColor = System.Drawing.Color.White;
+            this.txtDescription.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.txtDescription.Location = new System.Drawing.Point(833, 88);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -106,7 +111,9 @@
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.txtName.Location = new System.Drawing.Point(833, 41);
             this.txtName.Name = "txtName";
             this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -116,7 +123,9 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.dtpDate.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
+            this.dtpDate.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Location = new System.Drawing.Point(488, 47);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -139,24 +148,27 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(180)))), ((int)(((byte)(167)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(145, 63);
+            this.btnSearch.Location = new System.Drawing.Point(266, 117);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearch.Size = new System.Drawing.Size(80, 80);
+            this.btnSearch.Size = new System.Drawing.Size(100, 40);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "بحث";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.txtSearch.Location = new System.Drawing.Point(488, 128);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -167,11 +179,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label1.Location = new System.Drawing.Point(1062, 130);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(51, 24);
+            this.label1.Size = new System.Drawing.Size(55, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "المعرف";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -180,11 +194,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(1063, 88);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(50, 24);
+            this.label2.Size = new System.Drawing.Size(51, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "الوصف";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,11 +209,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(1072, 44);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(41, 24);
+            this.label3.Size = new System.Drawing.Size(44, 24);
             this.label3.TabIndex = 14;
             this.label3.Text = "الاسم";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -206,11 +224,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label4.Location = new System.Drawing.Point(733, 132);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(40, 24);
+            this.label4.Size = new System.Drawing.Size(41, 24);
             this.label4.TabIndex = 15;
             this.label4.Text = "البحث";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -218,11 +238,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(720, 91);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(53, 24);
+            this.label5.Size = new System.Drawing.Size(55, 24);
             this.label5.TabIndex = 16;
             this.label5.Text = "الفصول";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -230,52 +252,58 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label6.Location = new System.Drawing.Point(733, 49);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(40, 24);
+            this.label6.Size = new System.Drawing.Size(46, 24);
             this.label6.TabIndex = 17;
             this.label6.Text = "التاريخ";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnAddActivity
             // 
+            this.btnAddActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnAddActivity.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(180)))), ((int)(((byte)(167)))));
             this.btnAddActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddActivity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnAddActivity.Image = ((System.Drawing.Image)(resources.GetObject("btnAddActivity.Image")));
-            this.btnAddActivity.Location = new System.Drawing.Point(366, 63);
+            this.btnAddActivity.Location = new System.Drawing.Point(266, 53);
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAddActivity.Size = new System.Drawing.Size(88, 80);
+            this.btnAddActivity.Size = new System.Drawing.Size(100, 40);
             this.btnAddActivity.TabIndex = 18;
             this.btnAddActivity.Text = "اضافة";
             this.btnAddActivity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddActivity.UseVisualStyleBackColor = true;
+            this.btnAddActivity.UseVisualStyleBackColor = false;
             this.btnAddActivity.Click += new System.EventHandler(this.btnAddUpdateActivity_Click);
             // 
             // btnUpdateActivity
             // 
+            this.btnUpdateActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnUpdateActivity.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(180)))), ((int)(((byte)(167)))));
             this.btnUpdateActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateActivity.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateActivity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnUpdateActivity.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateActivity.Image")));
-            this.btnUpdateActivity.Location = new System.Drawing.Point(259, 63);
+            this.btnUpdateActivity.Location = new System.Drawing.Point(109, 53);
             this.btnUpdateActivity.Name = "btnUpdateActivity";
             this.btnUpdateActivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnUpdateActivity.Size = new System.Drawing.Size(80, 80);
+            this.btnUpdateActivity.Size = new System.Drawing.Size(100, 40);
             this.btnUpdateActivity.TabIndex = 19;
             this.btnUpdateActivity.Text = "تعديل";
             this.btnUpdateActivity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdateActivity.UseVisualStyleBackColor = true;
+            this.btnUpdateActivity.UseVisualStyleBackColor = false;
             this.btnUpdateActivity.Click += new System.EventHandler(this.btnUpdateActivity_Click);
             // 
             // txtActivityID
             // 
-            this.txtActivityID.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivityID.BackColor = System.Drawing.Color.White;
+            this.txtActivityID.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivityID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.txtActivityID.Location = new System.Drawing.Point(833, 128);
             this.txtActivityID.Name = "txtActivityID";
             this.txtActivityID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -284,7 +312,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.panel2.Controls.Add(this.btnUpdateActivity);
             this.panel2.Controls.Add(this.btnDeleteActivity);
             this.panel2.Controls.Add(this.btnAddActivity);
@@ -312,6 +340,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvActivities);

@@ -52,32 +52,38 @@
             // 
             // btnLoadStudents
             // 
+            this.btnLoadStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnLoadStudents.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnLoadStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadStudents.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnLoadStudents.Image = global::School_Management.Properties.Resources.icons8_load_30;
             this.btnLoadStudents.Location = new System.Drawing.Point(329, 60);
             this.btnLoadStudents.Name = "btnLoadStudents";
             this.btnLoadStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnLoadStudents.Size = new System.Drawing.Size(98, 64);
+            this.btnLoadStudents.Size = new System.Drawing.Size(100, 40);
             this.btnLoadStudents.TabIndex = 1;
             this.btnLoadStudents.Text = "تحديث";
-            this.btnLoadStudents.UseVisualStyleBackColor = true;
+            this.btnLoadStudents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoadStudents.UseVisualStyleBackColor = false;
             this.btnLoadStudents.Click += new System.EventHandler(this.btnLoadStudents_Click_1);
             // 
             // btnSaveAttendance
             // 
+            this.btnSaveAttendance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnSaveAttendance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnSaveAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveAttendance.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveAttendance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnSaveAttendance.Image = global::School_Management.Properties.Resources.icons8_save_30;
             this.btnSaveAttendance.Location = new System.Drawing.Point(193, 60);
             this.btnSaveAttendance.Name = "btnSaveAttendance";
             this.btnSaveAttendance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveAttendance.Size = new System.Drawing.Size(98, 64);
+            this.btnSaveAttendance.Size = new System.Drawing.Size(100, 40);
             this.btnSaveAttendance.TabIndex = 2;
             this.btnSaveAttendance.Text = "حفظ";
-            this.btnSaveAttendance.UseVisualStyleBackColor = true;
+            this.btnSaveAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveAttendance.UseVisualStyleBackColor = false;
             this.btnSaveAttendance.Click += new System.EventHandler(this.btnSaveAttendance_Click_1);
             // 
             // dtpDate
@@ -95,11 +101,11 @@
             this.dgvStudents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStudents.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvStudents.Location = new System.Drawing.Point(0, 0);
+            this.dgvStudents.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvStudents.Location = new System.Drawing.Point(0, 170);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvStudents.Size = new System.Drawing.Size(1152, 568);
+            this.dgvStudents.Size = new System.Drawing.Size(1152, 398);
             this.dgvStudents.TabIndex = 5;
             this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             this.dgvStudents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellValueChanged);
@@ -107,29 +113,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label1.Location = new System.Drawing.Point(1050, 42);
+            this.label1.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.label1.Location = new System.Drawing.Point(1050, 47);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(47, 26);
+            this.label1.Size = new System.Drawing.Size(44, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "الصف";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
-            this.label2.Location = new System.Drawing.Point(1068, 92);
+            this.label2.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.label2.Location = new System.Drawing.Point(1050, 98);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(46, 26);
+            this.label2.Size = new System.Drawing.Size(48, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "التاريخ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.panel2.Controls.Add(this.btnLoadStudents);
             this.panel2.Controls.Add(this.btnSaveAttendance);
             this.panel2.Controls.Add(this.label1);
@@ -147,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvStudents);

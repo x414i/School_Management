@@ -60,18 +60,19 @@
             this.dgvReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvReport.Location = new System.Drawing.Point(0, 0);
+            this.dgvReport.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvReport.Location = new System.Drawing.Point(0, 189);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvReport.Size = new System.Drawing.Size(1152, 568);
+            this.dgvReport.Size = new System.Drawing.Size(1152, 379);
             this.dgvReport.TabIndex = 2;
             // 
             // btnShowReport
             // 
+            this.btnShowReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnShowReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnShowReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowReport.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnShowReport.Image = global::School_Management.Properties.Resources.icons8_load_30;
             this.btnShowReport.Location = new System.Drawing.Point(644, 112);
@@ -81,14 +82,15 @@
             this.btnShowReport.TabIndex = 3;
             this.btnShowReport.Text = "تحديث";
             this.btnShowReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShowReport.UseVisualStyleBackColor = true;
+            this.btnShowReport.UseVisualStyleBackColor = false;
             this.btnShowReport.Click += new System.EventHandler(this.btnShowReport_Click);
             // 
             // btnExportReport
             // 
+            this.btnExportReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnExportReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnExportReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportReport.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnExportReport.Image = global::School_Management.Properties.Resources.icons8_export_excel_32;
             this.btnExportReport.Location = new System.Drawing.Point(281, 112);
@@ -98,14 +100,15 @@
             this.btnExportReport.TabIndex = 4;
             this.btnExportReport.Text = "إكسيل";
             this.btnExportReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportReport.UseVisualStyleBackColor = true;
+            this.btnExportReport.UseVisualStyleBackColor = false;
             this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
             // 
             // btnExportToPDF
             // 
+            this.btnExportToPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnExportToPDF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnExportToPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportToPDF.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportToPDF.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportToPDF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnExportToPDF.Image = global::School_Management.Properties.Resources.icons8_pdf_30;
             this.btnExportToPDF.Location = new System.Drawing.Point(471, 112);
@@ -115,14 +118,15 @@
             this.btnExportToPDF.TabIndex = 5;
             this.btnExportToPDF.Text = "PDF";
             this.btnExportToPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportToPDF.UseVisualStyleBackColor = true;
+            this.btnExportToPDF.UseVisualStyleBackColor = false;
             this.btnExportToPDF.Click += new System.EventHandler(this.btnExportToPDF_Click);
             // 
             // btnSyncReport
             // 
+            this.btnSyncReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnSyncReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnSyncReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyncReport.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSyncReport.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSyncReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
             this.btnSyncReport.Image = global::School_Management.Properties.Resources.icons8_cloud_sync_32;
             this.btnSyncReport.Location = new System.Drawing.Point(814, 112);
@@ -132,17 +136,18 @@
             this.btnSyncReport.TabIndex = 6;
             this.btnSyncReport.Text = "تقرير المزامنة";
             this.btnSyncReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSyncReport.UseVisualStyleBackColor = true;
+            this.btnSyncReport.UseVisualStyleBackColor = false;
             this.btnSyncReport.Click += new System.EventHandler(this.btnSyncReport_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label2.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(905, 62);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(69, 26);
+            this.label2.Size = new System.Drawing.Size(72, 24);
             this.label2.TabIndex = 8;
             this.label2.Text = "نوع التقرير";
             // 
@@ -168,11 +173,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label4.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label4.Location = new System.Drawing.Point(905, 18);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(68, 26);
+            this.label4.Size = new System.Drawing.Size(70, 24);
             this.label4.TabIndex = 11;
             this.label4.Text = "التاريخ من";
             // 
@@ -188,11 +194,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label3.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(548, 18);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(30, 26);
+            this.label3.Size = new System.Drawing.Size(29, 24);
             this.label3.TabIndex = 10;
             this.label3.Text = "الى";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -220,6 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);

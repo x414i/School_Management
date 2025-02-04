@@ -78,7 +78,7 @@ namespace School_Management
                     if (previousBtn.GetType() == typeof(Button))
                     {
                     //previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previousBtn.BackColor = Color.FromArgb(42, 92, 117);
+                    previousBtn.BackColor = Color.FromArgb(94, 148, 171);
                     previousBtn.ForeColor = Color.Gainsboro;
                         previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     }
@@ -123,7 +123,7 @@ namespace School_Management
             lblTitle.Text = "الصفحة الرئيسية";
             //panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
             panelTitleBar.BackColor = Color.FromArgb(42, 92, 117);
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            panelLogo.BackColor = Color.FromArgb(42, 92, 117);
             currentButton = null;
             btnCloseChildForm.Visible = false;
         }
@@ -280,6 +280,11 @@ namespace School_Management
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktopPane_Paint(object sender, PaintEventArgs e)
         {
 
         }

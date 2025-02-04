@@ -61,8 +61,9 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(92)))), ((int)(((byte)(117)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelMenu.Controls.Add(this.btnReport);
+            this.panelMenu.Controls.Add(this.btnStu);
             this.panelMenu.Controls.Add(this.btnSchul);
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnActive);
@@ -73,7 +74,6 @@
             this.panelMenu.Controls.Add(this.btnClass);
             this.panelMenu.Controls.Add(this.btnSubjects);
             this.panelMenu.Controls.Add(this.btnTeacher);
-            this.panelMenu.Controls.Add(this.btnStu);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelMenu.Location = new System.Drawing.Point(1168, 0);
@@ -83,7 +83,7 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(92)))), ((int)(((byte)(117)))));
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -106,7 +106,7 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(92)))), ((int)(((byte)(117)))));
             this.panelTitleBar.Controls.Add(this.button3);
             this.panelTitleBar.Controls.Add(this.button2);
             this.panelTitleBar.Controls.Add(this.button1);
@@ -214,6 +214,7 @@
             this.panelDesktopPane.Name = "panelDesktopPane";
             this.panelDesktopPane.Size = new System.Drawing.Size(1168, 607);
             this.panelDesktopPane.TabIndex = 4;
+            this.panelDesktopPane.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPane_Paint);
             // 
             // pictureBox1
             // 
@@ -457,7 +458,7 @@
             this.btnStu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(180)))), ((int)(((byte)(167)))));
             this.btnStu.Image = global::School_Management.Properties.Resources.icons8_students_30;
             this.btnStu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStu.Location = new System.Drawing.Point(0, 80);
+            this.btnStu.Location = new System.Drawing.Point(-3, 86);
             this.btnStu.Name = "btnStu";
             this.btnStu.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
             this.btnStu.Size = new System.Drawing.Size(180, 50);

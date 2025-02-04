@@ -34,7 +34,6 @@
             this.btnAddSubject = new System.Windows.Forms.Button();
             this.btnEditSubject = new System.Windows.Forms.Button();
             this.btnDeleteSubject = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,12 +47,12 @@
             this.dgvSubjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSubjects.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSubjects.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvSubjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSubjects.Location = new System.Drawing.Point(0, 0);
+            this.dgvSubjects.Location = new System.Drawing.Point(0, 146);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvSubjects.Size = new System.Drawing.Size(1152, 568);
+            this.dgvSubjects.Size = new System.Drawing.Size(1152, 422);
             this.dgvSubjects.TabIndex = 0;
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
@@ -80,72 +79,70 @@
             // 
             // btnAddSubject
             // 
+            this.btnAddSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnAddSubject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnAddSubject.FlatAppearance.BorderSize = 2;
             this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnAddSubject.ForeColor = System.Drawing.Color.White;
+            this.btnAddSubject.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnAddSubject.Image = global::School_Management.Properties.Resources.icons8_add_30;
             this.btnAddSubject.Location = new System.Drawing.Point(498, 54);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAddSubject.Size = new System.Drawing.Size(97, 38);
+            this.btnAddSubject.Size = new System.Drawing.Size(100, 40);
             this.btnAddSubject.TabIndex = 3;
-            this.btnAddSubject.Text = "إضافة مادة";
-            this.btnAddSubject.UseVisualStyleBackColor = true;
+            this.btnAddSubject.Text = "إضافة";
+            this.btnAddSubject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddSubject.UseVisualStyleBackColor = false;
             this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click_1);
             // 
             // btnEditSubject
             // 
+            this.btnEditSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnEditSubject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnEditSubject.FlatAppearance.BorderSize = 2;
             this.btnEditSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnEditSubject.ForeColor = System.Drawing.Color.White;
+            this.btnEditSubject.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnEditSubject.Image = global::School_Management.Properties.Resources.icons8_update_30;
             this.btnEditSubject.Location = new System.Drawing.Point(344, 54);
             this.btnEditSubject.Name = "btnEditSubject";
             this.btnEditSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEditSubject.Size = new System.Drawing.Size(98, 38);
+            this.btnEditSubject.Size = new System.Drawing.Size(100, 40);
             this.btnEditSubject.TabIndex = 4;
-            this.btnEditSubject.Text = "تعديل مادة";
-            this.btnEditSubject.UseVisualStyleBackColor = true;
+            this.btnEditSubject.Text = "تعديل";
+            this.btnEditSubject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditSubject.UseVisualStyleBackColor = false;
             this.btnEditSubject.Click += new System.EventHandler(this.btnEditSubject_Click);
             // 
             // btnDeleteSubject
             // 
+            this.btnDeleteSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.btnDeleteSubject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnDeleteSubject.FlatAppearance.BorderSize = 2;
             this.btnDeleteSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteSubject.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnDeleteSubject.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSubject.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnDeleteSubject.Image = global::School_Management.Properties.Resources.icons8_delete_32;
             this.btnDeleteSubject.Location = new System.Drawing.Point(226, 54);
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteSubject.Size = new System.Drawing.Size(97, 38);
+            this.btnDeleteSubject.Size = new System.Drawing.Size(100, 40);
             this.btnDeleteSubject.TabIndex = 5;
             this.btnDeleteSubject.Text = "حذف";
-            this.btnDeleteSubject.UseVisualStyleBackColor = true;
+            this.btnDeleteSubject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteSubject.UseVisualStyleBackColor = false;
             this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Cairo", 10F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(114, 54);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnClose.Size = new System.Drawing.Size(98, 38);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "إغلاق";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label1.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label1.Location = new System.Drawing.Point(1053, 42);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(76, 26);
+            this.label1.Size = new System.Drawing.Size(75, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "اسم المادة";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -153,18 +150,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label2.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(1049, 85);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(80, 26);
+            this.label2.Size = new System.Drawing.Size(81, 24);
             this.label2.TabIndex = 8;
             this.label2.Text = "اسم الاستاذ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.cmbTeachers);
             this.panel2.Controls.Add(this.txtSubjectName);
             this.panel2.Controls.Add(this.btnDeleteSubject);
@@ -183,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvSubjects);
@@ -205,7 +202,6 @@
         private System.Windows.Forms.Button btnAddSubject;
         private System.Windows.Forms.Button btnEditSubject;
         private System.Windows.Forms.Button btnDeleteSubject;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;

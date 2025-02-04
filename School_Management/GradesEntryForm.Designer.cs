@@ -51,16 +51,21 @@
             // 
             // btnSaveGrade
             // 
-            this.btnSaveGrade.FlatAppearance.BorderSize = 0;
+            this.btnSaveGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.btnSaveGrade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnSaveGrade.FlatAppearance.BorderSize = 2;
             this.btnSaveGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveGrade.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnSaveGrade.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnSaveGrade.Image = global::School_Management.Properties.Resources.icons8_save_30;
             this.btnSaveGrade.Location = new System.Drawing.Point(45, 15);
             this.btnSaveGrade.Name = "btnSaveGrade";
             this.btnSaveGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveGrade.Size = new System.Drawing.Size(121, 62);
+            this.btnSaveGrade.Size = new System.Drawing.Size(100, 40);
             this.btnSaveGrade.TabIndex = 0;
             this.btnSaveGrade.Text = "حفظ";
-            this.btnSaveGrade.UseVisualStyleBackColor = true;
+            this.btnSaveGrade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveGrade.UseVisualStyleBackColor = false;
             this.btnSaveGrade.Click += new System.EventHandler(this.btnSaveGrade_Click_1);
             // 
             // cmbStudents
@@ -107,44 +112,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label1.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label1.Location = new System.Drawing.Point(1078, 22);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(47, 26);
+            this.label1.Size = new System.Drawing.Size(45, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "الدرجة";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label2.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(1075, 67);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(49, 26);
+            this.label2.Size = new System.Drawing.Size(50, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "الطالب";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label3.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(613, 12);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(48, 26);
+            this.label3.Size = new System.Drawing.Size(47, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "المادة";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label4.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label4.Location = new System.Drawing.Point(579, 68);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(88, 26);
+            this.label4.Size = new System.Drawing.Size(92, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "تاريخ الامتحان";
             // 
@@ -152,12 +161,13 @@
             // 
             this.dgvGrades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGrades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvGrades.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.dgvGrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGrades.Location = new System.Drawing.Point(0, 0);
+            this.dgvGrades.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvGrades.Location = new System.Drawing.Point(0, 277);
             this.dgvGrades.Name = "dgvGrades";
             this.dgvGrades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvGrades.Size = new System.Drawing.Size(1152, 568);
+            this.dgvGrades.Size = new System.Drawing.Size(1152, 291);
             this.dgvGrades.TabIndex = 10;
             this.dgvGrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrades_CellContentClick);
             // 
@@ -172,31 +182,38 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnSearch.FlatAppearance.BorderSize = 2;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnSearch.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnSearch.Image = global::School_Management.Properties.Resources.icons8_search_30;
             this.btnSearch.Location = new System.Drawing.Point(390, 173);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearch.Size = new System.Drawing.Size(79, 35);
+            this.btnSearch.Size = new System.Drawing.Size(100, 40);
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "بحث";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cairo", 10F);
+            this.label5.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(963, 182);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(43, 26);
+            this.label5.Size = new System.Drawing.Size(43, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "البحث";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.panel2.Controls.Add(this.btnEditGrade);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnDeleteGrade);
@@ -221,30 +238,40 @@
             // 
             // btnEditGrade
             // 
-            this.btnEditGrade.FlatAppearance.BorderSize = 0;
+            this.btnEditGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.btnEditGrade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnEditGrade.FlatAppearance.BorderSize = 2;
             this.btnEditGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditGrade.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnEditGrade.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnEditGrade.Image = global::School_Management.Properties.Resources.icons8_update_30;
             this.btnEditGrade.Location = new System.Drawing.Point(45, 182);
             this.btnEditGrade.Name = "btnEditGrade";
             this.btnEditGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEditGrade.Size = new System.Drawing.Size(121, 62);
+            this.btnEditGrade.Size = new System.Drawing.Size(100, 40);
             this.btnEditGrade.TabIndex = 10;
             this.btnEditGrade.Text = "تعديل";
-            this.btnEditGrade.UseVisualStyleBackColor = true;
+            this.btnEditGrade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditGrade.UseVisualStyleBackColor = false;
             this.btnEditGrade.Click += new System.EventHandler(this.btnEditGrade_Click);
             // 
             // btnDeleteGrade
             // 
-            this.btnDeleteGrade.FlatAppearance.BorderSize = 0;
+            this.btnDeleteGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(223)))), ((int)(((byte)(222)))));
+            this.btnDeleteGrade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnDeleteGrade.FlatAppearance.BorderSize = 2;
             this.btnDeleteGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteGrade.Font = new System.Drawing.Font("Cairo", 10F);
+            this.btnDeleteGrade.Font = new System.Drawing.Font("Cairo ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(140)))), ((int)(((byte)(126)))));
+            this.btnDeleteGrade.Image = global::School_Management.Properties.Resources.icons8_delete_32;
             this.btnDeleteGrade.Location = new System.Drawing.Point(45, 96);
             this.btnDeleteGrade.Name = "btnDeleteGrade";
             this.btnDeleteGrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDeleteGrade.Size = new System.Drawing.Size(106, 62);
+            this.btnDeleteGrade.Size = new System.Drawing.Size(100, 40);
             this.btnDeleteGrade.TabIndex = 11;
             this.btnDeleteGrade.Text = "حذف";
-            this.btnDeleteGrade.UseVisualStyleBackColor = true;
+            this.btnDeleteGrade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteGrade.UseVisualStyleBackColor = false;
             this.btnDeleteGrade.Click += new System.EventHandler(this.btnDeleteGrade_Click);
             // 
             // label6
@@ -261,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(1152, 568);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
