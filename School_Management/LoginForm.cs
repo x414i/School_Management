@@ -47,10 +47,10 @@ namespace School_Management
                                 // Verify the password
                                 if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
                                 {
-                                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("تم تسجيل الدخول بنجاح :) \n Username : "+ username, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     // Redirect to the main form
-                                    MainForm mainForm = new MainForm();
+                                    main mainForm = new main();
                                     mainForm.Show();
 
                                     this.Hide(); // Hide the login form

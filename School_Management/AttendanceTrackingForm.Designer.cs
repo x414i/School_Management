@@ -160,7 +160,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvStudents);
             this.Name = "AttendanceTrackingForm";
-            this.Text = "AttendanceTrackingForm";
+            this.Text = "الحضور";
             this.Load += new System.EventHandler(this.AttendanceTrackingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.panel2.ResumeLayout(false);

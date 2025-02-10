@@ -305,7 +305,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvTimetable);
             this.Name = "TimetableManagementForm";
-            this.Text = "TimetableManagementForm";
+            this.Text = "الجدول الزمني";
             this.Load += new System.EventHandler(this.TimetableManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetable)).EndInit();
             this.panel2.ResumeLayout(false);
